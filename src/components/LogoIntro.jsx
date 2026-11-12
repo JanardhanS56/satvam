@@ -99,7 +99,7 @@ export default function LogoIntro({ onComplete }) {
         {/* Logo Mark with Shimmer Wrapper */}
         <div ref={markRef} className="relative w-28 h-28 sm:w-36 sm:h-36 overflow-hidden rounded-full flex items-center justify-center p-3 bg-[#F5EFE3] shadow-soft border border-[#6B5B45]/15">
           <SafeImage
-            src="/references/logo/logo-mark.svg"
+            src="/references/logo/logo-mark.webp"
             alt="Satvam Seal"
             className="w-full h-full object-contain"
             fallbackText="SV"

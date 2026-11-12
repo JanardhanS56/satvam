@@ -68,7 +68,7 @@ export default function Hero() {
         <div className="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#F5EFE3]/90 border border-[#6B5B45]/15 backdrop-blur-xs shadow-xs">
           <div className="w-5 h-5 rounded-full overflow-hidden flex items-center justify-center bg-[#FAF7F0]">
             <SafeImage
-              src="/references/logo/logo-mark.svg"
+              src="/references/logo/logo-mark.webp"
               alt="Seal"
               className="w-4 h-4 object-contain"
               fallbackText="S"
@@ -79,12 +79,12 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Full Lockup Logo per design.md (Home hero: h-32) */}
+        {/* Full Lockup Logo from References/logo */}
         <div className="mb-4 flex flex-col items-center justify-center">
           <SafeImage
-            src="/references/logo/logo.svg"
+            src="/references/logo/logo.webp"
             alt="Satvam Vedic Apothecary"
-            className="h-24 sm:h-28 md:h-32 w-auto object-contain filter drop-shadow-xs"
+            className="h-28 sm:h-36 md:h-44 w-auto max-w-[280px] sm:max-w-md object-contain filter drop-shadow-sm"
             fallbackText="SATVAM"
           />
           <h1 className="sr-only">Satvam — Vedic Hair Care Atelier</h1>
@@ -103,18 +103,26 @@ export default function Hero() {
 
         {/* CTAs */}
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-          <Link
-            to="/journey"
-            className="btn-primary w-full sm:w-auto px-8 py-3.5 text-base shadow-soft hover:shadow-lifted font-medium tracking-wide"
+          <button
+            type="button"
+            onClick={() => {
+              const el = document.getElementById('journey-section');
+              if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                navigate('/journey');
+              }
+            }}
+            className="btn-primary w-full sm:w-auto px-8 py-3.5 text-base shadow-soft hover:shadow-lifted font-medium tracking-wide flex items-center justify-center gap-2"
           >
-            Enter the Atelier
-          </Link>
+            Enter the Atelier ↓
+          </button>
           <button
             type="button"
             onClick={handleSkipJourney}
             className="btn-ghost w-full sm:w-auto px-8 py-3.5 text-base tracking-wide"
           >
-            Skip the journey
+            Skip to Shop →
           </button>
         </div>
       </div>

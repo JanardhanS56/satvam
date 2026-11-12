@@ -29,7 +29,7 @@ export default function Nav() {
         >
           <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-[#F5EFE3] border border-[#6B5B45]/20 shadow-xs">
             <SafeImage
-              src="/references/logo/logo-mark.svg"
+              src="/references/logo/logo-mark.webp"
               alt="Satvam Mark"
               className="w-8 h-8 object-contain"
               fallbackText="SV"

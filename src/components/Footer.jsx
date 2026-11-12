@@ -22,7 +22,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-[#FAF7F0]/10 flex items-center justify-center border border-[#FAF7F0]/20">
               <SafeImage
-                src="/references/logo/logo-mark.svg"
+                src="/references/logo/logo-mark.webp"
                 alt="Satvam"
                 className="w-7 h-7 object-contain brightness-0 invert"
                 fallbackText="SV"

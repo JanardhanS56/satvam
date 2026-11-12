@@ -2,7 +2,7 @@ import React from 'react';
 import LogoIntro from '../components/LogoIntro';
 import Hero from '../components/Hero';
 import BrandPromise from '../components/BrandPromise';
-import JourneyTeaser from '../components/JourneyTeaser';
+import LiveJourneySection from '../components/LiveJourneySection';
 import ContactFooter from '../components/ContactFooter';
 
 export default function Home() {
@@ -17,8 +17,8 @@ export default function Home() {
       {/* Brand Promise Strip (Leaf, Mortar, Bottle bio-active credentials) */}
       <BrandPromise />
 
-      {/* The 5-Stage Seed-to-Bottle Journey Showcase Teaser */}
-      <JourneyTeaser />
+      {/* Automated 5-Stage Seed-to-Bottle Journey Experience */}
+      <LiveJourneySection />
 
       {/* Customer Helpdesk & Interactive Concierge */}
       <ContactFooter />

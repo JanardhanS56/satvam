@@ -8,7 +8,10 @@ import {
   Quote,
   Sparkles,
   Award,
-  CheckCircle2
+  CheckCircle2,
+  TrendingUp,
+  Landmark,
+  Handshake
 } from 'lucide-react';
 
 export default function About() {
@@ -106,19 +109,126 @@ export default function About() {
       {/* 1. Origin Story Section */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Photograph */}
-          <div className="lg:col-span-5 bg-[#F5EFE3] p-4 rounded-3xl border border-[#6B5B45]/20 shadow-soft">
-            <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-[#FAF7F0] flex items-center justify-center">
-              <SafeImage
-                src="/references/about/origin.webp"
-                alt="Ancestral oil pressing traditions"
-                className="w-full h-full object-cover filter saturate-[0.9] sepia-[0.1]"
-                fallbackText="Satvam Origin Archive"
-              />
+          {/* Left Column: Growth Trajectory & Tri-Pillar Trust Matrix (Replaces former placeholder image) */}
+          <div className="lg:col-span-5 bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#6B5B45]/20 shadow-soft flex flex-col justify-between space-y-6">
+            <div>
+              {/* Header Badge */}
+              <div className="flex items-center justify-between pb-3 border-b border-[#6B5B45]/15">
+                <div className="flex items-center gap-2">
+                  <TrendingUp className="w-4 h-4 text-[#C9A961]" />
+                  <span className="font-mono text-xs uppercase tracking-wider text-[#6B5B45] font-semibold">
+                    Ecosystem Trust Matrix
+                  </span>
+                </div>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-[#F5EFE3] text-[#2D3E2F] border border-[#6B5B45]/15">
+                  2018 — 2026
+                </span>
+              </div>
+
+              {/* Growth Trajectory Across Years (Visual Progress Bars) */}
+              <div className="mt-4">
+                <h4 className="font-display font-medium text-base text-[#2D3E2F] mb-3">
+                  Consecrated Growth Trajectory
+                </h4>
+                <div className="space-y-3">
+                  {/* 2018 */}
+                  <div>
+                    <div className="flex justify-between text-xs mb-1 font-mono">
+                      <span className="text-[#6B5B45]">2018 · Genesis</span>
+                      <span className="font-semibold text-[#2D3E2F]">240 Bottles (Kolhapur Ghani)</span>
+                    </div>
+                    <div className="h-2 w-full bg-[#F5EFE3] rounded-full overflow-hidden">
+                      <div className="h-full bg-[#6B5B45]/40 rounded-full w-[12%]" />
+                    </div>
+                  </div>
+
+                  {/* 2021 */}
+                  <div>
+                    <div className="flex justify-between text-xs mb-1 font-mono">
+                      <span className="text-[#6B5B45]">2021 · Ayush Standardized</span>
+                      <span className="font-semibold text-[#2D3E2F]">18,000 Verified Patrons</span>
+                    </div>
+                    <div className="h-2 w-full bg-[#F5EFE3] rounded-full overflow-hidden">
+                      <div className="h-full bg-[#6B5B45]/60 rounded-full w-[38%]" />
+                    </div>
+                  </div>
+
+                  {/* 2024 */}
+                  <div>
+                    <div className="flex justify-between text-xs mb-1 font-mono">
+                      <span className="text-[#6B5B45]">2024 · Direct Grower Alliance</span>
+                      <span className="font-semibold text-[#2D3E2F]">220,000 Cold-Pressed Units</span>
+                    </div>
+                    <div className="h-2 w-full bg-[#F5EFE3] rounded-full overflow-hidden">
+                      <div className="h-full bg-[#2D3E2F]/80 rounded-full w-[70%]" />
+                    </div>
+                  </div>
+
+                  {/* 2026 */}
+                  <div>
+                    <div className="flex justify-between text-xs mb-1 font-mono">
+                      <span className="text-emerald-800 font-bold">2026 · National Footprint</span>
+                      <span className="font-bold text-emerald-800">500,000+ Active Ritualists</span>
+                    </div>
+                    <div className="h-2.5 w-full bg-[#F5EFE3] rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-[#C9A961] to-emerald-600 rounded-full w-[100%]" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p className="mt-3 font-mono text-[11px] text-[#6B5B45] text-center italic">
-              Vaagai wood pressing mortar and pestle · Satvam Archives, 2018
-            </p>
+
+            {/* Tri-Pillar Trust Section: Producers · Investors · Distributors */}
+            <div className="pt-4 border-t border-[#6B5B45]/15 space-y-3.5">
+              <h4 className="font-display font-medium text-base text-[#2D3E2F]">
+                Institutional Trust & Governance
+              </h4>
+
+              {/* Pillar 1: Producers */}
+              <div className="p-3 bg-[#FAF7F0] rounded-xl border border-[#6B5B45]/15">
+                <div className="flex items-center gap-2 mb-1">
+                  <Sprout className="w-4 h-4 text-emerald-700" />
+                  <span className="font-mono text-xs uppercase font-bold text-[#2D3E2F] tracking-wide">
+                    Producers · 740+ Family Farms
+                  </span>
+                </div>
+                <p className="text-xs text-[#6B5B45] leading-relaxed">
+                  100% direct fair-trade agreements. Farmers receive guaranteed purchase 22% above market rates with advance capital for heritage wildcraft seeds.
+                </p>
+              </div>
+
+              {/* Pillar 2: Investors */}
+              <div className="p-3 bg-[#FAF7F0] rounded-xl border border-[#6B5B45]/15">
+                <div className="flex items-center gap-2 mb-1">
+                  <Landmark className="w-4 h-4 text-[#C9A961]" />
+                  <span className="font-mono text-xs uppercase font-bold text-[#2D3E2F] tracking-wide">
+                    Investors · 100% Patient Capital
+                  </span>
+                </div>
+                <p className="text-xs text-[#6B5B45] leading-relaxed">
+                  Zero venture-debt or hyper-growth dilution. Formulations governed by an autonomous Vaidya Advisory Council with statutory veto power.
+                </p>
+              </div>
+
+              {/* Pillar 3: Distributors */}
+              <div className="p-3 bg-[#FAF7F0] rounded-xl border border-[#6B5B45]/15">
+                <div className="flex items-center gap-2 mb-1">
+                  <Handshake className="w-4 h-4 text-[#2D3E2F]" />
+                  <span className="font-mono text-xs uppercase font-bold text-[#2D3E2F] tracking-wide">
+                    Distributors · 180+ Ethical Dispensaries
+                  </span>
+                </div>
+                <p className="text-xs text-[#6B5B45] leading-relaxed">
+                  Selected through strict Ayurvedic medical licensure across 28 states, maintaining a 99.2% re-order consistency and zero synthetic returns.
+                </p>
+              </div>
+            </div>
+
+            {/* Bottom Proof Metric Banner */}
+            <div className="bg-[#2D3E2F] text-[#FAF7F0] p-3 rounded-xl flex items-center justify-between text-xs font-mono">
+              <span>✦ Direct Trade Certified</span>
+              <span className="text-[#C9A961]">Zero Middlemen</span>
+            </div>
           </div>
 
           {/* Right Narrative Story */}

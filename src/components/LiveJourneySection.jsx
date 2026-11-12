@@ -2,12 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { SafeImage } from '../lib/images';
 import {
-  Compass,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
-  Pause,
-  Play,
   Sprout,
   Droplets,
   Users,
@@ -99,21 +96,26 @@ const JOURNEY_SCENES = [
 
 export default function LiveJourneySection() {
   const [currentIdx, setCurrentIdx] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef(null);
 
-  const STAGE_DURATION_MS = 5000;
-  const TICK_INTERVAL_MS = 50;
+  // Controlled, slow, and satisfying progression: 6.5s per stage
+  const STAGE_DURATION_MS = 6500;
+  const TICK_INTERVAL_MS = 30;
 
-  // Auto-play timer
+  // Automatically active on landing page; resets when unmounted or returning
   useEffect(() => {
-    if (isPaused) {
-      clearInterval(intervalRef.current);
-      return;
-    }
+    setCurrentIdx(0);
+    setProgress(0);
+
+    let isVisible = true;
+    const handleVisibility = () => {
+      isVisible = document.visibilityState === 'visible';
+    };
+    document.addEventListener('visibilitychange', handleVisibility);
 
     intervalRef.current = setInterval(() => {
+      if (!isVisible) return;
       setProgress((prev) => {
         if (prev >= 100) {
           setCurrentIdx((c) => (c + 1) % JOURNEY_SCENES.length);
@@ -123,8 +125,11 @@ export default function LiveJourneySection() {
       });
     }, TICK_INTERVAL_MS);
 
-    return () => clearInterval(intervalRef.current);
-  }, [isPaused, currentIdx]);
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+      document.removeEventListener('visibilitychange', handleVisibility);
+    };
+  }, []);
 
   const selectStage = (idx) => {
     setCurrentIdx(idx);
@@ -148,16 +153,11 @@ export default function LiveJourneySection() {
     <section
       id="journey-section"
       className="w-full bg-[#FAF7F0] py-16 sm:py-24 px-6 border-t border-[#6B5B45]/15"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
       <div className="max-w-7xl mx-auto lg:px-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F5EFE3] text-[#6B5B45] text-xs font-mono uppercase tracking-widest border border-[#6B5B45]/15 mb-3">
-              <Compass className="w-3.5 h-3.5 text-[#C9A961]" /> Automated Lineage Chronicle
-            </div>
             <h2 className="font-display font-medium text-3xl sm:text-5xl text-[#2D3E2F] leading-tight">
               The 5-Stage Seed-to-Bottle Journey
             </h2>
@@ -166,44 +166,27 @@ export default function LiveJourneySection() {
             </p>
           </div>
 
-          {/* Autoplay status & Manual Controls */}
-          <div className="flex items-center gap-3">
+          {/* Stepper Chevrons */}
+          <div className="flex items-center gap-2">
+            <span className="font-mono text-xs text-[#6B5B45] uppercase tracking-wider mr-1">
+              Stage {currentIdx + 1} of 5
+            </span>
             <button
               type="button"
-              onClick={() => setIsPaused(!isPaused)}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FFFFFF] border border-[#6B5B45]/20 text-xs font-mono text-[#2D3E2F] hover:bg-[#F5EFE3] transition-colors shadow-xs"
-              title={isPaused ? 'Resume auto-progression' : 'Pause auto-progression'}
+              onClick={prevStage}
+              className="w-9 h-9 rounded-full bg-[#FFFFFF] border border-[#6B5B45]/20 flex items-center justify-center text-[#2D3E2F] hover:bg-[#F5EFE3] transition-colors shadow-xs"
+              aria-label="Previous stage"
             >
-              {isPaused ? (
-                <>
-                  <Play className="w-3.5 h-3.5 text-emerald-700 fill-current" />
-                  <span>Resume Auto-Play</span>
-                </>
-              ) : (
-                <>
-                  <Pause className="w-3.5 h-3.5 text-[#C9A961]" />
-                  <span>Auto-Advancing</span>
-                </>
-              )}
+              <ChevronLeft className="w-4 h-4" />
             </button>
-            <div className="flex items-center gap-1">
-              <button
-                type="button"
-                onClick={prevStage}
-                className="w-8 h-8 rounded-full bg-[#FFFFFF] border border-[#6B5B45]/20 flex items-center justify-center text-[#2D3E2F] hover:bg-[#F5EFE3] transition-colors"
-                aria-label="Previous stage"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                type="button"
-                onClick={nextStage}
-                className="w-8 h-8 rounded-full bg-[#FFFFFF] border border-[#6B5B45]/20 flex items-center justify-center text-[#2D3E2F] hover:bg-[#F5EFE3] transition-colors"
-                aria-label="Next stage"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
+            <button
+              type="button"
+              onClick={nextStage}
+              className="w-9 h-9 rounded-full bg-[#FFFFFF] border border-[#6B5B45]/20 flex items-center justify-center text-[#2D3E2F] hover:bg-[#F5EFE3] transition-colors shadow-xs"
+              aria-label="Next stage"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
 
@@ -252,13 +235,13 @@ export default function LiveJourneySection() {
         {/* Dynamic Stage Display Container */}
         <div className="bg-[#FFFFFF] rounded-3xl border border-[#6B5B45]/20 shadow-soft overflow-hidden p-6 sm:p-10 lg:p-12 transition-all">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left: Stage Image with Subtle Ken Burns Zoom */}
-            <div className="lg:col-span-6 relative aspect-[4/3] rounded-2xl overflow-hidden bg-[#FAF7F0] border border-[#6B5B45]/15 shadow-inner">
+            {/* Left: Stage Image Expanded by ~15% (col-span-7) */}
+            <div className="lg:col-span-7 relative aspect-[4/3] sm:aspect-[16/11] lg:min-h-[480px] rounded-2xl overflow-hidden bg-[#FAF7F0] border border-[#6B5B45]/15 shadow-md">
               <SafeImage
                 key={active.src}
                 src={active.src}
                 alt={active.headline}
-                className="w-full h-full object-cover filter saturate-[0.95] transition-all duration-700 ease-out animate-fadeIn"
+                className="w-full h-full object-cover filter saturate-[0.95] transition-all duration-1000 ease-in-out hover:scale-102 animate-fadeIn"
                 fallbackText={active.stage}
               />
 
@@ -278,14 +261,14 @@ export default function LiveJourneySection() {
             </div>
 
             {/* Right: Narrative, Contrast Chips, and Direct CTA */}
-            <div className="lg:col-span-6 space-y-6">
+            <div className="lg:col-span-5 space-y-6">
               <div>
                 <div className="flex items-center gap-2 text-xs font-mono text-[#C9A961] uppercase tracking-widest font-semibold mb-2">
                   <span>Satvam Botanical Protocol</span>
                   <span>·</span>
                   <span>Zero Solvents</span>
                 </div>
-                <h3 className="font-display font-medium text-2xl sm:text-4xl text-[#2D3E2F] leading-tight">
+                <h3 className="font-display font-medium text-2xl sm:text-3xl lg:text-4xl text-[#2D3E2F] leading-tight">
                   {active.headline}
                 </h3>
               </div>

@@ -14,11 +14,11 @@ export default function Home() {
       {/* Hero Section with Parallax and 'Enter the Atelier' CTA */}
       <Hero />
 
+      {/* 5-Stage Seed-to-Bottle Journey Experience (Immediately below Hero) */}
+      <LiveJourneySection />
+
       {/* Brand Promise Strip (Leaf, Mortar, Bottle bio-active credentials) */}
       <BrandPromise />
-
-      {/* Automated 5-Stage Seed-to-Bottle Journey Experience */}
-      <LiveJourneySection />
 
       {/* Customer Helpdesk & Interactive Concierge */}
       <ContactFooter />

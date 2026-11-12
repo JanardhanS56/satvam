@@ -8,3 +8,8 @@ dist
 .vercel
 references/**/*.psd
 references/**/*.ai
+References/**/*.psd
+References/**/*.ai
+References/**/*.png
+References/**/*.jpg
+References/**/*.jpeg

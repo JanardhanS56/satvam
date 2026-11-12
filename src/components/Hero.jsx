@@ -6,9 +6,6 @@ import { isReducedMotion } from '../lib/gsap';
 export default function Hero() {
   const navigate = useNavigate();
   const heroRef = useRef(null);
-  const layer1Ref = useRef(null);
-  const layer2Ref = useRef(null);
-  const layer3Ref = useRef(null);
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -38,69 +35,37 @@ export default function Hero() {
     navigate('/shop');
   };
 
-  // Parallax translation offsets
-  const offset1 = isReducedMotion() ? 0 : scrollY * 0.12;
-  const offset2 = isReducedMotion() ? 0 : scrollY * 0.24;
-  const offset3 = isReducedMotion() ? 0 : scrollY * 0.38;
+  // Parallax translation offset for single editorial background
+  const offset = isReducedMotion() ? 0 : scrollY * 0.18;
 
   return (
     <section
       ref={heroRef}
       className="relative w-full min-h-[92vh] lg:min-h-screen overflow-hidden flex flex-col justify-between pt-12 pb-16 bg-[#FAF7F0]"
     >
-      {/* Background Parallax Layers */}
+      {/* Background Parallax Layer (Single Editorial per References/README.md) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0">
-        {/* Layer 1 (Furthest back - Landscape / Mist) */}
         <div
-          ref={layer1Ref}
-          className="absolute inset-0 w-full h-[120%] -top-[10%] opacity-25 object-cover transition-transform duration-75 ease-out"
-          style={{ transform: `translate3d(0, ${offset1}px, 0)` }}
-        >
-          <SafeImage
-            src="/references/hero/hero-1.webp"
-            alt="Ayurvedic foothills layer 1"
-            className="w-full h-full object-cover object-center filter saturate-[0.85] sepia-[0.1]"
-            fallbackText="Atelier Landscape 1"
-          />
-        </div>
-
-        {/* Layer 2 (Mid layer - Botanical canopy) */}
-        <div
-          ref={layer2Ref}
-          className="absolute inset-0 w-full h-[120%] -top-[10%] opacity-35 object-cover transition-transform duration-75 ease-out mix-blend-multiply"
-          style={{ transform: `translate3d(0, ${offset2}px, 0)` }}
+          className="absolute inset-0 w-full h-[125%] -top-[12%] opacity-35 object-cover transition-transform duration-75 ease-out will-change-transform"
+          style={{ transform: `translate3d(0, ${offset}px, 0) scale(1.1)` }}
         >
           <SafeImage
             src="/references/hero/hero-2.webp"
-            alt="Botanical grove layer 2"
-            className="w-full h-full object-cover object-center filter saturate-[0.9]"
-            fallbackText="Atelier Grove 2"
-          />
-        </div>
-
-        {/* Layer 3 (Foreground botanical shadow) */}
-        <div
-          ref={layer3Ref}
-          className="absolute inset-0 w-full h-[120%] -top-[10%] opacity-20 object-cover transition-transform duration-75 ease-out"
-          style={{ transform: `translate3d(0, ${offset3}px, 0)` }}
-        >
-          <SafeImage
-            src="/references/hero/hero-3.webp"
-            alt="Botanical leaves layer 3"
-            className="w-full h-full object-cover object-bottom"
-            fallbackText="Botanicals 3"
+            alt="Botanical grove editorial layer"
+            className="w-full h-full object-cover object-center filter saturate-[0.9] sepia-[0.08]"
+            fallbackText="Atelier Grove"
           />
         </div>
 
         {/* Gradient Scrims to preserve 60% ivory palette */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F0] via-[#FAF7F0]/70 to-[#FAF7F0]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,#FAF7F0_85%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F0]/90 via-[#FAF7F0]/60 to-[#FAF7F0]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#FAF7F0_85%)]" />
       </div>
 
       {/* Hero Content Container */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center my-auto">
         {/* Seal / Eyebrow */}
-        <div className="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#F5EFE3]/80 border border-[#6B5B45]/15 backdrop-blur-xs">
+        <div className="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#F5EFE3]/90 border border-[#6B5B45]/15 backdrop-blur-xs shadow-xs">
           <div className="w-5 h-5 rounded-full overflow-hidden flex items-center justify-center bg-[#FAF7F0]">
             <SafeImage
               src="/references/logo/logo-mark.svg"
@@ -114,18 +79,24 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Brand Name Headline */}
-        <h1 className="font-display font-medium text-5xl sm:text-7xl lg:text-8xl tracking-[-0.02em] text-[#2D3E2F] leading-[1.05]">
-          SATVAM
-        </h1>
+        {/* Full Lockup Logo per design.md (Home hero: h-32) */}
+        <div className="mb-4 flex flex-col items-center justify-center">
+          <SafeImage
+            src="/references/logo/logo.svg"
+            alt="Satvam Vedic Apothecary"
+            className="h-24 sm:h-28 md:h-32 w-auto object-contain filter drop-shadow-xs"
+            fallbackText="SATVAM"
+          />
+          <h1 className="sr-only">Satvam — Vedic Hair Care Atelier</h1>
+        </div>
 
         {/* Tagline */}
-        <p className="mt-6 font-eyebrow text-sm sm:text-base md:text-lg tracking-[0.22em] text-[#6B5B45] uppercase font-medium max-w-2xl">
+        <p className="mt-4 font-eyebrow text-sm sm:text-base md:text-lg tracking-[0.22em] text-[#6B5B45] uppercase font-medium max-w-2xl">
           From India's Roots to Your Roots.
         </p>
 
         {/* Supporting description */}
-        <p className="mt-4 text-[#2D3E2F]/80 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+        <p className="mt-4 text-[#2D3E2F]/85 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
           Sacred cold-pressed hair elixirs crafted with single-origin Indian botanicals,
           wood-pressed slowly to preserve whole plant vitality.
         </p>

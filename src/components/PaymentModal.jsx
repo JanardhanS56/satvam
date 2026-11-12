@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, CheckCircle, Loader2, ShieldCheck, Lock } from 'lucide-react';
 import { useUIStore } from '../stores/ui';
 import { useCartStore } from '../stores/cart';
+import { useProfileStore } from '../stores/profile';
 import { SafeImage } from '../lib/images';
 
 export default function PaymentModal() {
@@ -41,6 +42,40 @@ export default function PaymentModal() {
 
     // Exactly 2s spinner
     setTimeout(() => {
+      // Record completed purchase order in history before clearing cart
+      const currentCartItems = useCartStore.getState().items;
+      const currentSubtotal = useCartStore.getState().getSubtotal();
+      if (currentCartItems.length > 0) {
+        const now = new Date();
+        const dateStr = now.toLocaleDateString('en-GB', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        }) + ', ' + now.toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        const randomId = 'SV-' + Math.floor(10000 + Math.random() * 90000);
+        const randomBatch = 'LOT-SV-2026-B' + (Math.floor(Math.random() * 9) + 1);
+        const randomTrack = 'DEL-IND-' + Math.floor(10000000 + Math.random() * 90000000);
+
+        useProfileStore.getState().addOrder({
+          id: randomId,
+          date: dateStr,
+          status: 'Confirmed · Preparing Fresh Batch',
+          batchCode: randomBatch,
+          trackingNumber: randomTrack,
+          total: currentSubtotal,
+          items: currentCartItems.map((item) => ({
+            slug: item.slug,
+            name: item.name,
+            bottleImage: item.bottleImage || item.image || `references/products/${item.slug}-bottle.webp`,
+            price: item.price,
+            quantity: item.quantity
+          }))
+        });
+      }
+
       setStatus('success');
       clearCart();
 

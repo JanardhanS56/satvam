@@ -3,6 +3,34 @@ import { persist } from 'zustand/middleware';
 
 const generateDefaultName = () => 'Guest-' + Math.random().toString(36).slice(2, 7);
 
+export const DEFAULT_ORDERS = [
+  {
+    id: 'SV-84291',
+    date: '10 Nov 2026, 04:15 PM',
+    status: 'Delivered',
+    batchCode: 'LOT-SV-2026-B4',
+    trackingNumber: 'DEL-IND-90823412',
+    deliveryDate: '12 Nov 2026',
+    total: 1048,
+    items: [
+      {
+        slug: 'keshkanti',
+        name: 'Keshkanti',
+        bottleImage: 'references/products/keshkanti-bottle.webp',
+        price: 549,
+        quantity: 1
+      },
+      {
+        slug: 'amla-pitta',
+        name: 'Amla-Pitta',
+        bottleImage: 'references/products/amla-pitta-bottle.webp',
+        price: 499,
+        quantity: 1
+      }
+    ]
+  }
+];
+
 export const useProfileStore = create(
   persist(
     (set, get) => ({
@@ -13,6 +41,7 @@ export const useProfileStore = create(
       concerns: [],
       wishlist: [],
       favorites: [],
+      orders: DEFAULT_ORDERS,
       quizResults: null,
       popupsDisabled: false,
 
@@ -54,6 +83,13 @@ export const useProfileStore = create(
         set({ favorites: updated });
       },
 
+      addOrder: (order) => {
+        const current = get().orders || [];
+        set({ orders: [order, ...current] });
+      },
+
+      clearOrders: () => set({ orders: [] }),
+
       setQuizResults: (results) => set({ quizResults: results }),
 
       setPopupsDisabled: (disabled) => {
@@ -70,10 +106,13 @@ export const useProfileStore = create(
     {
       name: 'satvam_profile',
       onRehydrateStorage: () => (state) => {
-        if (typeof window !== 'undefined') {
+        if (typeof window !== 'undefined' && state) {
           const disabled = localStorage.getItem('satvam_popups_disabled') === '1';
-          if (disabled && state) {
+          if (disabled) {
             state.popupsDisabled = true;
+          }
+          if (!state.orders || state.orders.length === 0) {
+            state.orders = DEFAULT_ORDERS;
           }
         }
       }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useProfileStore } from '../stores/profile';
 import { useCartStore } from '../stores/cart';
 import { useUIStore } from '../stores/ui';
@@ -10,6 +11,11 @@ import {
   Heart,
   Bookmark,
   ShoppingBag,
+  History,
+  PackageCheck,
+  RotateCcw,
+  ArrowRight,
+  ShieldCheck,
   BellOff,
   Bell,
   Trash2,
@@ -34,6 +40,7 @@ export default function Profile() {
   const toggleWishlist = useProfileStore((state) => state.toggleWishlist);
   const favorites = useProfileStore((state) => state.favorites);
   const toggleFavorite = useProfileStore((state) => state.toggleFavorite);
+  const orders = useProfileStore((state) => state.orders) || [];
   const popupsDisabled = useProfileStore((state) => state.popupsDisabled);
   const setPopupsDisabled = useProfileStore((state) => state.setPopupsDisabled);
 
@@ -41,17 +48,21 @@ export default function Profile() {
   const removeItemFromCart = useCartStore((state) => state.removeItem);
   const addItemToCart = useCartStore((state) => state.addItem);
   const openPaymentModal = useUIStore((state) => state.openPaymentModal);
+  const showToast = useUIStore((state) => state.showToast);
 
-  const [activeTab, setActiveTab] = useState('quiz'); // quiz | wishlist | favorites | cart
+  const [activeTab, setActiveTab] = useState('quiz'); // quiz | wishlist | favorites | cart | history
   const [isEditingName, setIsEditingName] = useState(false);
   const [tempName, setTempName] = useState(name);
 
-  // Auto-scroll to quiz if loaded with #quiz
+  // Auto-scroll to quiz or open specific tab if loaded with hash
   useEffect(() => {
-    if (window.location.hash === '#quiz') {
+    const hash = (window.location.hash || '').replace('#', '').trim().toLowerCase();
+    if (hash === 'quiz') {
       setActiveTab('quiz');
       const el = document.getElementById('quiz-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
+    } else if (['wishlist', 'favorites', 'cart', 'history'].includes(hash)) {
+      setActiveTab(hash);
     }
   }, []);
 
@@ -66,6 +77,22 @@ export default function Profile() {
   const handleBuyNow = (product) => {
     addItemToCart(product, 1);
     openPaymentModal('profile');
+  };
+
+  const handleReorder = (order) => {
+    order.items.forEach((item) => {
+      const prod = getProductBySlug(item.slug) || {
+        slug: item.slug,
+        name: item.name,
+        price: item.price,
+        bottleImage: item.bottleImage
+      };
+      addItemToCart(prod, item.quantity || 1);
+    });
+    if (showToast) {
+      showToast(`Re-added ${order.items.length} ${order.items.length === 1 ? 'item' : 'items'} to Cart`, 'cart');
+    }
+    setActiveTab('cart');
   };
 
   const getProductBySlug = (slug) => {
@@ -270,6 +297,17 @@ export default function Profile() {
           >
             <ShoppingBag className="w-4 h-4" /> Cart ({cartItems.length})
           </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('history')}
+            className={`py-3.5 text-sm sm:text-base font-medium tracking-wide relative whitespace-nowrap transition-colors flex items-center gap-1.5 ${
+              activeTab === 'history'
+                ? 'text-[#2D3E2F] font-semibold after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#C9A961]'
+                : 'text-[#6B5B45] hover:text-[#2D3E2F]'
+            }`}
+          >
+            <History className="w-4 h-4" /> History ({orders.length})
+          </button>
         </div>
 
         {/* TAB 1: QUIZ */}
@@ -440,6 +478,136 @@ export default function Profile() {
                         title="Remove"
                       >
                         <Trash2 className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* TAB 5: HISTORY (PAST PURCHASES) */}
+        {activeTab === 'history' && (
+          <div className="space-y-6 animate-fadeIn">
+            {orders.length === 0 ? (
+              <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#6B5B45]/15 p-8">
+                <History className="w-10 h-10 text-[#6B5B45]/30 mx-auto mb-3" />
+                <h3 className="font-display text-lg text-[#2D3E2F]">No purchase history recorded</h3>
+                <p className="text-xs text-[#6B5B45] mt-1 max-w-sm mx-auto">
+                  Completed orders and seasonal refills from the Satvam Atelier will be archived here.
+                </p>
+                <Link
+                  to="/products"
+                  className="btn-primary inline-flex items-center gap-2 mt-5 py-2.5 px-5 text-xs font-semibold"
+                >
+                  Explore The Apothecary <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
+            ) : (
+              <div className="space-y-5">
+                {orders.map((order) => (
+                  <div
+                    key={order.id}
+                    className="bg-[#FFFFFF] rounded-3xl border border-[#6B5B45]/15 p-6 sm:p-7 shadow-xs space-y-5 transition-all hover:border-[#6B5B45]/30"
+                  >
+                    {/* Order Top Bar: ID, Date, Status, Total */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#6B5B45]/10">
+                      <div>
+                        <div className="flex items-center gap-2.5">
+                          <span className="font-mono text-sm font-bold text-[#2D3E2F] tracking-wide">
+                            Order #{order.id}
+                          </span>
+                          <span
+                            className={`inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-mono uppercase tracking-wider font-semibold ${
+                              order.status === 'Delivered'
+                                ? 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+                                : 'bg-[#E8B44A]/15 text-[#6B5B45] border border-[#C9A961]/30'
+                            }`}
+                          >
+                            <PackageCheck className="w-3 h-3 text-[#2D3E2F]" />
+                            {order.status}
+                          </span>
+                        </div>
+                        <div className="flex flex-wrap items-center gap-3 font-mono text-[11px] text-[#6B5B45] mt-1">
+                          <span>Placed: {order.date}</span>
+                          {order.batchCode && (
+                            <>
+                              <span className="text-[#6B5B45]/30">·</span>
+                              <span className="text-[#6B5B45]/90">Batch: {order.batchCode}</span>
+                            </>
+                          )}
+                          {order.trackingNumber && (
+                            <>
+                              <span className="text-[#6B5B45]/30">·</span>
+                              <span className="text-[#6B5B45]/70">Track: {order.trackingNumber}</span>
+                            </>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="text-left sm:text-right">
+                        <span className="block text-[11px] font-mono uppercase tracking-wider text-[#6B5B45]">
+                          Order Total
+                        </span>
+                        <span className="font-display font-bold text-xl text-[#2D3E2F]">
+                          ₹{order.total}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Purchased Items List */}
+                    <div className="divide-y divide-[#6B5B45]/10">
+                      {order.items.map((item, idx) => (
+                        <div
+                          key={idx}
+                          className="py-3.5 first:pt-0 last:pb-0 flex items-center justify-between gap-4"
+                        >
+                          <div className="flex items-center gap-3.5">
+                            <div className="w-14 h-16 bg-[#F5EFE3] rounded-xl p-1 flex items-center justify-center flex-shrink-0 border border-[#6B5B45]/10">
+                              <SafeImage
+                                src={item.bottleImage || `references/products/${item.slug}-bottle.webp`}
+                                alt={item.name}
+                                className="max-h-full max-w-full object-contain"
+                                fallbackText={item.name}
+                              />
+                            </div>
+                            <div>
+                              <Link
+                                to={`/products#${item.slug}`}
+                                className="font-display font-medium text-base text-[#2D3E2F] hover:text-[#C9A961] transition-colors"
+                              >
+                                {item.name}
+                              </Link>
+                              <p className="font-mono text-xs text-[#6B5B45]">
+                                Qty: {item.quantity} · ₹{item.price} each
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="text-right">
+                            <span className="font-mono text-sm font-semibold text-[#2D3E2F]">
+                              ₹{item.price * item.quantity}
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Card Footer: Reorder & Batch Quality Certificate */}
+                    <div className="pt-4 border-t border-[#6B5B45]/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+                      <div className="flex items-center gap-2 text-[11px] font-mono text-[#6B5B45]">
+                        <ShieldCheck className="w-3.5 h-3.5 text-[#C9A961]" />
+                        <span>FSSAI Clean-Room Batch Certified · Cold-Pressed</span>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => handleReorder(order)}
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 bg-[#F5EFE3] hover:bg-[#C9A961] text-[#2D3E2F] text-xs font-semibold rounded-full border border-[#6B5B45]/20 transition-all hover:shadow-xs focus:outline-none"
+                      >
+                        <RotateCcw className="w-3.5 h-3.5 text-[#2D3E2F]" />
+                        Reorder All Items
                       </button>
                     </div>
                   </div>

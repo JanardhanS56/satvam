@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Star, ShoppingBag, ArrowRight, Sparkles } from 'lucide-react';
 import { useCartStore } from '../stores/cart';
+import { useProfileStore } from '../stores/profile';
+import { useUIStore } from '../stores/ui';
 import IngredientOrbit from './IngredientOrbit';
 import { getHerbBadge } from '../lib/herbs';
 
@@ -17,6 +19,12 @@ export default function ProductCard({ product }) {
   const navigate = useNavigate();
   const addItem = useCartStore((state) => state.addItem);
   const openCart = useCartStore((state) => state.openCart);
+
+  const favorites = useProfileStore((state) => state.favorites);
+  const toggleFavorite = useProfileStore((state) => state.toggleFavorite);
+  const showToast = useUIStore((state) => state.showToast);
+
+  const isFavorite = favorites.includes(product.slug);
 
   const cardRef = useRef(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -53,8 +61,24 @@ export default function ProductCard({ product }) {
     navigate(`/products#${product.slug}`);
   };
 
+  const handleToggleFavorite = (e) => {
+    e.stopPropagation();
+    toggleFavorite(product.slug);
+    if (!isFavorite) {
+      showToast(`Added ${product.name} to Favourites`, 'favorite');
+    } else {
+      showToast(`Removed ${product.name} from Favourites`, 'info');
+    }
+  };
+
   // Top 5 ingredients for eye-catching floating bubbles on card hover
   const previewIngredients = (product.ingredients || []).slice(0, 5);
+
+  // Calculate percentage savings if product is discounted
+  const savePercent =
+    product.originalPrice && product.originalPrice > product.price
+      ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
+      : (typeof product.discount === 'number' ? product.discount : 0);
 
   return (
     <div
@@ -69,19 +93,41 @@ export default function ProductCard({ product }) {
         transform: `perspective(800px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`
       }}
     >
-      {/* Bestseller Badge */}
+      {/* Top Left: Bestseller Badge */}
       {product.bestSeller && (
         <span className="absolute top-4 left-4 z-20 px-3 py-1 bg-[#E8B44A] text-[#2D3E2F] font-mono text-[10px] uppercase font-bold tracking-wider rounded-full shadow-xs">
           ★ Bestseller
         </span>
       )}
 
-      {/* Target Gender Tag */}
-      {product.targetGender && product.targetGender !== 'all' && (
-        <span className="absolute top-4 right-4 z-20 px-2.5 py-0.5 bg-[#F5EFE3] text-[#6B5B45] font-mono text-[10px] uppercase tracking-wider rounded-full border border-[#6B5B45]/15">
-          {product.targetGender === 'male' ? 'For Men' : 'For Women'}
-        </span>
-      )}
+      {/* Top Right Cluster: Gender Badge + Yellow Theme Star Favourite Button */}
+      <div className="absolute top-4 right-4 z-30 flex items-center gap-2">
+        {product.targetGender && product.targetGender !== 'all' && (
+          <span className="px-2.5 py-0.5 bg-[#F5EFE3] text-[#6B5B45] font-mono text-[10px] uppercase tracking-wider rounded-full border border-[#6B5B45]/15">
+            {product.targetGender === 'male' ? 'For Men' : 'For Women'}
+          </span>
+        )}
+
+        <button
+          type="button"
+          onClick={handleToggleFavorite}
+          className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 border shadow-xs hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8B44A] ${
+            isFavorite
+              ? 'bg-[#FAF7F0] border-[#E8B44A] shadow-soft ring-1 ring-[#E8B44A]/50'
+              : 'bg-[#FAF7F0]/90 backdrop-blur-xs border-[#6B5B45]/20 hover:border-[#E8B44A]'
+          }`}
+          aria-label={isFavorite ? `Remove ${product.name} from favourites` : `Add ${product.name} to favourites`}
+          title={isFavorite ? 'In your Favourites (click to remove)' : 'Add to Favourites'}
+        >
+          <Star
+            className={`w-4 h-4 transition-colors ${
+              isFavorite
+                ? 'fill-[#E8B44A] stroke-[#E8B44A] filter drop-shadow-xs'
+                : 'stroke-[#E8B44A] fill-transparent hover:fill-[#E8B44A]/30'
+            }`}
+          />
+        </button>
+      </div>
 
       {/* Shatter-Orbit Interactive Bottle Center with Floating Circles on Hover */}
       <div className="my-2 relative z-10 w-full min-h-[320px] flex items-center justify-center overflow-visible">
@@ -163,9 +209,9 @@ export default function ProductCard({ product }) {
                 ₹{product.originalPrice}
               </span>
             )}
-            {product.discount && (
+            {savePercent > 0 && (
               <span className="text-xs font-mono font-semibold text-[#A8453D] bg-[#A8453D]/10 px-2 py-0.5 rounded-full">
-                Save {product.discount.percent}%
+                Save {savePercent}%
               </span>
             )}
           </div>

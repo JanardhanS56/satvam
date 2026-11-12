@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Star, ArrowUpRight, Sparkles } from 'lucide-react';
 import { SafeImage } from '../lib/images';
 import { getHerbBadge } from '../lib/herbs';
+import { useProfileStore } from '../stores/profile';
+import { useUIStore } from '../stores/ui';
 
 // Coordinate layouts for floating ingredient bubbles
 const BUBBLE_POSITIONS = [
@@ -14,9 +16,29 @@ const BUBBLE_POSITIONS = [
 
 export default function ProductCatalogCard({ product, onSelect }) {
   const [isHovered, setIsHovered] = useState(false);
+  const favorites = useProfileStore((state) => state.favorites);
+  const toggleFavorite = useProfileStore((state) => state.toggleFavorite);
+  const showToast = useUIStore((state) => state.showToast);
+
+  const isFavorite = favorites.includes(product.slug);
+
+  const handleToggleFavorite = (e) => {
+    e.stopPropagation();
+    toggleFavorite(product.slug);
+    if (!isFavorite) {
+      showToast(`Added ${product.name} to Favourites`, 'favorite');
+    } else {
+      showToast(`Removed ${product.name} from Favourites`, 'info');
+    }
+  };
 
   // Extract top 5 key ingredients for the floating preview bubbles
   const previewIngredients = (product.ingredients || []).slice(0, 5);
+
+  const savePercent =
+    product.originalPrice && product.originalPrice > product.price
+      ? Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)
+      : (typeof product.discount === 'number' ? product.discount : 0);
 
   return (
     <div
@@ -32,12 +54,34 @@ export default function ProductCatalogCard({ product, onSelect }) {
         </span>
       )}
 
-      {/* Top Concern Tag */}
-      {product.concerns && product.concerns.length > 0 && (
-        <span className="absolute top-4 right-4 z-20 px-2 py-0.5 bg-[#FAF7F0] text-[#6B5B45]/80 font-mono text-[9px] uppercase tracking-wider rounded-full border border-[#6B5B45]/10">
-          {product.concerns[0]}
-        </span>
-      )}
+      {/* Top Right: Concern Tag + Star Favourite Button */}
+      <div className="absolute top-4 right-4 z-30 flex items-center gap-2">
+        {product.concerns && product.concerns.length > 0 && (
+          <span className="px-2 py-0.5 bg-[#FAF7F0] text-[#6B5B45]/80 font-mono text-[9px] uppercase tracking-wider rounded-full border border-[#6B5B45]/10">
+            {product.concerns[0]}
+          </span>
+        )}
+
+        <button
+          type="button"
+          onClick={handleToggleFavorite}
+          className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200 border shadow-xs hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8B44A] ${
+            isFavorite
+              ? 'bg-[#FAF7F0] border-[#E8B44A] shadow-soft ring-1 ring-[#E8B44A]/50'
+              : 'bg-[#FAF7F0]/90 backdrop-blur-xs border-[#6B5B45]/20 hover:border-[#E8B44A]'
+          }`}
+          aria-label={isFavorite ? `Remove ${product.name} from favourites` : `Add ${product.name} to favourites`}
+          title={isFavorite ? 'In your Favourites' : 'Add to Favourites'}
+        >
+          <Star
+            className={`w-3.5 h-3.5 transition-colors ${
+              isFavorite
+                ? 'fill-[#E8B44A] stroke-[#E8B44A] filter drop-shadow-xs'
+                : 'stroke-[#E8B44A] fill-transparent hover:fill-[#E8B44A]/30'
+            }`}
+          />
+        </button>
+      </div>
 
       {/* Main Image Container — Always displays product bottle with floating ingredient bubbles on hover */}
       <div className="relative w-full h-64 my-2 flex items-center justify-center overflow-hidden rounded-xl bg-[#F5EFE3]/40 p-4">
@@ -129,6 +173,11 @@ export default function ProductCatalogCard({ product, onSelect }) {
             {product.originalPrice && product.originalPrice > product.price && (
               <span className="text-xs text-[#6B5B45]/50 line-through">
                 ₹{product.originalPrice}
+              </span>
+            )}
+            {savePercent > 0 && (
+              <span className="text-[10px] font-mono font-semibold text-[#A8453D] bg-[#A8453D]/10 px-1.5 py-0.5 rounded-full">
+                Save {savePercent}%
               </span>
             )}
           </div>

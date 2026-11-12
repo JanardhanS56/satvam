@@ -6,6 +6,8 @@ export const useUIStore = create((set, get) => ({
   isMobileNavOpen: false,
   activePopup: null,
   sessionPopupsCount: 0,
+  toast: null,
+  _toastTimeout: null,
 
   openPaymentModal: (source = null) => set({ isPaymentModalOpen: true, paymentSource: source }),
   closePaymentModal: () => set({ isPaymentModalOpen: false, paymentSource: null }),
@@ -18,5 +20,22 @@ export const useUIStore = create((set, get) => ({
       activePopup: popup,
       sessionPopupsCount: popup ? state.sessionPopupsCount + 1 : state.sessionPopupsCount
     })),
-  dismissPopup: () => set({ activePopup: null })
+  dismissPopup: () => set({ activePopup: null }),
+
+  showToast: (message, type = 'favorite') => {
+    if (get()._toastTimeout) {
+      clearTimeout(get()._toastTimeout);
+    }
+    set({ toast: { id: Date.now(), message, type } });
+    const timeout = setTimeout(() => {
+      set({ toast: null });
+    }, 2800);
+    set({ _toastTimeout: timeout });
+  },
+  dismissToast: () => {
+    if (get()._toastTimeout) {
+      clearTimeout(get()._toastTimeout);
+    }
+    set({ toast: null });
+  }
 }));

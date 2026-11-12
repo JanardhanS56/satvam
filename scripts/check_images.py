@@ -20,3 +20,4 @@ for i, p in enumerate(data['products'], 1):
 
 print(f'\nTotal Found: {len(found)} / {len(data["products"])}')
 print(f'Total Missing: {len(missing)} / {len(data["products"])}')
+

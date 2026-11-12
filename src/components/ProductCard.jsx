@@ -1,8 +1,17 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Star, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Star, ShoppingBag, ArrowRight, Sparkles } from 'lucide-react';
 import { useCartStore } from '../stores/cart';
 import IngredientOrbit from './IngredientOrbit';
+import { getHerbBadge } from '../lib/herbs';
+
+const SHOP_BUBBLE_POSITIONS = [
+  'top-14 left-3',
+  'top-14 right-3',
+  'top-1/2 -translate-y-8 left-2',
+  'top-1/2 -translate-y-8 right-2',
+  'bottom-4 left-1/2 -translate-x-1/2'
+];
 
 export default function ProductCard({ product }) {
   const navigate = useNavigate();
@@ -44,8 +53,8 @@ export default function ProductCard({ product }) {
     navigate(`/products#${product.slug}`);
   };
 
-  // Top ingredients for edge drifting tags on card hover
-  const driftIngredients = (product.ingredients || []).slice(0, 3);
+  // Top 5 ingredients for eye-catching floating bubbles on card hover
+  const previewIngredients = (product.ingredients || []).slice(0, 5);
 
   return (
     <div
@@ -74,29 +83,47 @@ export default function ProductCard({ product }) {
         </span>
       )}
 
-      {/* Edge-Drift Ingredient Pills (fade-slide in on card hover) */}
-      <div
-        className={`absolute top-14 inset-x-4 pointer-events-none z-10 flex flex-wrap gap-1.5 transition-all duration-300 ${
-          isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
-        }`}
-      >
-        {driftIngredients.map((ing, i) => (
-          <span
-            key={i}
-            className="text-[10px] font-mono bg-[#FAF7F0]/90 text-[#6B5B45] px-2 py-0.5 rounded-full border border-[#6B5B45]/20 backdrop-blur-xs shadow-xs"
-          >
-            ✦ {ing.name}
-          </span>
-        ))}
+      {/* Floating Enlarged Ingredient Bubbles (Pop out prominently on hover) */}
+      <div className="absolute inset-0 pointer-events-none p-3 overflow-hidden z-25">
+        {previewIngredients.map((ing, i) => {
+          const badge = getHerbBadge(ing.name);
+          const posClass = SHOP_BUBBLE_POSITIONS[i % SHOP_BUBBLE_POSITIONS.length];
+          const delays = ['delay-0', 'delay-75', 'delay-100', 'delay-150', 'delay-200'];
+
+          return (
+            <div
+              key={i}
+              className={`absolute ${posClass} transition-all duration-300 ease-out transform ${delays[i % delays.length]} ${
+                isHovered
+                  ? 'opacity-100 scale-100 translate-y-0'
+                  : 'opacity-0 scale-75 translate-y-3'
+              }`}
+            >
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-[#FAF7F0]/95 backdrop-blur-md border-2 border-[#C9A961]/70 shadow-lifted text-[#2D3E2F]">
+                <span className="text-xl sm:text-2xl select-none filter drop-shadow-xs leading-none">
+                  {badge.emoji}
+                </span>
+                <div className="flex flex-col text-left">
+                  <span className="font-display font-semibold text-xs sm:text-sm leading-tight text-[#2D3E2F]">
+                    {ing.name}
+                  </span>
+                  <span className="font-mono text-[10px] text-[#6B5B45] font-medium leading-tight mt-0.5">
+                    {ing.percentage ? `${ing.percentage}% · ` : ''}{ing.sanskritName || badge.type}
+                  </span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Shatter-Orbit Interactive Bottle Center */}
-      <div className="my-2">
+      <div className="my-2 relative z-10">
         <IngredientOrbit product={product} />
       </div>
 
       {/* Product Details Section */}
-      <div className="pt-4 border-t border-[#6B5B45]/10 flex flex-col flex-grow justify-between">
+      <div className="pt-4 border-t border-[#6B5B45]/10 flex flex-col flex-grow justify-between relative z-10">
         <div>
           {/* Star Rating & Review Count */}
           <div className="flex items-center gap-1.5 mb-2 text-xs text-[#6B5B45]">

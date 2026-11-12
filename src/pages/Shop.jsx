@@ -25,7 +25,7 @@ export default function Shop() {
         </p>
         <p className="text-sm sm:text-base text-[#2D3E2F]/75 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
           Each formula is slow cold-pressed in limited small batches.
-          Hover any bottle to inspect its physical poise; click the bottle to shatter the veil and orbit its raw ingredients.
+          Hover any bottle to preview its floating botanical components; click the bottle to shatter the veil and orbit its raw ingredients.
         </p>
       </section>
 

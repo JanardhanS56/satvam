@@ -41,3 +41,31 @@
   --radius-modal: 20px;
   --radius-img: 4px;
 }
+
+html.dark {
+  color-scheme: dark;
+
+  /* Canvas (60%) - Deep obsidian forest slate */
+  --satvam-ivory: #111512;
+  --satvam-cream: #18201A;
+  --satvam-paper: #202922;
+
+  /* Structure (30%) - Luminous warm parchment & fawn */
+  --satvam-forest: #F3EFE6;
+  --satvam-bark: #C5B7A5;
+  --satvam-moss: #8FA276;
+
+  /* Accent (10%) - Radiant Ayurvedic Gold & Saffron */
+  --satvam-gold: #D8B76E;
+  --satvam-gold-hover: #E4C885;
+  --satvam-hibiscus: #D4635B;
+  --satvam-saffron: #F3C465;
+
+  /* Shadows in Dark Mode */
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lifted: 0 4px 12px rgba(0, 0, 0, 0.5), 0 24px 48px rgba(0, 0, 0, 0.7);
+
+  /* Borders in Dark Mode */
+  --border-subtle: 1px solid rgba(197, 183, 165, 0.16);
+  --border-nav: 1px solid rgba(197, 183, 165, 0.14);
+}

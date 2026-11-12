@@ -84,6 +84,180 @@
   }
 }
 
+/* =========================================================================
+   DARK MODE SYSTEM & MAPPINGS (Vedic Night Apothecary Aesthetic)
+   ========================================================================= */
+html.dark {
+  background-color: var(--satvam-ivory);
+  color: var(--satvam-forest);
+}
+
+html.dark body {
+  background-color: var(--satvam-ivory);
+  color: var(--satvam-forest);
+}
+
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: var(--satvam-forest);
+}
+
+/* Background mappings */
+html.dark .bg-\[\#FAF7F0\] {
+  background-color: var(--satvam-ivory) !important;
+}
+html.dark .bg-\[\#FAF7F0\]\/95 {
+  background-color: rgba(17, 21, 18, 0.95) !important;
+}
+html.dark .bg-\[\#FAF7F0\]\/90 {
+  background-color: rgba(17, 21, 18, 0.90) !important;
+}
+html.dark .bg-\[\#FAF7F0\]\/85 {
+  background-color: rgba(17, 21, 18, 0.85) !important;
+}
+html.dark .bg-\[\#FAF7F0\]\/80 {
+  background-color: rgba(17, 21, 18, 0.80) !important;
+}
+html.dark .bg-\[\#FAF7F0\]\/60 {
+  background-color: rgba(17, 21, 18, 0.60) !important;
+}
+
+html.dark .bg-\[\#F5EFE3\] {
+  background-color: var(--satvam-cream) !important;
+}
+html.dark .bg-\[\#F5EFE3\]\/90 {
+  background-color: rgba(24, 32, 26, 0.90) !important;
+}
+html.dark .bg-\[\#F5EFE3\]\/80 {
+  background-color: rgba(24, 32, 26, 0.80) !important;
+}
+html.dark .bg-\[\#F5EFE3\]\/75 {
+  background-color: rgba(24, 32, 26, 0.75) !important;
+}
+html.dark .bg-\[\#F5EFE3\]\/70 {
+  background-color: rgba(24, 32, 26, 0.70) !important;
+}
+html.dark .bg-\[\#F5EFE3\]\/60 {
+  background-color: rgba(24, 32, 26, 0.60) !important;
+}
+html.dark .bg-\[\#F5EFE3\]\/50 {
+  background-color: rgba(24, 32, 26, 0.50) !important;
+}
+html.dark .bg-\[\#F5EFE3\]\/40 {
+  background-color: rgba(24, 32, 26, 0.40) !important;
+}
+
+html.dark .bg-\[\#FFFFFF\],
+html.dark .bg-white {
+  background-color: var(--satvam-paper) !important;
+}
+
+/* Primary ink: Forest ink becomes warm parchment ivory */
+html.dark .text-\[\#2D3E2F\] {
+  color: var(--satvam-forest) !important;
+}
+html.dark .text-\[\#2D3E2F\]\/90 {
+  color: rgba(243, 239, 230, 0.90) !important;
+}
+html.dark .text-\[\#2D3E2F\]\/85 {
+  color: rgba(243, 239, 230, 0.85) !important;
+}
+html.dark .text-\[\#2D3E2F\]\/80 {
+  color: rgba(243, 239, 230, 0.80) !important;
+}
+html.dark .text-\[\#2D3E2F\]\/75 {
+  color: rgba(243, 239, 230, 0.75) !important;
+}
+
+/* Secondary bark ink: becomes warm herbal fawn */
+html.dark .text-\[\#6B5B45\] {
+  color: var(--satvam-bark) !important;
+}
+html.dark .text-\[\#6B5B45\]\/90 {
+  color: rgba(197, 183, 165, 0.90) !important;
+}
+html.dark .text-\[\#6B5B45\]\/80 {
+  color: rgba(197, 183, 165, 0.80) !important;
+}
+html.dark .text-\[\#6B5B45\]\/70 {
+  color: rgba(197, 183, 165, 0.70) !important;
+}
+html.dark .text-\[\#6B5B45\]\/60 {
+  color: rgba(197, 183, 165, 0.60) !important;
+}
+html.dark .text-\[\#6B5B45\]\/50 {
+  color: rgba(197, 183, 165, 0.50) !important;
+}
+html.dark .text-\[\#6B5B45\]\/40 {
+  color: rgba(197, 183, 165, 0.40) !important;
+}
+html.dark .text-\[\#6B5B45\]\/30 {
+  color: rgba(197, 183, 165, 0.30) !important;
+}
+
+/* Borders */
+html.dark .border-\[\#6B5B45\]\/15 {
+  border-color: rgba(197, 183, 165, 0.16) !important;
+}
+html.dark .border-\[\#6B5B45\]\/20 {
+  border-color: rgba(197, 183, 165, 0.22) !important;
+}
+html.dark .border-\[\#6B5B45\]\/30 {
+  border-color: rgba(197, 183, 165, 0.30) !important;
+}
+html.dark .border-\[\#6B5B45\]\/40 {
+  border-color: rgba(197, 183, 165, 0.40) !important;
+}
+html.dark .border-\[\#6B5B45\]\/10 {
+  border-color: rgba(197, 183, 165, 0.12) !important;
+}
+html.dark .border-\[\#2D3E2F\] {
+  border-color: rgba(243, 239, 230, 0.30) !important;
+}
+html.dark .border-\[\#2D3E2F\]\/15 {
+  border-color: rgba(243, 239, 230, 0.18) !important;
+}
+html.dark .border-\[\#2D3E2F\]\/20 {
+  border-color: rgba(243, 239, 230, 0.24) !important;
+}
+
+/* Ghost Buttons */
+html.dark .btn-ghost {
+  border-color: rgba(243, 239, 230, 0.35);
+  color: var(--satvam-forest);
+}
+html.dark .btn-ghost:hover {
+  background-color: rgba(243, 239, 230, 0.08);
+}
+
+/* Gradient scrims in Dark Mode (Hero) */
+html.dark .from-\[\#FAF7F0\]\/90 {
+  --tw-gradient-from: rgba(17, 21, 18, 0.92) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(17, 21, 18, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+html.dark .via-\[\#FAF7F0\]\/60 {
+  --tw-gradient-to: rgba(17, 21, 18, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), rgba(17, 21, 18, 0.65) var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+}
+html.dark .to-\[\#FAF7F0\] {
+  --tw-gradient-to: #111512 var(--tw-gradient-to-position) !important;
+}
+html.dark .bg-\[radial-gradient\(circle_at_center\,transparent_20\%\,\#FAF7F0_85\%\)\] {
+  background-image: radial-gradient(circle at center, transparent 20%, #111512 85%) !important;
+}
+
+/* Inputs & Form Elements */
+html.dark input,
+html.dark select,
+html.dark textarea {
+  color-scheme: dark;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, ::before, ::after {
     animation-duration: 0.01ms !important;

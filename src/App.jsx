@@ -6,10 +6,16 @@ import PopupScheduler from './components/PopupScheduler';
 import CartDrawer from './components/CartDrawer';
 import PaymentModal from './components/PaymentModal';
 import { useUIStore } from './stores/ui';
+import { useThemeStore } from './stores/theme';
 
 export default function App() {
   const { pathname } = useLocation();
   const toast = useUIStore((state) => state.toast);
+  const initTheme = useThemeStore((state) => state.initTheme);
+
+  useEffect(() => {
+    initTheme();
+  }, [initTheme]);
 
   useEffect(() => {
     window.scrollTo(0, 0);

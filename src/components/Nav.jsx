@@ -5,6 +5,7 @@ import { useCartStore } from '../stores/cart';
 import { useUIStore } from '../stores/ui';
 import { useProfileStore } from '../stores/profile';
 import { SafeImage } from '../lib/images';
+import ThemeSwitcher from './ThemeSwitcher';
 
 export default function Nav() {
   const totalCount = useCartStore((state) => state.getTotalCount());
@@ -71,7 +72,9 @@ export default function Nav() {
         </nav>
 
         {/* Right Cluster */}
-        <div className="flex items-center gap-4 lg:gap-6">
+        <div className="flex items-center gap-3 sm:gap-4 lg:gap-5">
+          <ThemeSwitcher />
+
           <Link
             to="/profile"
             className="p-1 text-[#2D3E2F] hover:text-[#6B5B45] transition-colors rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961] flex items-center justify-center"
@@ -143,6 +146,10 @@ export default function Nav() {
               </NavLink>
             ))}
             <div className="pt-4 border-t border-[#6B5B45]/10 flex flex-col gap-3">
+              <div className="flex items-center justify-between py-1">
+                <span className="text-sm font-medium text-[#6B5B45]">Theme</span>
+                <ThemeSwitcher />
+              </div>
               <Link
                 to="/profile"
                 onClick={() => setMobileNavOpen(false)}

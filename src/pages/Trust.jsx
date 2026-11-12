@@ -7,7 +7,9 @@ import {
   XCircle,
   Sparkles,
   Award,
-  SlidersHorizontal
+  SlidersHorizontal,
+  X,
+  ZoomIn
 } from 'lucide-react';
 
 const FAQ_DATA = [
@@ -110,6 +112,7 @@ const CERTIFICATES = [
 export default function Trust() {
   const [activeFaqCategory, setActiveFaqCategory] = useState('All');
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
+  const [selectedCert, setSelectedCert] = useState(null);
 
   const faqCategories = ['All', 'Health', 'Beauty', 'Price', 'Availability', 'Shipping'];
 
@@ -163,7 +166,7 @@ export default function Trust() {
               Standardized & Certified Formulations
             </h2>
             <p className="text-xs text-[#6B5B45] mt-2">
-              Every badge is verified through institutional audits and statutory pharmacopeial registrations.
+              Every badge is verified through institutional audits and statutory pharmacopeial registrations. Click any certificate to inspect full document.
             </p>
           </div>
 
@@ -172,12 +175,14 @@ export default function Trust() {
             {CERTIFICATES.map((cert, idx) => (
               <div
                 key={idx}
-                className="group satvam-card bg-[#FFFFFF] p-5 rounded-2xl border-2 border-[#C9A961] shadow-soft hover:-translate-y-2 hover:shadow-lifted transition-all duration-300 flex flex-col justify-between"
+                onClick={() => setSelectedCert(cert)}
+                className="group satvam-card bg-[#FFFFFF] p-5 rounded-2xl border-2 border-[#C9A961] shadow-soft hover:-translate-y-2 hover:shadow-lifted transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                title="Click to inspect certificate in high resolution"
               >
                 <div>
                   {/* Gold Double Border Frame */}
-                  <div className="border border-[#C9A961]/40 p-2 rounded-xl bg-[#FAF7F0] mb-4">
-                    <div className="aspect-[3/4] rounded-lg overflow-hidden bg-[#F5EFE3] flex items-center justify-center p-2">
+                  <div className="border border-[#C9A961]/40 p-2 rounded-xl bg-[#FAF7F0] mb-4 relative overflow-hidden">
+                    <div className="aspect-[4/3] rounded-lg overflow-hidden bg-[#FFFFFF] flex items-center justify-center p-1.5 shadow-inner">
                       <SafeImage
                         src={cert.src}
                         alt={cert.title}
@@ -185,12 +190,16 @@ export default function Trust() {
                         fallbackText={cert.title}
                       />
                     </div>
+                    {/* Hover Zoom Prompt */}
+                    <div className="absolute inset-0 bg-[#2D3E2F]/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-xs text-[#FAF7F0] font-mono tracking-wider backdrop-blur-2xs">
+                      <ZoomIn className="w-4 h-4 text-[#C9A961]" /> Inspect
+                    </div>
                   </div>
 
                   <span className="font-mono text-[10px] text-[#C9A961] uppercase tracking-wider block font-semibold">
                     {cert.authority}
                   </span>
-                  <h3 className="font-display font-medium text-lg text-[#2D3E2F] mt-1 mb-2 leading-snug">
+                  <h3 className="font-display font-medium text-lg text-[#2D3E2F] mt-1 mb-2 leading-snug group-hover:text-[#6B5B45] transition-colors">
                     {cert.title}
                   </h3>
                 </div>
@@ -203,6 +212,55 @@ export default function Trust() {
           </div>
         </div>
       </section>
+
+      {/* Certificate Lightbox Inspection Modal */}
+      {selectedCert && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#2D3E2F]/80 backdrop-blur-xs animate-fadeIn"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setSelectedCert(null)}
+        >
+          <div
+            className="relative max-w-4xl w-full bg-[#FAF7F0] rounded-3xl p-6 sm:p-8 border-2 border-[#C9A961] shadow-2xl flex flex-col items-center animate-scaleUp max-h-[92vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedCert(null)}
+              className="absolute top-4 right-4 p-2 text-[#6B5B45] hover:text-[#2D3E2F] rounded-full hover:bg-[#F5EFE3] transition-colors"
+              aria-label="Close certificate inspection"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            <div className="w-full text-center mb-4">
+              <span className="font-mono text-xs uppercase tracking-widest text-[#C9A961] font-semibold">
+                {selectedCert.authority}
+              </span>
+              <h3 className="font-display font-medium text-2xl sm:text-3xl text-[#2D3E2F] mt-1">
+                {selectedCert.title}
+              </h3>
+            </div>
+
+            <div className="w-full max-h-[65vh] rounded-2xl overflow-hidden bg-[#FFFFFF] border border-[#6B5B45]/20 p-2 shadow-inner flex items-center justify-center">
+              <SafeImage
+                src={selectedCert.src}
+                alt={selectedCert.title}
+                className="max-h-[60vh] w-auto object-contain rounded-lg shadow-sm"
+                fallbackText={selectedCert.title}
+              />
+            </div>
+
+            <p className="mt-4 text-xs sm:text-sm text-[#6B5B45] text-center max-w-xl leading-relaxed">
+              {selectedCert.caption}
+            </p>
+            <span className="mt-2 text-[11px] font-mono text-[#6B5B45]/70">
+              Official Statutory Compliance Document · Satvam Vedic Apothecary
+            </span>
+          </div>
+        </div>
+      )}
 
       {/* 2. Myths vs Facts (4-card 2-col layout) */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 py-16">

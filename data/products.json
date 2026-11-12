@@ -1,0 +1,2219 @@
+{
+    "products": [
+        {
+            "slug": "keshkanti",
+            "name": "Keshkanti",
+            "subtitle": "Hibiscus & Bhringraj Hair Oil",
+            "tagline": "For hair that remembers its roots.",
+            "hero": true,
+            "price": 549,
+            "originalPrice": 699,
+            "size": "100ml",
+            "bestSeller": true,
+            "discount": 21,
+            "rating": 4.8,
+            "reviewCount": 1247,
+            "targetGender": "all",
+            "hairTypes": [
+                "curly",
+                "wavy",
+                "straight"
+            ],
+            "concerns": [
+                "hair-fall",
+                "thinning",
+                "breakage"
+            ],
+            "description": "Our signature oil. Five herbs cold-pressed into a single amber bottle. Bhringraj for strength, hibiscus for shine, amla for scalp health — a slow, patient blend that meets hair where it lives.",
+            "ingredients": [
+                {
+                    "name": "Hibiscus",
+                    "sanskrit": "Japa",
+                    "role": "Conditions and adds shine",
+                    "percent": 18
+                },
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Stimulates follicles, reduces fall",
+                    "percent": 22
+                },
+                {
+                    "name": "Amla",
+                    "sanskrit": "Amalaki",
+                    "role": "Vitamin C for scalp health",
+                    "percent": 15
+                },
+                {
+                    "name": "Black Sesame",
+                    "sanskrit": "Krishna Tila",
+                    "role": "Deep carrier, nourishes shaft",
+                    "percent": 30
+                },
+                {
+                    "name": "Fenugreek",
+                    "sanskrit": "Methika",
+                    "role": "Protein for shaft repair",
+                    "percent": 10
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Natural preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Bhringraj is Ayurveda's oldest hair herb — called kesharaj, king of hair — because its bitter compounds wake dormant follicles. We pair it with hibiscus mucilage, which coats each strand and reduces the friction that causes breakage. Cold-pressing, never heating, preserves both.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "moon",
+                    "title": "Warm",
+                    "description": "Warm 2–3 pumps in your palm."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Massage into scalp for 5 minutes, circular motion."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Rest",
+                    "description": "Leave for 30 minutes, or overnight for deep repair."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash with a mild, sulfate-free shampoo."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Meera R.",
+                    "stars": 5,
+                    "text": "Third bottle. My hairline is filling in — I didn't believe it either."
+                },
+                {
+                    "name": "Aditi K.",
+                    "stars": 5,
+                    "text": "The scent is heaven. My hair feels thicker after two washes."
+                },
+                {
+                    "name": "Rhea S.",
+                    "stars": 4,
+                    "text": "Works beautifully but the oil is heavy — use less than you think."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/keshkanti-before.webp",
+                "after": "references/reviews/keshkanti-after.webp"
+            },
+            "image": "references/products/keshkanti-bottle.webp",
+            "ingredientsImage": "references/products/keshkanti-ingredients.webp"
+        },
+        {
+            "slug": "amla-pitta",
+            "name": "Amla-Pitta",
+            "subtitle": "Amla & Neem Clarifying Oil",
+            "tagline": "Cool the scalp. Calm the flake.",
+            "hero": true,
+            "price": 499,
+            "originalPrice": 599,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 17,
+            "rating": 4.7,
+            "reviewCount": 892,
+            "targetGender": "all",
+            "hairTypes": [
+                "oily",
+                "wavy",
+                "straight"
+            ],
+            "concerns": [
+                "dandruff",
+                "itchy-scalp",
+                "buildup"
+            ],
+            "description": "A clarifying oil for scalps that run hot. Neem's antibacterial edge, amla's vitamin C, and a whisper of camphor — for the days when your scalp needs to breathe.",
+            "ingredients": [
+                {
+                    "name": "Amla",
+                    "sanskrit": "Amalaki",
+                    "role": "Antioxidant, scalp health",
+                    "percent": 25
+                },
+                {
+                    "name": "Neem",
+                    "sanskrit": "Nimba",
+                    "role": "Antibacterial, anti-flake",
+                    "percent": 18
+                },
+                {
+                    "name": "Camphor",
+                    "sanskrit": "Karpura",
+                    "role": "Cooling, soothes itch",
+                    "percent": 2
+                },
+                {
+                    "name": "Coconut",
+                    "sanskrit": "Narikela",
+                    "role": "Light carrier",
+                    "percent": 40
+                },
+                {
+                    "name": "Tea Tree",
+                    "sanskrit": "—",
+                    "role": "Antifungal",
+                    "percent": 5
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 10
+                }
+            ],
+            "whyThisHerb": "Dandruff is not dry scalp — it's an overgrowth of a fungus called Malassezia. Neem and tea tree address it at the source. Camphor isn't for smell — it's a mild anaesthetic that stops the itch-scratch-flake loop.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "Apply directly to the scalp, section by section."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Massage for 3 minutes — let the camphor cool."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Wait",
+                    "description": "Leave for 20 minutes."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Rinse twice. Use twice a week."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Priya N.",
+                    "stars": 5,
+                    "text": "My scalp has never been this calm. Two weeks in, flakes gone."
+                },
+                {
+                    "name": "Sahil M.",
+                    "stars": 4,
+                    "text": "Strong camphor smell — took a day to like, but it works."
+                },
+                {
+                    "name": "Nandini V.",
+                    "stars": 5,
+                    "text": "Winter itch is gone. Repurchasing."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/amla-pitta-before.webp",
+                "after": "references/reviews/amla-pitta-after.webp"
+            },
+            "image": "references/products/amla-pitta-bottle.webp",
+            "ingredientsImage": "references/products/amla-pitta-ingredients.webp"
+        },
+        {
+            "slug": "shirodhara",
+            "name": "Shirodhara",
+            "subtitle": "Brahmi & Jatamansi Restorative Oil",
+            "tagline": "For the night your mind won't stop.",
+            "hero": true,
+            "price": 649,
+            "originalPrice": 799,
+            "size": "100ml",
+            "bestSeller": true,
+            "discount": 19,
+            "rating": 4.9,
+            "reviewCount": 1503,
+            "targetGender": "all",
+            "hairTypes": [
+                "all"
+            ],
+            "concerns": [
+                "stress-fall",
+                "sleep",
+                "thinning"
+            ],
+            "description": "The oil we recommend when hair loss is happening from the inside. Brahmi and jatamansi are the two herbs Ayurvedic doctors prescribe for a mind that won't rest — and a scalp that's paying for it.",
+            "ingredients": [
+                {
+                    "name": "Brahmi",
+                    "sanskrit": "Bacopa",
+                    "role": "Nervine, calms nervous system",
+                    "percent": 22
+                },
+                {
+                    "name": "Jatamansi",
+                    "sanskrit": "Tapaswini",
+                    "role": "Sleep support, stress reduction",
+                    "percent": 18
+                },
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Follicle stimulation",
+                    "percent": 20
+                },
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Warm carrier, penetrates scalp",
+                    "percent": 30
+                },
+                {
+                    "name": "Lavender",
+                    "sanskrit": "—",
+                    "role": "Aromatic, calming",
+                    "percent": 5
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Hair falls in cycles tied to stress — cortisol shuts down the follicle's growth phase. Brahmi and jatamansi have been used for centuries in Ayurvedic chikitsa for the nervous system. We're not making a scalp product. We're making a sleep product that happens to grow hair.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "moon",
+                    "title": "Evening",
+                    "description": "Best applied 1 hour before sleep."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Slow, firm massage — 7 minutes."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Overnight",
+                    "description": "Leave overnight. Sleep."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Morning",
+                    "description": "Wash in the morning. Three times a week."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Kavya R.",
+                    "stars": 5,
+                    "text": "The scent alone puts me to sleep. Hair fall halved in a month."
+                },
+                {
+                    "name": "Rohit A.",
+                    "stars": 5,
+                    "text": "Skeptical about stress-hair-fall. Now convinced."
+                },
+                {
+                    "name": "Tara I.",
+                    "stars": 5,
+                    "text": "My mother uses it too. Generational."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/shirodhara-before.webp",
+                "after": "references/reviews/shirodhara-after.webp"
+            },
+            "image": "references/products/shirodhara-bottle.webp",
+            "ingredientsImage": "references/products/shirodhara-ingredients.webp"
+        },
+        {
+            "slug": "vanaspati",
+            "name": "Vanaspati",
+            "subtitle": "Coconut & Sesame Everyday Oil",
+            "tagline": "The oil you'll reach for on Sunday.",
+            "hero": true,
+            "price": 399,
+            "originalPrice": 499,
+            "size": "150ml",
+            "bestSeller": false,
+            "discount": 20,
+            "rating": 4.6,
+            "reviewCount": 2104,
+            "targetGender": "all",
+            "hairTypes": [
+                "all"
+            ],
+            "concerns": [
+                "dryness",
+                "frizz",
+                "maintenance"
+            ],
+            "description": "Our weekday oil. Light, clean, and honest — two carriers, a splash of almond, nothing else. This is the bottle you keep in the shower.",
+            "ingredients": [
+                {
+                    "name": "Cold-pressed Coconut",
+                    "sanskrit": "Narikela",
+                    "role": "Seals cuticle, light",
+                    "percent": 45
+                },
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Deep nourishment",
+                    "percent": 30
+                },
+                {
+                    "name": "Almond",
+                    "sanskrit": "Vatama",
+                    "role": "Softens, vitamin E",
+                    "percent": 20
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Not everything needs a story. Sometimes your hair just needs oil. We keep this one simple because simplicity is the hardest formula to make.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Pump",
+                    "description": "1 pump for short hair, 2 for long."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Distribute",
+                    "description": "Through mid-lengths to ends."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Wait",
+                    "description": "10 minutes is enough."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash as normal."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Sneha D.",
+                    "stars": 5,
+                    "text": "Simple and perfect. Not greasy."
+                },
+                {
+                    "name": "Yash P.",
+                    "stars": 4,
+                    "text": "Wish the bottle was bigger."
+                },
+                {
+                    "name": "Ira T.",
+                    "stars": 5,
+                    "text": "My gym-bag oil."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/vanaspati-before.webp",
+                "after": "references/reviews/vanaspati-after.webp"
+            },
+            "image": "references/products/vanaspati-bottle.webp",
+            "ingredientsImage": "references/products/vanaspati-ingredients.webp"
+        },
+        {
+            "slug": "pushpa-vetiver",
+            "name": "Pushpa",
+            "subtitle": "Rose & Vetiver Frizz Tamer",
+            "tagline": "For hair that fights the monsoon.",
+            "hero": true,
+            "price": 579,
+            "originalPrice": 699,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 17,
+            "rating": 4.7,
+            "reviewCount": 743,
+            "targetGender": "all",
+            "hairTypes": [
+                "curly",
+                "wavy",
+                "frizzy"
+            ],
+            "concerns": [
+                "frizz",
+                "dryness",
+                "humidity"
+            ],
+            "description": "The frizz-tamer. Rose hydrosol and vetiver root oil — the combination that Ayurvedic grandmothers kept in rose-tinted glass. Heavier on the ends, lighter on the scalp.",
+            "ingredients": [
+                {
+                    "name": "Rose",
+                    "sanskrit": "Shatapatri",
+                    "role": "Hydrates, smooths",
+                    "percent": 15
+                },
+                {
+                    "name": "Vetiver",
+                    "sanskrit": "Ushira",
+                    "role": "Cooling, anti-frizz",
+                    "percent": 12
+                },
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Strengthens shaft",
+                    "percent": 15
+                },
+                {
+                    "name": "Jojoba",
+                    "sanskrit": "—",
+                    "role": "Mimics scalp sebum, lightweight",
+                    "percent": 35
+                },
+                {
+                    "name": "Argan",
+                    "sanskrit": "—",
+                    "role": "Anti-frizz, shine",
+                    "percent": 18
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Frizz is hair searching for moisture from the air. Rose and vetiver hydrate from within, so the shaft stops looking outside. Jojoba's molecular structure is nearly identical to your scalp's own sebum — which is why it absorbs without a film.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "2 pumps on damp, towel-dried hair."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Work through",
+                    "description": "Mid-lengths to ends. Avoid roots."
+                },
+                {
+                    "step": 3,
+                    "icon": "wind",
+                    "title": "Air dry",
+                    "description": "Let it air-dry for best frizz control."
+                },
+                {
+                    "step": 4,
+                    "icon": "sparkles",
+                    "title": "Refresh",
+                    "description": "1 pump on day 2 to refresh."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Zoya M.",
+                    "stars": 5,
+                    "text": "Monsoon frizz — solved. Finally."
+                },
+                {
+                    "name": "Divya S.",
+                    "stars": 5,
+                    "text": "The rose scent is everything."
+                },
+                {
+                    "name": "Aisha K.",
+                    "stars": 4,
+                    "text": "Slightly heavy if you have fine hair. Use less."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/pushpa-before.webp",
+                "after": "references/reviews/pushpa-after.webp"
+            },
+            "image": "references/products/pushpa-bottle.webp",
+            "ingredientsImage": "references/products/pushpa-ingredients.webp"
+        },
+        {
+            "slug": "rasayana",
+            "name": "Rasayana",
+            "subtitle": "Ashwagandha & Amla Age-Defying Oil",
+            "tagline": "For hair that's entering its next chapter.",
+            "hero": false,
+            "price": 699,
+            "originalPrice": 849,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 18,
+            "rating": 4.6,
+            "reviewCount": 412,
+            "targetGender": "all",
+            "hairTypes": [
+                "thinning",
+                "straight",
+                "wavy"
+            ],
+            "concerns": [
+                "aging",
+                "thinning",
+                "graying"
+            ],
+            "description": "For the hair that gets thinner at 45 than it was at 25. Ashwagandha, amla, and a hint of saffron — an oil for the patient body.",
+            "ingredients": [
+                {
+                    "name": "Ashwagandha",
+                    "sanskrit": "Balya",
+                    "role": "Adaptogen, follicle support",
+                    "percent": 20
+                },
+                {
+                    "name": "Amla",
+                    "sanskrit": "Amalaki",
+                    "role": "Antioxidant",
+                    "percent": 25
+                },
+                {
+                    "name": "Saffron",
+                    "sanskrit": "Kumkuma",
+                    "role": "Brightening, pigmentation",
+                    "percent": 2
+                },
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Carrier",
+                    "percent": 38
+                },
+                {
+                    "name": "Black seed",
+                    "sanskrit": "Krishna Jiraka",
+                    "role": "Follicle density",
+                    "percent": 10
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Hair thins with age because the follicle's growth cycle shortens. Ashwagandha's withanolides are being studied for their effect on telogen effluvium — the resting-hair shed. We pair it with saffron, whose crocin slows oxidative stress at the follicle.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "moon",
+                    "title": "Evening",
+                    "description": "Apply 1 hour before sleep."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Slow, upward massage for 6 minutes."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Overnight",
+                    "description": "Leave overnight."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash in the morning, 3 times a week."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Anjali P.",
+                    "stars": 5,
+                    "text": "I'm 47. My hair is the thickest it's been in a decade."
+                },
+                {
+                    "name": "Naveen R.",
+                    "stars": 4,
+                    "text": "Good but takes 6 weeks to show."
+                },
+                {
+                    "name": "Sarita V.",
+                    "stars": 5,
+                    "text": "Worth every rupee."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/rasayana-before.webp",
+                "after": "references/reviews/rasayana-after.webp"
+            },
+            "image": "references/products/rasayana-bottle.webp",
+            "ingredientsImage": "references/products/rasayana-ingredients.webp"
+        },
+        {
+            "slug": "kumkumadi",
+            "name": "Kumkumadi",
+            "subtitle": "Saffron & Manjistha Scalp Oil",
+            "tagline": "For scalps that need a reset.",
+            "hero": false,
+            "price": 799,
+            "originalPrice": 949,
+            "size": "100ml",
+            "bestSeller": true,
+            "discount": 16,
+            "rating": 4.8,
+            "reviewCount": 628,
+            "targetGender": "all",
+            "hairTypes": [
+                "oily",
+                "wavy"
+            ],
+            "concerns": [
+                "scalp-health",
+                "buildup",
+                "irritation"
+            ],
+            "description": "Kumkumadi is Ayurveda's most referenced scalp formula — used for skin and for scalp. Saffron's crocin and manjistha's rubia — a medicinal oil for a scalp that has started to feel like work.",
+            "ingredients": [
+                {
+                    "name": "Saffron",
+                    "sanskrit": "Kumkuma",
+                    "role": "Brightening, anti-inflammatory",
+                    "percent": 3
+                },
+                {
+                    "name": "Manjistha",
+                    "sanskrit": "Manjistha",
+                    "role": "Blood purifier, anti-irritation",
+                    "percent": 15
+                },
+                {
+                    "name": "Lotus",
+                    "sanskrit": "Kamala",
+                    "role": "Cooling",
+                    "percent": 8
+                },
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Carrier",
+                    "percent": 45
+                },
+                {
+                    "name": "Coconut",
+                    "sanskrit": "Narikela",
+                    "role": "Light carrier",
+                    "percent": 24
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Kumkumadi is traditionally a face oil — but the same logic applies to scalp. Saffron and manjistha calm inflammation, which is what builds up when the scalp's microbiome goes out of balance.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "3 drops directly onto scalp."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Slow, 4-minute massage."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Wait",
+                    "description": "20 minutes."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash gently. Twice weekly."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Aparna S.",
+                    "stars": 5,
+                    "text": "My scalp has never felt this calm."
+                },
+                {
+                    "name": "Karan T.",
+                    "stars": 5,
+                    "text": "The saffron is real — you can smell it."
+                },
+                {
+                    "name": "Mira N.",
+                    "stars": 4,
+                    "text": "Expensive but a bottle lasts."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/kumkumadi-before.webp",
+                "after": "references/reviews/kumkumadi-after.webp"
+            },
+            "image": "references/products/kumkumadi-bottle.webp",
+            "ingredientsImage": "references/products/kumkumadi-ingredients.webp"
+        },
+        {
+            "slug": "neelibhringadi",
+            "name": "Neelibhringadi",
+            "subtitle": "Indigo & Bhringraj Anti-Graying Oil",
+            "tagline": "For hair that remembers its color.",
+            "hero": false,
+            "price": 649,
+            "originalPrice": 799,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 19,
+            "rating": 4.5,
+            "reviewCount": 387,
+            "targetGender": "all",
+            "hairTypes": [
+                "all"
+            ],
+            "concerns": [
+                "graying",
+                "dryness"
+            ],
+            "description": "Neelibhringadi is an old Kerala formula — indigo and bhringraj suspended in coconut milk. Used for centuries for premature graying.",
+            "ingredients": [
+                {
+                    "name": "Indigo",
+                    "sanskrit": "Nili",
+                    "role": "Natural pigment support",
+                    "percent": 18
+                },
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Follicle strength",
+                    "percent": 22
+                },
+                {
+                    "name": "Coconut milk",
+                    "sanskrit": "Narikela",
+                    "role": "Deep conditioning",
+                    "percent": 40
+                },
+                {
+                    "name": "Amla",
+                    "sanskrit": "Amalaki",
+                    "role": "Antioxidant",
+                    "percent": 15
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Graying isn't reversible, but its pace responds to scalp health. Indigo doesn't dye — it delivers plant pigment precursors that support melanin production at the follicle. Results are subtle, cumulative, honest.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "moon",
+                    "title": "Evening",
+                    "description": "Warm 3 pumps."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Massage into scalp and roots."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Overnight",
+                    "description": "Leave overnight."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash morning. 3 times weekly."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Latha M.",
+                    "stars": 5,
+                    "text": "Slowed my graying visibly over 3 months."
+                },
+                {
+                    "name": "Ramesh S.",
+                    "stars": 4,
+                    "text": "Smells like a Kerala grandmother's kitchen. I love it."
+                },
+                {
+                    "name": "Preethi A.",
+                    "stars": 4,
+                    "text": "Works slow but honestly."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/neelibhringadi-before.webp",
+                "after": "references/reviews/neelibhringadi-after.webp"
+            },
+            "image": "references/products/neelibhringadi-bottle.webp",
+            "ingredientsImage": "references/products/neelibhringadi-ingredients.webp"
+        },
+        {
+            "slug": "tiladi-men",
+            "name": "Tiladi",
+            "subtitle": "Sesame & Fenugreek Men's Hair Oil",
+            "tagline": "For hair that's asked to do a lot.",
+            "hero": false,
+            "price": 499,
+            "originalPrice": 599,
+            "size": "100ml",
+            "bestSeller": true,
+            "discount": 17,
+            "rating": 4.7,
+            "reviewCount": 1084,
+            "targetGender": "male",
+            "hairTypes": [
+                "straight",
+                "wavy"
+            ],
+            "concerns": [
+                "hair-fall",
+                "thinning",
+                "dandruff"
+            ],
+            "description": "Built for men — because hair care shouldn't be gendered in the wrong direction. Sesame for absorption, fenugreek for shaft strength, rosemary for circulation.",
+            "ingredients": [
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Fast-absorbing carrier",
+                    "percent": 40
+                },
+                {
+                    "name": "Fenugreek",
+                    "sanskrit": "Methika",
+                    "role": "Protein for shaft",
+                    "percent": 18
+                },
+                {
+                    "name": "Rosemary",
+                    "sanskrit": "—",
+                    "role": "Circulation, growth",
+                    "percent": 10
+                },
+                {
+                    "name": "Peppermint",
+                    "sanskrit": "—",
+                    "role": "Cooling, scalp energy",
+                    "percent": 5
+                },
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Fall reduction",
+                    "percent": 22
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Men's scalps have more sebum and shorter hair cycles. Sesame absorbs fast enough for a 2-minute morning routine. Rosemary and peppermint are both shown in small studies to increase scalp blood flow — a mechanical boon to follicles.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "2 pumps to scalp before shower."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Massage 2 minutes."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Quick",
+                    "description": "Leave 10 minutes."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash. Daily is fine."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Arjun K.",
+                    "stars": 5,
+                    "text": "First hair oil that doesn't feel like my grandmother's."
+                },
+                {
+                    "name": "Vikram S.",
+                    "stars": 5,
+                    "text": "Smells clean. My barber noticed."
+                },
+                {
+                    "name": "Rohan M.",
+                    "stars": 4,
+                    "text": "Great for daily use."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/tiladi-before.webp",
+                "after": "references/reviews/tiladi-after.webp"
+            },
+            "image": "references/products/tiladi-bottle.webp",
+            "ingredientsImage": "references/products/tiladi-ingredients.webp"
+        },
+        {
+            "slug": "keshini-men",
+            "name": "Keshini",
+            "subtitle": "Rosemary & Peppermint Men's Thinning Oil",
+            "tagline": "For the thinning you noticed last month.",
+            "hero": false,
+            "price": 649,
+            "originalPrice": 799,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 19,
+            "rating": 4.6,
+            "reviewCount": 521,
+            "targetGender": "male",
+            "hairTypes": [
+                "straight",
+                "thinning"
+            ],
+            "concerns": [
+                "thinning",
+                "receding",
+                "hair-fall"
+            ],
+            "description": "Our heavier men's formula. Rosemary, peppermint, and a touch of capsaicin — for the man who wants to fight thinning seriously.",
+            "ingredients": [
+                {
+                    "name": "Rosemary",
+                    "sanskrit": "—",
+                    "role": "Follicle circulation",
+                    "percent": 15
+                },
+                {
+                    "name": "Peppermint",
+                    "sanskrit": "—",
+                    "role": "Cooling, stimulation",
+                    "percent": 8
+                },
+                {
+                    "name": "Capsaicin",
+                    "sanskrit": "—",
+                    "role": "Micro-circulation",
+                    "percent": 1
+                },
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Fall reduction",
+                    "percent": 20
+                },
+                {
+                    "name": "Jojoba",
+                    "sanskrit": "—",
+                    "role": "Light carrier",
+                    "percent": 40
+                },
+                {
+                    "name": "Amla",
+                    "sanskrit": "Amalaki",
+                    "role": "Antioxidant",
+                    "percent": 10
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 6
+                }
+            ],
+            "whyThisHerb": "Rosemary oil at 2% has been compared favourably to minoxidil in one small trial for androgenetic alopecia. We use it at 3%. Capsaicin at 0.01% causes a subtle warming — mild micro-circulation. Not a miracle, but a real fighter.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "moon",
+                    "title": "Night",
+                    "description": "Apply at night, 3 times a week."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Massage 5 minutes."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Overnight",
+                    "description": "Leave overnight."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash in the morning."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Kunal D.",
+                    "stars": 5,
+                    "text": "3 months in — visible new growth at temples."
+                },
+                {
+                    "name": "Siddharth V.",
+                    "stars": 4,
+                    "text": "The tingle tells you it's working. Give it time."
+                },
+                {
+                    "name": "Aakash R.",
+                    "stars": 4,
+                    "text": "Expensive but a bottle lasts 6 weeks."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/keshini-before.webp",
+                "after": "references/reviews/keshini-after.webp"
+            },
+            "image": "references/products/keshini-bottle.webp",
+            "ingredientsImage": "references/products/keshini-ingredients.webp"
+        },
+        {
+            "slug": "sariva",
+            "name": "Sariva",
+            "subtitle": "Anantmool & Tulsi Scalp Reset",
+            "tagline": "For scalps that need healing.",
+            "hero": false,
+            "price": 549,
+            "originalPrice": 699,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 21,
+            "rating": 4.5,
+            "reviewCount": 298,
+            "targetGender": "all",
+            "hairTypes": [
+                "oily",
+                "wavy"
+            ],
+            "concerns": [
+                "scalp-infection",
+                "irritation",
+                "dandruff"
+            ],
+            "description": "For scalps that have been through something — psoriasis, folliculitis, or just a bad reaction to shampoo. Anantmool and tulsi are the gentle healers.",
+            "ingredients": [
+                {
+                    "name": "Anantmool",
+                    "sanskrit": "Sariva",
+                    "role": "Blood purifier, skin healer",
+                    "percent": 18
+                },
+                {
+                    "name": "Tulsi",
+                    "sanskrit": "Tulasi",
+                    "role": "Antibacterial",
+                    "percent": 15
+                },
+                {
+                    "name": "Neem",
+                    "sanskrit": "Nimba",
+                    "role": "Anti-inflammatory",
+                    "percent": 12
+                },
+                {
+                    "name": "Coconut",
+                    "sanskrit": "Narikela",
+                    "role": "Carrier",
+                    "percent": 45
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 10
+                }
+            ],
+            "whyThisHerb": "Anantmool is Ayurveda's quiet healer — used in psoriasis and eczema formulas because it moderates the skin's inflammatory response. We use it at a lower concentration than you'd find in skin oils, because scalp skin is thinner than face.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "Apply to affected areas only."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Gentle massage, don't scratch."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Wait",
+                    "description": "30 minutes."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash with gentle shampoo."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Sneha R.",
+                    "stars": 5,
+                    "text": "My folliculitis flares have calmed down."
+                },
+                {
+                    "name": "Vijay P.",
+                    "stars": 4,
+                    "text": "Works but slow."
+                },
+                {
+                    "name": "Kavya N.",
+                    "stars": 5,
+                    "text": "Wish it was bigger."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/sariva-before.webp",
+                "after": "references/reviews/sariva-after.webp"
+            },
+            "image": "references/products/sariva-bottle.webp",
+            "ingredientsImage": "references/products/sariva-ingredients.webp"
+        },
+        {
+            "slug": "mahabhringraj",
+            "name": "Mahabhringraj",
+            "subtitle": "Intense Bhringraj Regrowth Oil",
+            "tagline": "For a hairline that needs persuading.",
+            "hero": false,
+            "price": 749,
+            "originalPrice": 899,
+            "size": "100ml",
+            "bestSeller": true,
+            "discount": 17,
+            "rating": 4.8,
+            "reviewCount": 1892,
+            "targetGender": "all",
+            "hairTypes": [
+                "all"
+            ],
+            "concerns": [
+                "regrowth",
+                "thinning",
+                "receding"
+            ],
+            "description": "Bhringraj at the highest concentration we can extract — 32%. This is our most concentrated formula, for those fighting visible regrowth.",
+            "ingredients": [
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Follicle stimulation",
+                    "percent": 32
+                },
+                {
+                    "name": "Amla",
+                    "sanskrit": "Amalaki",
+                    "role": "Antioxidant",
+                    "percent": 15
+                },
+                {
+                    "name": "Brahmi",
+                    "sanskrit": "Bacopa",
+                    "role": "Nervine support",
+                    "percent": 12
+                },
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Carrier",
+                    "percent": 30
+                },
+                {
+                    "name": "Fenugreek",
+                    "sanskrit": "Methika",
+                    "role": "Protein",
+                    "percent": 8
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 3
+                }
+            ],
+            "whyThisHerb": "Most bhringraj oils use 5–10%. We use 32% — the maximum a cold-press can carry. It's intense, it's expensive, and it's the closest thing to Ayurveda's traditional bhringraj tailam we've been able to make at scale.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "moon",
+                    "title": "Night",
+                    "description": "Apply 4 nights a week."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Firm, upward massage for 10 minutes."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Overnight",
+                    "description": "Leave overnight."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash morning. Patience — 8 weeks."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Reema T.",
+                    "stars": 5,
+                    "text": "I have baby hairs at 34. First time."
+                },
+                {
+                    "name": "Sameer J.",
+                    "stars": 5,
+                    "text": "The most honest bhringraj oil on the market."
+                },
+                {
+                    "name": "Preethi K.",
+                    "stars": 4,
+                    "text": "Heavy. But it works."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/mahabhringraj-before.webp",
+                "after": "references/reviews/mahabhringraj-after.webp"
+            },
+            "image": "references/products/mahabhringraj-bottle.webp",
+            "ingredientsImage": "references/products/mahabhringraj-ingredients.webp"
+        },
+        {
+            "slug": "chandanadi",
+            "name": "Chandanadi",
+            "subtitle": "Sandalwood & Neem Cooling Oil",
+            "tagline": "For scalps that run hot.",
+            "hero": false,
+            "price": 599,
+            "originalPrice": 749,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 20,
+            "rating": 4.6,
+            "reviewCount": 512,
+            "targetGender": "all",
+            "hairTypes": [
+                "oily",
+                "all"
+            ],
+            "concerns": [
+                "dandruff",
+                "itchy-scalp",
+                "heat"
+            ],
+            "description": "Sandalwood cools. Neem clarifies. Coconut delivers. The oil for summer, for humid cities, for scalps that flare in the heat.",
+            "ingredients": [
+                {
+                    "name": "Sandalwood",
+                    "sanskrit": "Chandana",
+                    "role": "Cooling, calming",
+                    "percent": 8
+                },
+                {
+                    "name": "Neem",
+                    "sanskrit": "Nimba",
+                    "role": "Antibacterial",
+                    "percent": 15
+                },
+                {
+                    "name": "Vetiver",
+                    "sanskrit": "Ushira",
+                    "role": "Cooling",
+                    "percent": 8
+                },
+                {
+                    "name": "Coconut",
+                    "sanskrit": "Narikela",
+                    "role": "Carrier",
+                    "percent": 50
+                },
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Carrier",
+                    "percent": 14
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Sandalwood's santalols are anti-inflammatory and mildly antiseptic — the reason it's been used in Indian skincare for 2,000 years. We pair it with vetiver, which Ayurveda calls the cooling root.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "Apply to scalp."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Cool 3-minute massage."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Wait",
+                    "description": "30 minutes."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash. Use in summer, twice weekly."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Nisha M.",
+                    "stars": 5,
+                    "text": "My scalp used to itch every summer. Not anymore."
+                },
+                {
+                    "name": "Rahul D.",
+                    "stars": 4,
+                    "text": "The sandalwood scent is amazing."
+                },
+                {
+                    "name": "Ishita L.",
+                    "stars": 4,
+                    "text": "Cooling, light."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/chandanadi-before.webp",
+                "after": "references/reviews/chandanadi-after.webp"
+            },
+            "image": "references/products/chandanadi-bottle.webp",
+            "ingredientsImage": "references/products/chandanadi-ingredients.webp"
+        },
+        {
+            "slug": "yastimadhu",
+            "name": "Yastimadhu",
+            "subtitle": "Licorice & Amla Split-End Repair",
+            "tagline": "For hair that's been through bleach.",
+            "hero": false,
+            "price": 549,
+            "originalPrice": 649,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 15,
+            "rating": 4.5,
+            "reviewCount": 344,
+            "targetGender": "all",
+            "hairTypes": [
+                "straight",
+                "wavy",
+                "curly"
+            ],
+            "concerns": [
+                "split-ends",
+                "breakage",
+                "dryness"
+            ],
+            "description": "For hair recovering from coloring, heat, or just time. Yastimadhu (licorice) coats the shaft and reduces the friction that causes split ends.",
+            "ingredients": [
+                {
+                    "name": "Licorice",
+                    "sanskrit": "Yastimadhu",
+                    "role": "Shaft smoothing",
+                    "percent": 15
+                },
+                {
+                    "name": "Amla",
+                    "sanskrit": "Amalaki",
+                    "role": "Antioxidant",
+                    "percent": 20
+                },
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Strength",
+                    "percent": 15
+                },
+                {
+                    "name": "Jojoba",
+                    "sanskrit": "—",
+                    "role": "Carrier",
+                    "percent": 30
+                },
+                {
+                    "name": "Argan",
+                    "sanskrit": "—",
+                    "role": "Sealing ends",
+                    "percent": 15
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Split ends can't be repaired, but they can be sealed. Yastimadhu's glycyrrhizin forms a film on the cuticle that mimics a leave-in conditioner without silicone. Argan adds a slip layer that reduces the friction — the actual cause of new splits.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "2 pumps on damp ends."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Comb",
+                    "description": "Comb through with a wide-tooth comb."
+                },
+                {
+                    "step": 3,
+                    "icon": "wind",
+                    "title": "Air dry",
+                    "description": "Air dry for best sealing."
+                },
+                {
+                    "step": 4,
+                    "icon": "sparkles",
+                    "title": "Refresh",
+                    "description": "1 pump on day 3 to refresh."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Aanya K.",
+                    "stars": 5,
+                    "text": "My bleached ends recovered. Really."
+                },
+                {
+                    "name": "Mira S.",
+                    "stars": 4,
+                    "text": "Wish it was bigger."
+                },
+                {
+                    "name": "Pia T.",
+                    "stars": 5,
+                    "text": "Softest hair in years."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/yastimadhu-before.webp",
+                "after": "references/reviews/yastimadhu-after.webp"
+            },
+            "image": "references/products/yastimadhu-bottle.webp",
+            "ingredientsImage": "references/products/yastimadhu-ingredients.webp"
+        },
+        {
+            "slug": "japa",
+            "name": "Japa",
+            "subtitle": "Hibiscus & Rose Frizz Control",
+            "tagline": "For hair that wants to stay.",
+            "hero": false,
+            "price": 449,
+            "originalPrice": 549,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 18,
+            "rating": 4.6,
+            "reviewCount": 623,
+            "targetGender": "all",
+            "hairTypes": [
+                "curly",
+                "frizzy",
+                "wavy"
+            ],
+            "concerns": [
+                "frizz",
+                "dryness"
+            ],
+            "description": "The lighter frizz tamer. For curly hair that wants hold without weight.",
+            "ingredients": [
+                {
+                    "name": "Hibiscus",
+                    "sanskrit": "Japa",
+                    "role": "Frizz control",
+                    "percent": 22
+                },
+                {
+                    "name": "Rose",
+                    "sanskrit": "Shatapatri",
+                    "role": "Hydration",
+                    "percent": 12
+                },
+                {
+                    "name": "Jojoba",
+                    "sanskrit": "—",
+                    "role": "Lightweight carrier",
+                    "percent": 40
+                },
+                {
+                    "name": "Aloe",
+                    "sanskrit": "Kumari",
+                    "role": "Moisture",
+                    "percent": 15
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Curly hair needs oil on the ends, not the roots. Japa's hibiscus mucilage — a natural polymer — gives curls a light cast that defines without crunch.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "On damp hair."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Scrunch",
+                    "description": "Scrunch into curls."
+                },
+                {
+                    "step": 3,
+                    "icon": "wind",
+                    "title": "Air dry",
+                    "description": "Air dry or diffuse."
+                },
+                {
+                    "step": 4,
+                    "icon": "sparkles",
+                    "title": "Refresh",
+                    "description": "Refresh with water on day 2."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Anushka P.",
+                    "stars": 5,
+                    "text": "Curl definition without crunch."
+                },
+                {
+                    "name": "Riya M.",
+                    "stars": 4,
+                    "text": "Perfect for 3B hair."
+                },
+                {
+                    "name": "Ishita D.",
+                    "stars": 5,
+                    "text": "Finally, a curly-specific oil."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/japa-before.webp",
+                "after": "references/reviews/japa-after.webp"
+            },
+            "image": "references/products/japa-bottle.webp",
+            "ingredientsImage": "references/products/japa-ingredients.webp"
+        },
+        {
+            "slug": "triphala",
+            "name": "Triphala",
+            "subtitle": "Triphala Scalp Detox Oil",
+            "tagline": "For scalps that have been through too much.",
+            "hero": false,
+            "price": 599,
+            "originalPrice": 699,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 14,
+            "rating": 4.7,
+            "reviewCount": 445,
+            "targetGender": "all",
+            "hairTypes": [
+                "oily",
+                "all"
+            ],
+            "concerns": [
+                "buildup",
+                "dull-hair",
+                "detox"
+            ],
+            "description": "Triphala — three fruits — in an oil. For scalps that feel heavy from years of product.",
+            "ingredients": [
+                {
+                    "name": "Amla",
+                    "sanskrit": "Amalaki",
+                    "role": "Antioxidant",
+                    "percent": 12
+                },
+                {
+                    "name": "Bibhitaki",
+                    "sanskrit": "Vibhitaki",
+                    "role": "Astringent",
+                    "percent": 10
+                },
+                {
+                    "name": "Haritaki",
+                    "sanskrit": "Haritaki",
+                    "role": "Detox, scalp clearing",
+                    "percent": 10
+                },
+                {
+                    "name": "Coconut",
+                    "sanskrit": "Narikela",
+                    "role": "Carrier",
+                    "percent": 45
+                },
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Carrier",
+                    "percent": 18
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Triphala is Ayurveda's most studied formula — three fruits, each at a different pH, working together to balance gut flora. We borrow the same logic for scalp flora.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "Apply to scalp, section by section."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "5-minute massage."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Wait",
+                    "description": "40 minutes."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash. Weekly."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Pooja S.",
+                    "stars": 5,
+                    "text": "My scalp feels lighter. Hair bouncier."
+                },
+                {
+                    "name": "Kiran R.",
+                    "stars": 4,
+                    "text": "Great weekly reset."
+                },
+                {
+                    "name": "Asha M.",
+                    "stars": 5,
+                    "text": "Best detox oil I've tried."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/triphala-before.webp",
+                "after": "references/reviews/triphala-after.webp"
+            },
+            "image": "references/products/triphala-bottle.webp",
+            "ingredientsImage": "references/products/triphala-ingredients.webp"
+        },
+        {
+            "slug": "arjunadi",
+            "name": "Arjunadi",
+            "subtitle": "Arjuna & Brahmi Stress-Shed Oil",
+            "tagline": "For hair that's tired of holding you together.",
+            "hero": false,
+            "price": 649,
+            "originalPrice": 799,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 19,
+            "rating": 4.7,
+            "reviewCount": 587,
+            "targetGender": "all",
+            "hairTypes": [
+                "all"
+            ],
+            "concerns": [
+                "stress-fall",
+                "thinning",
+                "sleep"
+            ],
+            "description": "For telogen effluvium — the hair loss that comes from stress, illness, or big life changes. Arjuna for the heart, brahmi for the mind.",
+            "ingredients": [
+                {
+                    "name": "Arjuna",
+                    "sanskrit": "Arjuna",
+                    "role": "Heart tonic, stress reduction",
+                    "percent": 15
+                },
+                {
+                    "name": "Brahmi",
+                    "sanskrit": "Bacopa",
+                    "role": "Nervine",
+                    "percent": 18
+                },
+                {
+                    "name": "Ashwagandha",
+                    "sanskrit": "Balya",
+                    "role": "Adaptogen",
+                    "percent": 12
+                },
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Carrier",
+                    "percent": 40
+                },
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Follicle support",
+                    "percent": 10
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Arjuna has been used in Ayurvedic cardiology for 1,500 years — it moderates the body's response to stress. Combined with brahmi and ashwagandha, this is our formula for the hair loss that started when life got hard.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "moon",
+                    "title": "Night",
+                    "description": "Apply at bedtime."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Slow 8-minute massage."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Overnight",
+                    "description": "Leave overnight."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash morning. 3 times weekly."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Neelam K.",
+                    "stars": 5,
+                    "text": "After my divorce, my hair fell in clumps. This helped."
+                },
+                {
+                    "name": "Rohit M.",
+                    "stars": 5,
+                    "text": "Post-COVID hair fall — mostly resolved."
+                },
+                {
+                    "name": "Divya L.",
+                    "stars": 4,
+                    "text": "Give it 8 weeks. It works."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/arjunadi-before.webp",
+                "after": "references/reviews/arjunadi-after.webp"
+            },
+            "image": "references/products/arjunadi-bottle.webp",
+            "ingredientsImage": "references/products/arjunadi-ingredients.webp"
+        },
+        {
+            "slug": "karanja",
+            "name": "Karanja",
+            "subtitle": "Karanja & Neem Scalp Purifier",
+            "tagline": "For the scalp issue you don't talk about.",
+            "hero": false,
+            "price": 499,
+            "originalPrice": 599,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 17,
+            "rating": 4.4,
+            "reviewCount": 276,
+            "targetGender": "all",
+            "hairTypes": [
+                "oily"
+            ],
+            "concerns": [
+                "lice",
+                "scalp-infection",
+                "irritation"
+            ],
+            "description": "Karanja oil is Ayurveda's antiparasitic. For lice, for stubborn scalp infections, for the things that need a stronger hand.",
+            "ingredients": [
+                {
+                    "name": "Karanja",
+                    "sanskrit": "Karanja",
+                    "role": "Antiparasitic, antifungal",
+                    "percent": 25
+                },
+                {
+                    "name": "Neem",
+                    "sanskrit": "Nimba",
+                    "role": "Antibacterial",
+                    "percent": 20
+                },
+                {
+                    "name": "Turmeric",
+                    "sanskrit": "Haridra",
+                    "role": "Anti-inflammatory",
+                    "percent": 3
+                },
+                {
+                    "name": "Coconut",
+                    "sanskrit": "Narikela",
+                    "role": "Carrier",
+                    "percent": 42
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Karanja's karanjin is a natural insecticide — it's why the tree's oil has been used for skin parasites for centuries. Not a pleasant oil, but an honest one.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "Apply to affected areas."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Massage in."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Wait",
+                    "description": "Leave 45 minutes."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash. Repeat 3 times weekly until resolved."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Sunita M.",
+                    "stars": 5,
+                    "text": "Lice in my daughter's hair — gone in 10 days."
+                },
+                {
+                    "name": "Ramya K.",
+                    "stars": 4,
+                    "text": "Smell is strong but it works."
+                },
+                {
+                    "name": "Praveen D.",
+                    "stars": 4,
+                    "text": "Effective. Not for daily use."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/karanja-before.webp",
+                "after": "references/reviews/karanja-after.webp"
+            },
+            "image": "references/products/karanja-bottle.webp",
+            "ingredientsImage": "references/products/karanja-ingredients.webp"
+        },
+        {
+            "slug": "devadaru-men",
+            "name": "Devadaru",
+            "subtitle": "Cedarwood & Vetiver Men's Scalp Oil",
+            "tagline": "For the man who wants his scalp to feel like a forest.",
+            "hero": false,
+            "price": 599,
+            "originalPrice": 749,
+            "size": "100ml",
+            "bestSeller": false,
+            "discount": 20,
+            "rating": 4.6,
+            "reviewCount": 398,
+            "targetGender": "male",
+            "hairTypes": [
+                "straight",
+                "wavy"
+            ],
+            "concerns": [
+                "dandruff",
+                "itchy-scalp",
+                "stress-fall"
+            ],
+            "description": "Cedarwood and vetiver — the two masculine notes in Ayurvedic perfumery, paired with a clarifying base for men's scalps.",
+            "ingredients": [
+                {
+                    "name": "Cedarwood",
+                    "sanskrit": "Devadaru",
+                    "role": "Clarifying, aromatic",
+                    "percent": 12
+                },
+                {
+                    "name": "Vetiver",
+                    "sanskrit": "Ushira",
+                    "role": "Cooling, grounding",
+                    "percent": 10
+                },
+                {
+                    "name": "Neem",
+                    "sanskrit": "Nimba",
+                    "role": "Anti-flake",
+                    "percent": 15
+                },
+                {
+                    "name": "Sesame",
+                    "sanskrit": "Tila",
+                    "role": "Light carrier",
+                    "percent": 40
+                },
+                {
+                    "name": "Bhringraj",
+                    "sanskrit": "Keshraj",
+                    "role": "Fall support",
+                    "percent": 15
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 8
+                }
+            ],
+            "whyThisHerb": "Devadaru is the Sanskrit name for the Himalayan cedar — a tree whose wood has been burned in Indian temples for 3,000 years. Its oil clarifies and grounds. Vetiver keeps it from feeling sharp.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Apply",
+                    "description": "3 pumps before shower."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Massage",
+                    "description": "Massage 3 minutes."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Quick",
+                    "description": "Leave 15 minutes."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash. Use 3 times weekly."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Aman S.",
+                    "stars": 5,
+                    "text": "Smells like a temple in the mountains."
+                },
+                {
+                    "name": "Dev P.",
+                    "stars": 4,
+                    "text": "Great for dandruff."
+                },
+                {
+                    "name": "Yash R.",
+                    "stars": 5,
+                    "text": "My go-to now."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/devadaru-before.webp",
+                "after": "references/reviews/devadaru-after.webp"
+            },
+            "image": "references/products/devadaru-bottle.webp",
+            "ingredientsImage": "references/products/devadaru-ingredients.webp"
+        },
+        {
+            "slug": "shubhra-kids",
+            "name": "Shubhra",
+            "subtitle": "Coconut & Almond Gentle Oil",
+            "tagline": "For the smallest heads in the house.",
+            "hero": false,
+            "price": 349,
+            "originalPrice": 449,
+            "size": "150ml",
+            "bestSeller": false,
+            "discount": 22,
+            "rating": 4.9,
+            "reviewCount": 894,
+            "targetGender": "all",
+            "hairTypes": [
+                "all"
+            ],
+            "concerns": [
+                "dryness",
+                "delicate-hair",
+                "kids"
+            ],
+            "description": "For children 3+. Two carriers, no essential oils, no fragrance. The simplest formula we make.",
+            "ingredients": [
+                {
+                    "name": "Coconut",
+                    "sanskrit": "Narikela",
+                    "role": "Light carrier",
+                    "percent": 50
+                },
+                {
+                    "name": "Almond",
+                    "sanskrit": "Vatama",
+                    "role": "Softening",
+                    "percent": 30
+                },
+                {
+                    "name": "Sunflower",
+                    "sanskrit": "Suryakanti",
+                    "role": "Vitamin E rich",
+                    "percent": 15
+                },
+                {
+                    "name": "Vitamin E",
+                    "sanskrit": "—",
+                    "role": "Preservative",
+                    "percent": 5
+                }
+            ],
+            "whyThisHerb": "Children's scalps are thinner and more sensitive. We leave out every essential oil, every fragrance, every botanical extract that could irritate. This is oil, as simple as oil can be.",
+            "howToUse": [
+                {
+                    "step": 1,
+                    "icon": "droplets",
+                    "title": "Warm",
+                    "description": "Warm in your hands."
+                },
+                {
+                    "step": 2,
+                    "icon": "hand",
+                    "title": "Apply",
+                    "description": "Gentle massage into scalp."
+                },
+                {
+                    "step": 3,
+                    "icon": "clock",
+                    "title": "Quick",
+                    "description": "Leave 20 minutes."
+                },
+                {
+                    "step": 4,
+                    "icon": "droplets",
+                    "title": "Wash",
+                    "description": "Wash with baby shampoo."
+                }
+            ],
+            "reviews": [
+                {
+                    "name": "Ritu K.",
+                    "stars": 5,
+                    "text": "My daughter's hair is finally soft."
+                },
+                {
+                    "name": "Sanjay M.",
+                    "stars": 5,
+                    "text": "No reactions, no scent. Perfect."
+                },
+                {
+                    "name": "Neha P.",
+                    "stars": 5,
+                    "text": "Only oil I use on my twins."
+                }
+            ],
+            "beforeAfter": {
+                "before": "references/reviews/shubhra-before.webp",
+                "after": "references/reviews/shubhra-after.webp"
+            },
+            "image": "references/products/shubhra-bottle.webp",
+            "ingredientsImage": "references/products/shubhra-ingredients.webp"
+        }
+    ]
+}

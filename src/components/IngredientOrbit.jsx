@@ -22,6 +22,37 @@ const SHARD_CONFIGS = [
   { clip: 'polygon(0% 0%, 80% 0%, 100% 100%)', angle: 350, dist: 125, size: 25 }
 ];
 
+const HERB_METADATA = {
+  Bhringraj: { emoji: '🌱', bg: 'bg-[#2D3E2F]', border: 'border-[#C9A961]', text: 'text-[#C9A961]' },
+  Amla: { emoji: '🍈', bg: 'bg-[#3D5239]', border: 'border-[#E8B44A]', text: 'text-[#E8B44A]' },
+  Hibiscus: { emoji: '🌺', bg: 'bg-[#7A2A28]', border: 'border-[#E5989B]', text: 'text-[#FAF7F0]' },
+  Brahmi: { emoji: '🍃', bg: 'bg-[#2C4A3E]', border: 'border-[#A3B899]', text: 'text-[#FAF7F0]' },
+  Saffron: { emoji: '🏵️', bg: 'bg-[#8F5E15]', border: 'border-[#E8B44A]', text: 'text-[#FAF7F0]' },
+  Sesame: { emoji: '✨', bg: 'bg-[#6B5B45]', border: 'border-[#C9A961]', text: 'text-[#FAF7F0]' },
+  Neem: { emoji: '🌿', bg: 'bg-[#203D2A]', border: 'border-[#A3B899]', text: 'text-[#FAF7F0]' },
+  Sandalwood: { emoji: '🪵', bg: 'bg-[#704F38]', border: 'border-[#E8B44A]', text: 'text-[#FAF7F0]' },
+  Rose: { emoji: '🌹', bg: 'bg-[#852C3A]', border: 'border-[#E5989B]', text: 'text-[#FAF7F0]' },
+  Vetiver: { emoji: '🌾', bg: 'bg-[#615B3E]', border: 'border-[#C9A961]', text: 'text-[#FAF7F0]' },
+  Ashwagandha: { emoji: '🌾', bg: 'bg-[#5A4D3B]', border: 'border-[#C9A961]', text: 'text-[#FAF7F0]' },
+  Fenugreek: { emoji: '🌱', bg: 'bg-[#405438]', border: 'border-[#A3B899]', text: 'text-[#FAF7F0]' },
+  Coconut: { emoji: '🥥', bg: 'bg-[#4A3B32]', border: 'border-[#C9A961]', text: 'text-[#FAF7F0]' },
+  Licorice: { emoji: '🌿', bg: 'bg-[#3E4A35]', border: 'border-[#C9A961]', text: 'text-[#FAF7F0]' },
+  Indigo: { emoji: '💠', bg: 'bg-[#233D4D]', border: 'border-[#76A8C2]', text: 'text-[#FAF7F0]' },
+  Jatamansi: { emoji: '🌱', bg: 'bg-[#3E382F]', border: 'border-[#C9A961]', text: 'text-[#FAF7F0]' },
+  Almond: { emoji: '🌰', bg: 'bg-[#5C4533]', border: 'border-[#C9A961]', text: 'text-[#FAF7F0]' },
+  Rosemary: { emoji: '🌿', bg: 'bg-[#294B37]', border: 'border-[#A3B899]', text: 'text-[#FAF7F0]' },
+  Lavender: { emoji: '🪻', bg: 'bg-[#4C3B5E]', border: 'border-[#B8A4D0]', text: 'text-[#FAF7F0]' }
+};
+
+function getHerbMeta(herbName = '') {
+  for (const key of Object.keys(HERB_METADATA)) {
+    if (herbName.toLowerCase().includes(key.toLowerCase())) {
+      return HERB_METADATA[key];
+    }
+  }
+  return { emoji: '🌿', bg: 'bg-[#2D3E2F]', border: 'border-[#C9A961]', text: 'text-[#C9A961]' };
+}
+
 export default function IngredientOrbit({ product }) {
   const containerRef = useRef(null);
   const bottleRef = useRef(null);
@@ -29,6 +60,7 @@ export default function IngredientOrbit({ product }) {
   const orbitNodesRef = useRef([]);
   const timelineRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [activeHighlightIndex, setActiveHighlightIndex] = useState(-1);
 
   // Take top 6 ingredients
   const ingredients = (product.ingredients || []).slice(0, 6);
@@ -37,7 +69,7 @@ export default function IngredientOrbit({ product }) {
       name: 'Vedic Herb',
       sanskritName: 'Vanaspati',
       percentage: 5,
-      role: 'Follicle health'
+      role: 'Follicle nourishment'
     });
   }
 
@@ -47,31 +79,38 @@ export default function IngredientOrbit({ product }) {
     }
 
     setIsPlaying(true);
+    setActiveHighlightIndex(0);
 
     if (isReducedMotion()) {
-      // Static overlay for 5 seconds on reduced motion
+      // Accessible static display for 5 seconds
       const timer = setTimeout(() => {
         setIsPlaying(false);
+        setActiveHighlightIndex(-1);
       }, 5000);
       return () => clearTimeout(timer);
     }
 
+    const radiusX = 165; // Horizontal width of 3D ellipse
+    const radiusY = 90;  // Depth foreshortening (tilted 3D plane)
+    const angleState = { value: 0 };
+
     const tl = gsap.timeline({
       onComplete: () => {
         setIsPlaying(false);
+        setActiveHighlightIndex(-1);
       }
     });
     timelineRef.current = tl;
 
-    // 1. Bottle scale + brightness surge (200ms)
+    // 1. Initial surge on bottle (200ms)
     tl.to(bottleRef.current, {
-      scale: 1.05,
-      filter: 'brightness(1.12)',
-      duration: 0.2,
+      scale: 1.06,
+      filter: 'brightness(1.15)',
+      duration: 0.22,
       ease: 'power2.out'
     });
 
-    // 2. Shards explode outward
+    // 2. Glass Shards Explode Outward
     shardsRef.current.forEach((shard, i) => {
       if (!shard) return;
       const conf = SHARD_CONFIGS[i];
@@ -81,44 +120,40 @@ export default function IngredientOrbit({ product }) {
 
       tl.fromTo(
         shard,
-        { x: 0, y: 0, scale: 0.2, opacity: 0.9, rotation: 0 },
+        { x: 0, y: 0, scale: 0.2, opacity: 0.95, rotation: 0 },
         {
           x: targetX,
           y: targetY,
-          scale: 1,
+          scale: 1.1,
           opacity: 0,
-          rotation: conf.angle * 2,
-          duration: 0.7,
+          rotation: conf.angle * 2.5,
+          duration: 0.75,
           ease: 'power3.out'
         },
-        0.15
+        0.12
       );
     });
 
-    // 3. Bottle dims to allow ingredients to shine
+    // 3. Bottle dims to background level
     tl.to(
       bottleRef.current,
       {
-        opacity: 0.35,
-        scale: 0.95,
-        duration: 0.4,
+        opacity: 0.38,
+        scale: 0.94,
+        duration: 0.45,
         ease: 'power2.inOut'
       },
       0.3
     );
 
-    // 4. 6 Ingredients orbit on tilted ellipse
+    // Initial appearance of nodes at base ellipse positions
     orbitNodesRef.current.forEach((node, i) => {
       if (!node) return;
-      const baseAngle = i * 60; // 0, 60, 120, 180, 240, 300
+      const baseAngle = i * 60;
       const rad = (baseAngle * Math.PI) / 180;
-      const radiusX = 145; // ellipse width
-      const radiusY = 95;  // ellipse height (tilted perspective)
-
       const startX = Math.cos(rad) * radiusX;
       const startY = Math.sin(rad) * radiusY;
 
-      // Reveal sprite
       tl.fromTo(
         node,
         { x: 0, y: 0, scale: 0, opacity: 0 },
@@ -127,44 +162,57 @@ export default function IngredientOrbit({ product }) {
           y: startY,
           scale: 1,
           opacity: 1,
-          duration: 0.6,
-          ease: 'back.out(1.4)'
+          duration: 0.65,
+          ease: 'back.out(1.5)'
         },
-        0.3 + i * 0.06
+        0.3 + i * 0.05
       );
-
-      // Staggered label highlight pulse
-      const labelEl = node.querySelector('.ingredient-label');
-      if (labelEl) {
-        tl.fromTo(
-          labelEl,
-          { opacity: 0.3, y: 4, scale: 0.95 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1.05,
-            duration: 0.5,
-            repeat: 1,
-            yoyo: true,
-            ease: 'power1.inOut'
-          },
-          0.8 + i * 0.3
-        );
-      }
     });
 
-    // 5. Orbit rotation motion for 3 seconds
+    // 4. Continuous 3D Elliptical Orbit & Depth Layering over 3.8s
     tl.to(
-      orbitNodesRef.current,
+      angleState,
       {
-        rotation: '+=25',
-        duration: 2.8,
-        ease: 'none'
+        value: 180, // rotate half-turn (180 degrees) smoothly
+        duration: 3.8,
+        ease: 'power1.inOut',
+        onUpdate: () => {
+          orbitNodesRef.current.forEach((node, i) => {
+            if (!node) return;
+            const currentDeg = (angleState.value + i * 60) % 360;
+            const rad = (currentDeg * Math.PI) / 180;
+            const x = Math.cos(rad) * radiusX;
+            const y = Math.sin(rad) * radiusY;
+            const sinVal = Math.sin(rad); // -1 (top/behind) to +1 (bottom/front)
+
+            // Dynamic depth simulation:
+            // Foreground nodes (sinVal > 0): larger, opaque, z-index 35
+            // Background nodes (sinVal < 0): smaller, semi-transparent, behind bottle
+            const scale = 0.88 + (sinVal + 1) * 0.14; // 0.88 to 1.16
+            const opacity = 0.72 + (sinVal + 1) * 0.14; // 0.72 to 1.0
+            const zIndex = sinVal > 0 ? 35 : 10;
+
+            node.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${scale})`;
+            node.style.opacity = opacity;
+            node.style.zIndex = zIndex;
+          });
+        }
       },
-      0.9
+      0.8
     );
 
-    // 6. Implode and reconvene back to bottle center
+    // 5. Continuous Cycling Label Highlight Pulse across 5s
+    for (let cycle = 0; cycle < 6; cycle++) {
+      tl.call(
+        () => {
+          setActiveHighlightIndex(cycle % 6);
+        },
+        null,
+        0.8 + cycle * 0.6
+      );
+    }
+
+    // 6. Implode and return into the bottle
     tl.to(
       orbitNodesRef.current,
       {
@@ -175,10 +223,10 @@ export default function IngredientOrbit({ product }) {
         duration: 0.6,
         ease: 'power2.in'
       },
-      4.2
+      4.4
     );
 
-    // Bottle returns to normal
+    // 7. Bottle returns to full radiance
     tl.to(
       bottleRef.current,
       {
@@ -188,7 +236,7 @@ export default function IngredientOrbit({ product }) {
         duration: 0.6,
         ease: 'power2.out'
       },
-      4.4
+      4.6
     );
   };
 
@@ -201,17 +249,17 @@ export default function IngredientOrbit({ product }) {
   return (
     <div
       ref={containerRef}
-      className="relative w-full h-80 flex items-center justify-center cursor-pointer select-none overflow-visible"
+      className="relative w-full h-84 flex items-center justify-center cursor-pointer select-none overflow-visible"
       onClick={triggerOrbit}
-      title="Click bottle to trigger shatter-orbit ingredient reveal"
+      title="Click bottle to trigger 3D shatter-orbit ingredient reveal"
     >
-      {/* 12-16 Explosion Shards (glass polygons) */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-20">
+      {/* 16 Shatter Explosion Shards */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-25">
         {SHARD_CONFIGS.map((conf, i) => (
           <div
             key={i}
             ref={(el) => (shardsRef.current[i] = el)}
-            className="absolute bg-gradient-to-br from-[#FAF7F0]/90 to-[#C9A961]/60 backdrop-blur-xs border border-white/40 shadow-xs"
+            className="absolute bg-gradient-to-br from-[#FAF7F0]/90 to-[#C9A961]/70 backdrop-blur-xs border border-white/50 shadow-xs"
             style={{
               width: `${conf.size}px`,
               height: `${conf.size}px`,
@@ -222,37 +270,52 @@ export default function IngredientOrbit({ product }) {
         ))}
       </div>
 
-      {/* 6 Orbiting Ingredient Sprites */}
-      <div className="absolute inset-0 pointer-events-none flex items-center justify-center z-30">
-        {ingredients.map((ing, i) => (
-          <div
-            key={i}
-            ref={(el) => (orbitNodesRef.current[i] = el)}
-            className="absolute flex flex-col items-center pointer-events-auto"
-            style={{ opacity: 0 }}
-          >
-            {/* Circular Ingredient Node */}
-            <div className="w-12 h-12 rounded-full bg-[#FAF7F0] border-2 border-[#C9A961] shadow-lifted flex items-center justify-center p-1 overflow-hidden transition-transform hover:scale-110">
-              <span className="text-base select-none">🌿</span>
-            </div>
+      {/* 6 Orbiting 3D Botanical Nodes */}
+      <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+        {ingredients.map((ing, i) => {
+          const meta = getHerbMeta(ing.name);
+          const isHighlighted = activeHighlightIndex === i;
 
-            {/* Ingredient Label Pill */}
-            <div className="ingredient-label mt-1 px-2.5 py-0.5 rounded-full bg-[#2D3E2F]/90 backdrop-blur-xs text-[#FAF7F0] border border-[#C9A961]/40 text-center whitespace-nowrap shadow-xs">
-              <p className="font-display text-[11px] font-medium leading-none text-[#C9A961]">
-                {ing.name} · {ing.percentage || 15}%
-              </p>
-              <p className="font-mono text-[9px] text-[#FAF7F0]/70 leading-none mt-0.5 italic">
-                {ing.sanskritName || ing.role}
-              </p>
+          return (
+            <div
+              key={i}
+              ref={(el) => (orbitNodesRef.current[i] = el)}
+              className="absolute flex flex-col items-center pointer-events-auto transition-shadow duration-300"
+              style={{ opacity: 0 }}
+            >
+              {/* Circular Botanical Herb Badge with 3D counter-elevation */}
+              <div
+                className={`w-12 h-12 rounded-full ${meta.bg} border-2 ${meta.border} shadow-lifted flex items-center justify-center p-1 overflow-hidden transition-all duration-300 ${
+                  isHighlighted ? 'scale-115 ring-2 ring-[#E8B44A] shadow-[0_0_14px_rgba(232,180,74,0.7)]' : ''
+                }`}
+              >
+                <span className="text-lg select-none filter drop-shadow-xs">{meta.emoji}</span>
+              </div>
+
+              {/* Herb Label Pill with Continuous Cycling Highlight */}
+              <div
+                className={`ingredient-label mt-1.5 px-3 py-1 rounded-full backdrop-blur-md text-center whitespace-nowrap shadow-md transition-all duration-300 border ${
+                  isHighlighted
+                    ? 'bg-[#2D3E2F] border-[#E8B44A] ring-1 ring-[#E8B44A]/80 translate-y-0.5 scale-105'
+                    : 'bg-[#2D3E2F]/90 border-[#C9A961]/35'
+                }`}
+              >
+                <p className={`font-display text-[11px] font-semibold tracking-wide ${meta.text}`}>
+                  {ing.name} · {ing.percentage || 15}%
+                </p>
+                <p className="font-mono text-[9px] text-[#FAF7F0]/80 leading-none mt-0.5 italic">
+                  {ing.sanskritName || ing.role}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* Center Bottle */}
+      {/* Center Bottle (z-index 20) */}
       <div
         ref={bottleRef}
-        className="relative z-10 w-48 h-64 flex items-center justify-center transition-all duration-300"
+        className="relative z-20 w-48 h-64 flex items-center justify-center transition-all duration-300"
       >
         <SafeImage
           src={product.image || `references/products/${product.slug}-bottle.webp`}
@@ -262,10 +325,10 @@ export default function IngredientOrbit({ product }) {
         />
       </div>
 
-      {/* Hint Badge overlay if idle */}
+      {/* Ambient Pulsing Callout Badge if Idle */}
       {!isPlaying && (
-        <span className="absolute bottom-2 left-1/2 -translate-x-1/2 z-10 text-[10px] tracking-widest uppercase font-mono text-[#6B5B45]/70 bg-[#FAF7F0]/80 px-2.5 py-0.5 rounded-full border border-[#6B5B45]/15 backdrop-blur-xs pointer-events-none">
-          Click bottle to shatter-orbit
+        <span className="absolute bottom-1 left-1/2 -translate-x-1/2 z-30 text-[10px] tracking-widest uppercase font-mono text-[#6B5B45] bg-[#FAF7F0]/95 px-3 py-1 rounded-full border border-[#C9A961]/40 backdrop-blur-xs shadow-xs pointer-events-none hover:bg-white transition-colors">
+          ✦ Click bottle to inspect botanicals ✦
         </span>
       )}
     </div>

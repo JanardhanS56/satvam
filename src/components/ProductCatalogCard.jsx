@@ -1,9 +1,22 @@
 import React, { useState } from 'react';
-import { Star, ArrowUpRight } from 'lucide-react';
+import { Star, ArrowUpRight, Sparkles } from 'lucide-react';
 import { SafeImage } from '../lib/images';
+import { getHerbBadge } from '../lib/herbs';
+
+// Coordinate layouts for floating ingredient bubbles
+const BUBBLE_POSITIONS = [
+  'top-3 left-3',
+  'top-3 right-3',
+  'bottom-12 left-3',
+  'bottom-12 right-3',
+  'bottom-2 left-1/2 -translate-x-1/2'
+];
 
 export default function ProductCatalogCard({ product, onSelect }) {
   const [isHovered, setIsHovered] = useState(false);
+
+  // Extract top 5 key ingredients for the floating preview bubbles
+  const previewIngredients = (product.ingredients || []).slice(0, 5);
 
   return (
     <div
@@ -26,37 +39,60 @@ export default function ProductCatalogCard({ product, onSelect }) {
         </span>
       )}
 
-      {/* Image Container with Crossfade on Hover */}
-      <div className="relative w-full h-56 my-2 flex items-center justify-center overflow-hidden rounded-xl bg-[#F5EFE3]/40 p-3">
-        {/* Default Bottle Image */}
-        <div
-          className={`absolute inset-0 flex items-center justify-center p-4 transition-opacity duration-400 ease-out ${
-            isHovered && product.ingredientsImage ? 'opacity-0' : 'opacity-100'
-          }`}
-        >
+      {/* Main Image Container — Always displays product bottle with floating ingredient bubbles on hover */}
+      <div className="relative w-full h-64 my-2 flex items-center justify-center overflow-hidden rounded-xl bg-[#F5EFE3]/40 p-4">
+        {/* Main Product Bottle (Always visible, does not disappear) */}
+        <div className="relative w-full h-full flex items-center justify-center p-2 transition-transform duration-300 ease-out group-hover:scale-105">
           <SafeImage
             src={product.image || `references/products/${product.slug}-bottle.webp`}
             alt={product.name}
-            className="max-h-full max-w-full object-contain filter drop-shadow-xs"
+            className="max-h-full max-w-full object-contain filter drop-shadow-sm transition-all duration-300"
             fallbackText={product.name}
           />
         </div>
 
-        {/* Crossfade Ingredients Flat-Lay Image on Hover */}
-        {product.ingredientsImage && (
-          <div
-            className={`absolute inset-0 flex items-center justify-center p-4 transition-opacity duration-400 ease-out ${
-              isHovered ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <SafeImage
-              src={product.ingredientsImage}
-              alt={`${product.name} raw botanicals`}
-              className="max-h-full max-w-full object-contain filter saturate-[0.95]"
-              fallbackText={`${product.name} Herbs`}
-            />
-          </div>
-        )}
+        {/* Floating Ingredient Bubbles (Pop out on hover) */}
+        <div className="absolute inset-0 pointer-events-none p-2 overflow-hidden">
+          {previewIngredients.map((ing, i) => {
+            const badge = getHerbBadge(ing.name);
+            const posClass = BUBBLE_POSITIONS[i % BUBBLE_POSITIONS.length];
+            const delays = ['delay-0', 'delay-75', 'delay-100', 'delay-150', 'delay-200'];
+
+            return (
+              <div
+                key={i}
+                className={`absolute z-30 ${posClass} transition-all duration-300 ease-out transform ${delays[i % delays.length]} ${
+                  isHovered
+                    ? 'opacity-100 scale-100 translate-y-0'
+                    : 'opacity-0 scale-75 translate-y-2'
+                }`}
+              >
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FAF7F0]/95 backdrop-blur-md border border-[#C9A961]/60 shadow-md text-[#2D3E2F]">
+                  <span className="text-sm select-none">{badge.emoji}</span>
+                  <div className="flex flex-col text-left">
+                    <span className="font-display font-semibold text-[11px] leading-tight text-[#2D3E2F]">
+                      {ing.name}
+                    </span>
+                    <span className="font-mono text-[8px] text-[#6B5B45] leading-tight">
+                      {ing.percentage ? `${ing.percentage}% · ` : ''}{ing.sanskritName || badge.type}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Hover Click Hint Overlay */}
+        <div
+          className={`absolute bottom-1 inset-x-0 mx-auto text-center pointer-events-none transition-opacity duration-200 ${
+            isHovered ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <span className="inline-flex items-center gap-1 text-[9px] font-mono uppercase tracking-widest text-[#6B5B45] bg-[#FAF7F0]/90 px-2 py-0.5 rounded-full border border-[#6B5B45]/15 backdrop-blur-xs">
+            <Sparkles className="w-2.5 h-2.5 text-[#C9A961]" /> Click to Enlarge & Break Down
+          </span>
+        </div>
       </div>
 
       {/* Product Info */}
@@ -97,7 +133,7 @@ export default function ProductCatalogCard({ product, onSelect }) {
             )}
           </div>
           <span className="text-xs font-medium text-[#C9A961] group-hover:text-[#2D3E2F] flex items-center gap-0.5 transition-colors">
-            Formulation Details <ArrowUpRight className="w-3.5 h-3.5" />
+            Full Formula <ArrowUpRight className="w-3.5 h-3.5" />
           </span>
         </div>
       </div>

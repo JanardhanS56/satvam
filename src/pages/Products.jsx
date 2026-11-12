@@ -104,7 +104,7 @@ export default function Products() {
           Single-origin botanicals tailored to individual scalp doshas.
         </p>
         <p className="text-xs sm:text-sm text-[#2D3E2F]/75 max-w-xl mx-auto mt-3 font-normal leading-relaxed">
-          Hover any card to reveal its raw botanical flat-lay; click for Sanskrit ratios, before/after proof, and ritual instructions.
+          Hover any card to preview its floating botanical ingredients; click to enlarge and inspect full Ayurvedic components.
         </p>
       </section>
 

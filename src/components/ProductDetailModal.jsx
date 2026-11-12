@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { useCartStore } from '../stores/cart';
 import { SafeImage } from '../lib/images';
+import { getHerbBadge } from '../lib/herbs';
 
 // Helper for Lucide icons in How to Use steps
 const getStepIcon = (iconName) => {
@@ -158,9 +159,9 @@ export default function ProductDetailModal({ product, onClose }) {
           {/* TAB 1: OVERVIEW */}
           {activeTab === 'overview' && (
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start animate-fadeIn">
-              {/* Bottle & Herb Visual */}
-              <div className="md:col-span-5 bg-[#F5EFE3] rounded-2xl p-6 flex flex-col items-center justify-center border border-[#6B5B45]/15">
-                <div className="w-48 h-64 flex items-center justify-center">
+              {/* Enlarged Bottle Pop-Out Visual */}
+              <div className="md:col-span-5 bg-[#F5EFE3] rounded-3xl p-6 flex flex-col items-center justify-center border border-[#6B5B45]/15 shadow-soft">
+                <div className="w-56 h-72 flex items-center justify-center transform transition-transform duration-300 hover:scale-105">
                   <SafeImage
                     src={product.image || `references/products/${product.slug}-bottle.webp`}
                     alt={product.name}
@@ -168,9 +169,9 @@ export default function ProductDetailModal({ product, onClose }) {
                     fallbackText={product.name}
                   />
                 </div>
-                <p className="mt-4 font-mono text-[11px] text-[#6B5B45] text-center">
-                  Cold-Pressed in Vaagai Wood Ghani · 100% Active Lipids
-                </p>
+                <div className="mt-4 px-3 py-1 bg-[#FAF7F0] rounded-full border border-[#6B5B45]/15 font-mono text-[10px] text-[#6B5B45] uppercase tracking-wider text-center">
+                  ✦ Authentic Vedic Amber Flacon · {product.size || '100ml'}
+                </div>
               </div>
 
               {/* Description & Chips */}
@@ -182,6 +183,34 @@ export default function ProductDetailModal({ product, onClose }) {
                   <p className="text-sm text-[#2D3E2F]/85 leading-relaxed">
                     {product.description}
                   </p>
+                </div>
+
+                {/* Constituent Botanical Components Breakdown (Herb, Root, Oil, etc.) */}
+                <div>
+                  <h5 className="text-eyebrow text-[#6B5B45] mb-2.5">
+                    Constituent Botanical Components
+                  </h5>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                    {(product.ingredients || []).map((ing, idx) => {
+                      const badge = getHerbBadge(ing.name);
+                      return (
+                        <div
+                          key={idx}
+                          className="p-2.5 rounded-xl bg-[#FFFFFF] border border-[#6B5B45]/15 flex items-center gap-2.5 shadow-xs"
+                        >
+                          <span className="text-base select-none">{badge.emoji}</span>
+                          <div className="overflow-hidden">
+                            <p className="font-display font-medium text-xs text-[#2D3E2F] truncate">
+                              {ing.name}
+                            </p>
+                            <p className="font-mono text-[9px] text-[#6B5B45] truncate">
+                              {ing.percentage ? `${ing.percentage}% · ` : ''}{badge.type}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* Target Hair Types */}

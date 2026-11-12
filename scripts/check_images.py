@@ -8,16 +8,22 @@ print('--- PRODUCT IMAGES STATUS ---')
 found = []
 missing = []
 
+found_count = 0
+missing_count = 0
+
 for i, p in enumerate(data['products'], 1):
     img_rel = p.get('image', '')
     disk_path = img_rel.replace('references/', 'References/')
-    if os.path.exists(disk_path):
-        found.append((p['name'], p['slug'], img_rel))
-        print(f'{i:2d}. [FOUND]   {p["name"]:<15} ({p["slug"]}) -> {img_rel}')
+    hero = p.get('hero', False)
+    exists = os.path.exists(disk_path)
+    if exists:
+        found_count += 1
+        status = '[FOUND]  '
     else:
-        missing.append((p['name'], p['slug'], img_rel))
-        print(f'{i:2d}. [MISSING] {p["name"]:<15} ({p["slug"]}) -> {img_rel}')
+        missing_count += 1
+        status = '[MISSING]'
+    print(f'{i:2d}. {status} {p["name"]:<15} ({p["slug"]:<15}) hero={hero} -> {img_rel}')
 
-print(f'\nTotal Found: {len(found)} / {len(data["products"])}')
-print(f'Total Missing: {len(missing)} / {len(data["products"])}')
+print(f'\nTotal Found: {found_count} / {len(data["products"])}')
+print(f'Total Missing: {missing_count} / {len(data["products"])}')
 

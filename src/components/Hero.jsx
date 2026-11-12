@@ -133,7 +133,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="mt-10 flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
           <Link
-            to="/shop"
+            to="/journey"
             className="btn-primary w-full sm:w-auto px-8 py-3.5 text-base shadow-soft hover:shadow-lifted font-medium tracking-wide"
           >
             Enter the Atelier

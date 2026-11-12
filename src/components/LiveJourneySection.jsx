@@ -233,10 +233,10 @@ export default function LiveJourneySection() {
         </div>
 
         {/* Dynamic Stage Display Container */}
-        <div className="bg-[#FFFFFF] rounded-3xl border border-[#6B5B45]/20 shadow-soft overflow-hidden p-6 sm:p-10 lg:p-12 transition-all">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left: Stage Image Expanded by ~15% (col-span-7) */}
-            <div className="lg:col-span-7 relative aspect-[4/3] sm:aspect-[16/11] lg:min-h-[480px] rounded-2xl overflow-hidden bg-[#FAF7F0] border border-[#6B5B45]/15 shadow-md">
+        <div className="bg-[#FFFFFF] rounded-3xl border border-[#6B5B45]/20 shadow-soft overflow-hidden p-6 sm:p-8 lg:p-10 xl:p-12 transition-all">
+          <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10 xl:gap-14">
+            {/* Left: Stage Image Expanded by ~15% (56% width on desktop) */}
+            <div className="w-full lg:w-[56%] flex-shrink-0 relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden bg-[#FAF7F0] border border-[#6B5B45]/15 shadow-md">
               <SafeImage
                 key={active.src}
                 src={active.src}
@@ -261,14 +261,14 @@ export default function LiveJourneySection() {
             </div>
 
             {/* Right: Narrative, Contrast Chips, and Direct CTA */}
-            <div className="lg:col-span-5 space-y-6">
+            <div className="w-full lg:w-[44%] min-w-0 flex-1 space-y-5 lg:space-y-6">
               <div>
                 <div className="flex items-center gap-2 text-xs font-mono text-[#C9A961] uppercase tracking-widest font-semibold mb-2">
                   <span>Satvam Botanical Protocol</span>
                   <span>·</span>
                   <span>Zero Solvents</span>
                 </div>
-                <h3 className="font-display font-medium text-2xl sm:text-3xl lg:text-4xl text-[#2D3E2F] leading-tight">
+                <h3 className="font-display font-medium text-2xl sm:text-3xl lg:text-3xl xl:text-4xl text-[#2D3E2F] leading-tight">
                   {active.headline}
                 </h3>
               </div>
@@ -284,7 +284,7 @@ export default function LiveJourneySection() {
               </div>
 
               {/* Problem vs Our Answer Chip */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                 <div className="p-3.5 rounded-xl bg-[#A8453D]/5 border border-[#A8453D]/20">
                   <div className="flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-[#A8453D] font-bold mb-1">
                     <AlertCircle className="w-3.5 h-3.5" /> Industry Short-Cut
@@ -305,17 +305,17 @@ export default function LiveJourneySection() {
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <Link
                   to="/shop"
-                  className="btn-primary w-full sm:w-auto px-6 py-3 text-sm font-semibold tracking-wide flex items-center justify-center gap-2 shadow-soft hover:shadow-lifted"
+                  className="btn-primary px-6 py-3 text-sm font-semibold tracking-wide flex items-center justify-center gap-2 shadow-soft hover:shadow-lifted"
                 >
                   <span>Explore Harvest Formulas</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   to="/products"
-                  className="btn-ghost w-full sm:w-auto px-6 py-3 text-sm font-medium tracking-wide text-center"
+                  className="btn-ghost px-6 py-3 text-sm font-medium tracking-wide text-center"
                 >
                   Inspect All 20 Botanicals
                 </Link>

@@ -1,0 +1,76 @@
+{
+  "slug": "yastimadhu-licorice-amla-split-end-repair",
+  "name": "Yastimadhu",
+  "subtitle": "Licorice & Amla Split-End Repair",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 580,
+  "originalPrice": 699,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "damaged",
+    "dry",
+    "brittle",
+    "all"
+  ],
+  "concerns": [
+    "split ends",
+    "hair breakage",
+    "damaged shafts",
+    "rough texture"
+  ],
+  "description": "An intensive, restorative rescue blend designed to mend damaged strands and lock in moisture. Yastimadhu joins the deeply nourishing, fortifying properties of Licorice root with the vitamin-rich, age-old hair vitalizer Amla. Supported by the restorative richness of Jojoba and Argan, this concentrated formula envelops brittle ends, helps restore elasticity, and coats the hair shaft to prevent future splitting and breakages, leaving hair beautifully smooth and resilient.",
+  "ingredients": [
+    {
+      "name": "Licorice Root",
+      "sanskrit": "Yastimadhu",
+      "role": "Rich in natural nutrients to help strengthen and coat the hair shaft, reducing breakage",
+      "percent": 30
+    },
+    {
+      "name": "Amla Fruit",
+      "sanskrit": "Amalaki",
+      "role": "Enriches with Vitamin C to fortify weakened strands and boost hair health",
+      "percent": 25
+    },
+    {
+      "name": "Jojoba Seeds",
+      "sanskrit": "Jojoba",
+      "role": "Mimics natural scalp oils to smooth and coat split ends",
+      "percent": 25
+    },
+    {
+      "name": "Argan Nuts",
+      "sanskrit": "Argan",
+      "role": "Infuses deep moisture and smooths frizz to protect fragile hair",
+      "percent": 20
+    }
+  ],
+  "whyThisHerb": "Yastimadhu, or Licorice Root, is a traditional soothing powerhouse that wraps fraying hair fibers in protective, natural moisture, working alongside revitalizing Amla to mend and prevent breakage.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "hand",
+      "title": "Warm",
+      "description": "Dispense 3-4 drops onto your fingers and warm by rubbing them together."
+    },
+    {
+      "step": 2,
+      "icon": "droplets",
+      "title": "Target Ends",
+      "description": "Gently massage the oil directly into the mid-lengths and split ends of your hair."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Soak",
+      "description": "Allow the rich restorative oil to absorb for 30 minutes, or use as a light leave-in treatment on damp hair."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Wash & Protect",
+      "description": "Wash away with your preferred mild shampoo, or let it work as a protective shield during the day."
+    }
+  ]
+}

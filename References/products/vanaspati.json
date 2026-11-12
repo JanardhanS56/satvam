@@ -1,0 +1,70 @@
+{
+  "slug": "vanaspati-coconut-sesame-everyday-oil",
+  "name": "Vanaspati",
+  "subtitle": "Coconut & Sesame Everyday Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 399,
+  "originalPrice": 499,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "normal",
+    "dry",
+    "fine",
+    "all"
+  ],
+  "concerns": [
+    "daily maintenance",
+    "frizz",
+    "dryness",
+    "dullness"
+  ],
+  "description": "A grounding everyday staple that honours the simplicity of pure, unadulterated nourishment. Vanaspati brings together the deeply hydrating grace of Coconut and the fortifying warmth of Sesame, enriched by the subtle richness of Almonds. Formulated for effortless daily use, this lightweight oil absorbs quickly to soften strands, tame flyaways, and offer a natural, healthy sheen without weighing your hair down.",
+  "ingredients": [
+    {
+      "name": "Coconut Oil",
+      "sanskrit": "Narikela Taila",
+      "role": "Hydrates and conditions to smooth the hair shaft",
+      "percent": 45
+    },
+    {
+      "name": "Sesame Seed Oil",
+      "sanskrit": "Tila Taila",
+      "role": "Provides penetrative warmth and strength to the roots",
+      "percent": 35
+    },
+    {
+      "name": "Almonds",
+      "sanskrit": "Vatada",
+      "role": "Rich in Vitamin E to enhance softness and natural shine",
+      "percent": 20
+    }
+  ],
+  "whyThisHerb": "Coconut provides an immediate surge of cooling moisture, whilst Sesame anchors the roots with protective warmth—an intuitive balance for steady, daily care.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "hand",
+      "title": "Warm",
+      "description": "Dispense a small amount into your palms and gently rub them together."
+    },
+    {
+      "step": 2,
+      "icon": "comb",
+      "title": "Smooth",
+      "description": "Lightly glide your hands over the lengths of your hair to tame frizz and add an instant sheen."
+    },
+    {
+      "step": 3,
+      "icon": "droplets",
+      "title": "Nourish",
+      "description": "Massage any remaining oil lightly into the scalp to maintain optimal daily moisture."
+    },
+    {
+      "step": 4,
+      "icon": "sun",
+      "title": "Protect",
+      "description": "Leave in throughout the day as a protective shield against the elements."
+    }
+  ]
+}

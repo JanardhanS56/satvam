@@ -1,0 +1,76 @@
+{
+  "slug": "keshini-rosemary-peppermint-mens-thinning-oil",
+  "name": "Keshini",
+  "subtitle": "Rosemary & Peppermint Men's Thinning Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 549,
+  "originalPrice": 649,
+  "size": "100ml",
+  "targetGender": "male",
+  "hairTypes": [
+    "thinning",
+    "fine",
+    "normal",
+    "oily"
+  ],
+  "concerns": [
+    "hair thinning",
+    "weak follicles",
+    "scalp congestion",
+    "receding hairline"
+  ],
+  "description": "A precise, stimulating botanical tonic crafted to awaken sluggish follicles and restore vitality to thinning hair. Keshini blends the crisp clarity of Rosemary and cooling Peppermint with the ancient, root-fortifying power of Bhringraj and Amla. Designed specifically for the nuances of men's scalp health, this lightweight oil encourages vigorous circulation, clears away follicle-blocking congestion, and builds a robust foundation for thicker, denser growth.",
+  "ingredients": [
+    {
+      "name": "Rosemary",
+      "sanskrit": "Rusmari",
+      "role": "Dramatically boosts microcirculation to awaken dormant roots",
+      "percent": 30
+    },
+    {
+      "name": "Peppermint Leaves",
+      "sanskrit": "Pudina",
+      "role": "Cools the scalp and clears away buildup that stifles growth",
+      "percent": 20
+    },
+    {
+      "name": "Bhringraj",
+      "sanskrit": "Keshraj",
+      "role": "Strengthens the hair shaft and anchors the roots deeply",
+      "percent": 25
+    },
+    {
+      "name": "Amla",
+      "sanskrit": "Amalaki",
+      "role": "Delivers essential Vitamin C to protect and nourish the scalp",
+      "percent": 25
+    }
+  ],
+  "whyThisHerb": "Rosemary is celebrated for its ability to draw fresh blood and oxygen directly to the follicles, while Bhringraj provides the foundational strength required to sustain new, resilient hair.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "droplets",
+      "title": "Target",
+      "description": "Apply a few drops directly to the scalp, focusing closely on the hairline, crown, and any areas of thinning."
+    },
+    {
+      "step": 2,
+      "icon": "hand",
+      "title": "Stimulate",
+      "description": "Vigorously massage the oil into the skin using your fingertips to encourage blood flow and awaken the roots."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Activate",
+      "description": "Allow the stimulating botanical blend to sit for at least 30 minutes, enjoying the crisp, cooling sensation."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Cleanse",
+      "description": "Wash thoroughly with a clarifying shampoo. Use consistently to maintain a healthy environment for growth."
+    }
+  ]
+}

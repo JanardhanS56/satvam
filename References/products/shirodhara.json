@@ -1,0 +1,76 @@
+{
+  "slug": "shirodhara-brahmi-jatamansi-restorative-oil",
+  "name": "Shirodhara",
+  "subtitle": "Brahmi & Jatamansi Restorative Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 649,
+  "originalPrice": 750,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "dry",
+    "damaged",
+    "stressed",
+    "normal"
+  ],
+  "concerns": [
+    "stress",
+    "sleeplessness",
+    "hair thinning",
+    "weak roots"
+  ],
+  "description": "An exquisite restorative elixir designed to calm the mind and revive weary strands, named after the sacred Ayurvedic therapy of 'Shirodhara'. This deeply meditative blend marries Brahmi, the herb of consciousness, with the grounding, earthy root of Jatamansi to help quiet busy thoughts while fortifying fragile hair at the root. Infused with soothing lavender and nutrient-rich sesame, it deeply nourishes the scalp and invites a sense of profound tranquility.",
+  "ingredients": [
+    {
+      "name": "Brahmi Leaves",
+      "sanskrit": "Brahmi",
+      "role": "Improves blood circulation and promotes mental clarity and hair strength",
+      "percent": 30
+    },
+    {
+      "name": "Jatamansi Roots",
+      "sanskrit": "Jatamansi",
+      "role": "Calms the nervous system and supports hair follicle rejuvenation",
+      "percent": 25
+    },
+    {
+      "name": "Sesame Seed Oil",
+      "sanskrit": "Tila Taila",
+      "role": "Warm, penetrative base to deeply nourish and anchor the hair",
+      "percent": 35
+    },
+    {
+      "name": "Lavender Sprigs",
+      "sanskrit": "Ushira-vishesha",
+      "role": "Aromatherapeutic relaxant to soothe the scalp and mind",
+      "percent": 10
+    }
+  ],
+  "whyThisHerb": "Brahmi and Jatamansi are historically revered for their dual ability to promote thick hair and ease a hyperactive mind, making this blend the ultimate night-time ritual.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "moon",
+      "title": "Unwind",
+      "description": "Best used in the evening. Warm the oil slightly in your hands and take a slow, deep breath of its earthy, lavender-infused aroma."
+    },
+    {
+      "step": 2,
+      "icon": "hand",
+      "title": "Crown Massage",
+      "description": "Pour onto the center of your scalp (the crown) and massage slowly using circular patterns to encourage deep relaxation."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Rest",
+      "description": "Leave it on overnight, allowing the sedative herbs to work their magic on your scalp and senses."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Rinse",
+      "description": "Gently wash away the next morning with warm water and a natural, chemical-free shampoo."
+    }
+  ]
+}

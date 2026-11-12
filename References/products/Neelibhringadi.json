@@ -1,0 +1,76 @@
+{
+  "slug": "neelibhringadi-indigo-bhringraj-anti-graying-oil",
+  "name": "Neelibhringadi",
+  "subtitle": "Indigo & Bhringraj Anti-Graying Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 699,
+  "originalPrice": 799,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "premature graying",
+    "aging",
+    "normal",
+    "dry"
+  ],
+  "concerns": [
+    "premature graying",
+    "loss of pigment",
+    "hair thinning",
+    "dullness"
+  ],
+  "description": "A time-honoured recipe devoted to preserving your hair's natural depth and vitality. Neelibhringadi marries the darkening, pigment-protecting qualities of Indigo with the root-fortifying strength of Bhringraj. Steeped slowly in a rich base of hydrating Coconut oil and antioxidant-dense Amla, this traditional infusion cools the scalp, delays the onset of premature silvering, and nurtures a vibrant, youthful lustre.",
+  "ingredients": [
+    {
+      "name": "Indigo Leaves",
+      "sanskrit": "Neeli",
+      "role": "Naturally deepens hair tone and protects existing pigment",
+      "percent": 30
+    },
+    {
+      "name": "Bhringraj",
+      "sanskrit": "Keshraj",
+      "role": "Fortifies the roots and encourages robust, healthy growth",
+      "percent": 30
+    },
+    {
+      "name": "Amla Fruit",
+      "sanskrit": "Amalaki",
+      "role": "Provides a concentrated dose of Vitamin C to stave off oxidative stress",
+      "percent": 20
+    },
+    {
+      "name": "Coconut Oil",
+      "sanskrit": "Narikela Taila",
+      "role": "Cools the scalp and provides a deeply conditioning base",
+      "percent": 20
+    }
+  ],
+  "whyThisHerb": "Indigo is traditionally celebrated in Ayurveda for its remarkable ability to maintain and deepen natural hair colour, while Bhringraj provides the foundational strength required to anchor each strand.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "droplets",
+      "title": "Section",
+      "description": "Part your hair to expose the scalp, focusing particularly on areas where early grays are visible."
+    },
+    {
+      "step": 2,
+      "icon": "hand",
+      "title": "Massage",
+      "description": "Gently massage the oil into the roots using your fingertips to stimulate circulation and absorption."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Rest",
+      "description": "Leave the oil on for at least an hour, or overnight, to allow the herbs to deeply penetrate the follicles."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Cleanse",
+      "description": "Wash thoroughly with a gentle herbal shampoo. Consistent weekly use is key to preserving natural pigment."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "pushpa-rose-vetiver-frizz-tamer",
+  "name": "Pushpa",
+  "subtitle": "Rose & Vetiver Frizz Tamer",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 549,
+  "originalPrice": 699,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "frizzy",
+    "dry",
+    "coarse",
+    "wavy"
+  ],
+  "concerns": [
+    "frizz",
+    "flyaways",
+    "dry ends",
+    "lack of shine"
+  ],
+  "description": "A fragrant, smoothing nectar crafted to tame unruly strands and impart a delicate, floral sheen. Pushpa weaves the timeless elegance of Rose with the grounding, earthy resilience of Vetiver to calm frizz and flyaways. Suspended in a luxurious, lightweight blend of Jojoba and Argan, this botanical tamer seals the hair cuticle, wrapping each strand in moisture without the weight, leaving behind a trail of subtle, poetic aroma.",
+  "ingredients": [
+    {
+      "name": "Rose Petals",
+      "sanskrit": "Shatapatrika",
+      "role": "Softens the hair and provides a calming, elegant fragrance",
+      "percent": 30
+    },
+    {
+      "name": "Vetiver Roots",
+      "sanskrit": "Ushira",
+      "role": "Cools the scalp and adds earthy depth to anchor the floral notes",
+      "percent": 25
+    },
+    {
+      "name": "Jojoba Seeds",
+      "sanskrit": "Jojoba",
+      "role": "Mimics natural sebum to smooth frizz without greasiness",
+      "percent": 25
+    },
+    {
+      "name": "Argan Nuts",
+      "sanskrit": "Argan",
+      "role": "Seals the hair cuticle for a luminous, protected finish",
+      "percent": 20
+    }
+  ],
+  "whyThisHerb": "Rose offers a softening touch that inherently calms flyaways, while Vetiver anchors the blend with its deep, cooling earthiness—a harmonious synergy for taming unruly hair.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "hand",
+      "title": "Warm",
+      "description": "Place two to three drops into your palms and rub them together to release the botanical aroma."
+    },
+    {
+      "step": 2,
+      "icon": "comb",
+      "title": "Smooth",
+      "description": "Lightly graze your hands over the mid-lengths and ends of dry or damp hair to tame frizz."
+    },
+    {
+      "step": 3,
+      "icon": "sparkles",
+      "title": "Polish",
+      "description": "Twist the ends slightly to seal in the moisture and add natural definition."
+    },
+    {
+      "step": 4,
+      "icon": "wind",
+      "title": "Breathe",
+      "description": "Enjoy the lingering, grounding scent of rose and vetiver as you step out for the day."
+    }
+  ]
+}

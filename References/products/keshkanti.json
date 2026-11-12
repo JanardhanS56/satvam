@@ -1,0 +1,77 @@
+{
+  "slug": "keshkanti-hibiscus-bhringraj-hair-oil",
+  "name": "Keshkanti",
+  "subtitle": "Hibiscus & Bhringraj Hair Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 549,
+  "originalPrice": 650,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "dry",
+    "damaged",
+    "normal",
+    "curly",
+    "coarse"
+  ],
+  "concerns": [
+    "hair fall",
+    "dullness",
+    "premature breakage",
+    "roughness"
+  ],
+  "description": "A restorative, deep-conditioning elixir rooted in centuries of Ayurvedic wisdom. Keshkanti marries the scalp-revitalizing power of Bhringraj with the moisture-locking grace of Hibiscus to nourish hair at its foundation. Grounded in a base of cold-pressed Sesame and vitamin-rich Amla, this oil helps curb everyday hair fall, strengthens strands against environmental stress, and leaves your hair with a natural, reflective lustre.",
+  "ingredients": [
+    {
+      "name": "Hibiscus Flower",
+      "sanskrit": "Japa",
+      "role": "Natural conditioning and softening agent to prevent dryness",
+      "percent": 35
+    },
+    {
+      "name": "Bhringraj Leaves",
+      "sanskrit": "Keshraj",
+      "role": "Strengthens hair roots and reduces hair fall",
+      "percent": 30
+    },
+    {
+      "name": "Amla Fruit",
+      "sanskrit": "Amalaki",
+      "role": "Vitamin C-rich antioxidant that enhances natural luster and scalp health",
+      "percent": 20
+    },
+    {
+      "name": "Sesame Seed Oil",
+      "sanskrit": "Tila Taila",
+      "role": "Deeply penetrative base oil that nourishes the scalp",
+      "percent": 15
+    }
+  ],
+  "whyThisHerb": "Bhringraj, known in Ayurveda as the ‘King of Hair,’ goes deep to revitalize follicles, while Hibiscus acts as a natural humectant, offering the rich, natural conditioning your hair needs to thrive.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "hand",
+      "title": "Dispense",
+      "description": "Pour a generous amount of oil into your palms and gently rub them together to slightly warm the blend."
+    },
+    {
+      "step": 2,
+      "icon": "droplets",
+      "title": "Massage",
+      "description": "Apply to your scalp, using your fingertips to massage in circular motions, focusing on the roots, then work the remaining oil through the lengths."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Rest",
+      "description": "Leave the oil on for at least 30 minutes, or overnight for a deeply nourishing treatment."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Rinse",
+      "description": "Wash thoroughly with a mild herbal shampoo. Use 2–3 times a week for best results."
+    }
+  ]
+}

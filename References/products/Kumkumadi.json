@@ -1,0 +1,76 @@
+{
+  "slug": "kumkumadi-saffron-manjistha-scalp-oil",
+  "name": "Kumkumadi",
+  "subtitle": "Saffron & Manjistha Scalp Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 849,
+  "originalPrice": 950,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "normal",
+    "dry",
+    "flaky",
+    "dull"
+  ],
+  "concerns": [
+    "scalp unevenness",
+    "dullness",
+    "dry patches",
+    "lack of vitality"
+  ],
+  "description": "A luxurious, golden infusion inspired by ancient royal rituals. Kumkumadi brings the clarifying and invigorating properties of pure Saffron to the scalp, partnered with the deeply purifying essence of Manjistha root. Gently steeped in a base of warm Sesame oil alongside delicate Lotus petals, this opulent blend clears away buildup, encourages a balanced, healthy scalp environment, and imparts a subtle, luminous sheen to your hair.",
+  "ingredients": [
+    {
+      "name": "Saffron Threads",
+      "sanskrit": "Kumkuma",
+      "role": "Stimulates blood flow to the scalp and promotes a healthy, even tone",
+      "percent": 5
+    },
+    {
+      "name": "Manjistha Root",
+      "sanskrit": "Manjistha",
+      "role": "Purifies the scalp and clears away lingering congestion",
+      "percent": 25
+    },
+    {
+      "name": "Lotus Petals",
+      "sanskrit": "Kamala",
+      "role": "Soothes inflammation and adds a delicate, conditioning touch",
+      "percent": 20
+    },
+    {
+      "name": "Sesame Seed Oil",
+      "sanskrit": "Tila Taila",
+      "role": "A warming, deeply penetrative base that locks in botanical nourishment",
+      "percent": 50
+    }
+  ],
+  "whyThisHerb": "Saffron is a revered botanical treasure that invigorates and balances the skin of the scalp, while Manjistha works beneath the surface to purify, creating the optimal foundation for resilient hair.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "droplets",
+      "title": "Section",
+      "description": "Part your hair into clean sections, exposing the scalp to receive the golden oil directly."
+    },
+    {
+      "step": 2,
+      "icon": "hand",
+      "title": "Massage",
+      "description": "Use gentle, circular motions with your fingertips to work the oil into the roots, encouraging circulation."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Steep",
+      "description": "Allow the rich botanicals to absorb for at least 45 minutes, letting the saffron work its clarifying magic."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Wash",
+      "description": "Cleanse thoroughly with a mild shampoo to reveal a deeply nourished, refreshed scalp."
+    }
+  ]
+}

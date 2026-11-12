@@ -1,0 +1,76 @@
+{
+  "slug": "amla-pitta-amla-neem-clarifying-oil",
+  "name": "Amla-Pitta",
+  "subtitle": "Amla & Neem Clarifying Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 575,
+  "originalPrice": 699,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "oily",
+    "normal",
+    "dandruff-prone",
+    "congested"
+  ],
+  "concerns": [
+    "dandruff",
+    "itchy scalp",
+    "excess oil",
+    "scalp buildup"
+  ],
+  "description": "An clarifying, scalp-cooling antidote to heat and irritation, inspired by traditional Ayurvedic recipes. Amla-Pitta harnesses the astringent prowess of Neem and the revitalizing richness of Amla to clarify the scalp while soothing fiery, itchy discomfort. Blended with cooling Camphor and a hydrating Coconut oil base, this lightweight formula gently breaks down sebum and flakiness without stripping away essential moisture.",
+  "ingredients": [
+    {
+      "name": "Amla Fruit",
+      "sanskrit": "Amalaki",
+      "role": "Rich in antioxidants to refresh and nourish follicles",
+      "percent": 35
+    },
+    {
+      "name": "Neem Leaves",
+      "sanskrit": "Nimba",
+      "role": "Deeply purifying and antimicrobial to target dandruff and irritation",
+      "percent": 30
+    },
+    {
+      "name": "Coconut Oil",
+      "sanskrit": "Narikela Taila",
+      "role": "Lightweight base that moisturizes and cools the scalp",
+      "percent": 25
+    },
+    {
+      "name": "Camphor Crystals",
+      "sanskrit": "Bhimseni Kapur",
+      "role": "Provides instant cooling relief and alleviates itching",
+      "percent": 10
+    }
+  ],
+  "whyThisHerb": "Neem, revered for centuries as a natural purifier, joins forces with cooling Camphor to pacify an irritated, dandruff-prone scalp while restoring lasting, light-weight balance.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "droplets",
+      "title": "Section & Apply",
+      "description": "Divide your hair into sections to reveal the scalp. Pour a few drops of the clarifying oil directly onto the parted lines."
+    },
+    {
+      "step": 2,
+      "icon": "hand",
+      "title": "Scalp Massage",
+      "description": "Using your fingertips, gently massage the oil into your scalp for 5 to 10 minutes, focusing on areas with irritation or buildup."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Allow to Clarify",
+      "description": "Leave on for 30 to 45 minutes to let the neem and camphor cleanse and soothe."
+    },
+    {
+      "step": 4,
+      "icon": "wind",
+      "title": "Rinse & Purify",
+      "description": "Wash thoroughly with a gentle clarifying shampoo. Use twice a week to maintain a fresh, balanced scalp."
+    }
+  ]
+}

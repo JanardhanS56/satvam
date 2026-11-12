@@ -1,0 +1,76 @@
+{
+  "slug": "japa-hibiscus-rose-frizz-control",
+  "name": "Japa",
+  "subtitle": "Hibiscus & Rose Frizz Control",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 499,
+  "originalPrice": 599,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "frizzy",
+    "unruly",
+    "dry",
+    "damaged"
+  ],
+  "concerns": [
+    "frizz",
+    "dryness",
+    "unmanageable hair",
+    "lack of shine"
+  ],
+  "description": "A deeply softening, botanical smoothing oil designed to restore calm and natural lustre to unruly hair. Japa blends the moisture-locking power of Hibiscus (Japa) with the soothing, delicate essence of Rose to naturalize and tame frizz. Enriched with cool, hydration-preserving Aloe Vera and nutrient-dense Jojoba, this lightweight formula seals the hair cuticle, smooths flyaways, and softens strands, leaving behind a delicate, botanical scent.",
+  "ingredients": [
+    {
+      "name": "Hibiscus Flowers",
+      "sanskrit": "Japa",
+      "role": "Deeply conditions and softens, helping to prevent frizz and retain natural moisture",
+      "percent": 35
+    },
+    {
+      "name": "Rose Petals",
+      "sanskrit": "Shatapatrika",
+      "role": "Soothing and fragrant, offering natural conditioning to smooth unruly strands",
+      "percent": 25
+    },
+    {
+      "name": "Aloe Leaves",
+      "sanskrit": "Kumari",
+      "role": "Provides cooling hydration and locks in natural moisture along the hair shaft",
+      "percent": 20
+    },
+    {
+      "name": "Jojoba Seeds",
+      "sanskrit": "Jojoba",
+      "role": "Lightweight, mimics natural sebum to smooth split ends and boost elasticity",
+      "percent": 20
+    }
+  ],
+  "whyThisHerb": "Hibiscus is historically celebrated for its natural humectant properties, working in complete harmony with the softening, protective qualities of Rose to ease frizz and leave strands manageable and silk-soft.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "hand",
+      "title": "Dispense",
+      "description": "Pour a few drops of the floral oil into your palms and warm them together slightly to release its botanical scent."
+    },
+    {
+      "step": 2,
+      "icon": "droplets",
+      "title": "Smooth",
+      "description": "Gently work your hands through the mid-lengths to ends of damp or dry hair, focusing on frizz-prone areas."
+    },
+    {
+      "step": 3,
+      "icon": "comb",
+      "title": "Even",
+      "description": "Gently comb through with your fingers to evenly distribute and seal the nourishing botanicals."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Shine",
+      "description": "Leave in as a daily protective shield to maintain natural softness, shine, and frizz control."
+    }
+  ]
+}

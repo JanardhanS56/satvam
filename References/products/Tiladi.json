@@ -1,0 +1,76 @@
+{
+  "slug": "tiladi-sesame-fenugreek-mens-hair-oil",
+  "name": "Tiladi",
+  "subtitle": "Sesame & Fenugreek Men's Hair Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 499,
+  "originalPrice": 599,
+  "size": "100ml",
+  "targetGender": "male",
+  "hairTypes": [
+    "thinning",
+    "dry",
+    "flaky",
+    "normal"
+  ],
+  "concerns": [
+    "hair fall",
+    "weak roots",
+    "dandruff",
+    "scalp tension"
+  ],
+  "description": "A robust, invigorating blend formulated specifically to address the unique needs of men's scalp and hair. Tiladi anchors the warming, deeply penetrative power of Sesame with the strengthening virtues of Fenugreek to fortify roots and curb hair fall. Enlivened with crisp Rosemary and cooling Peppermint, this oil stimulates microcirculation, clears daily buildup, and leaves the scalp feeling profoundly refreshed and resilient.",
+  "ingredients": [
+    {
+      "name": "Sesame Seeds",
+      "sanskrit": "Tila",
+      "role": "A warming, deeply penetrative base that anchors roots and nourishes the scalp",
+      "percent": 45
+    },
+    {
+      "name": "Fenugreek",
+      "sanskrit": "Methika",
+      "role": "Rich in proteins to rebuild hair strength and combat thinning",
+      "percent": 25
+    },
+    {
+      "name": "Rosemary Sprigs",
+      "sanskrit": "Rusmari",
+      "role": "Stimulates blood flow to the follicles to encourage healthy, steady growth",
+      "percent": 15
+    },
+    {
+      "name": "Peppermint Leaves",
+      "sanskrit": "Pudina",
+      "role": "Delivers an invigorating, cooling sensation while clarifying congestion",
+      "percent": 15
+    }
+  ],
+  "whyThisHerb": "Fenugreek is a botanical powerhouse of proteins essential for rebuilding weakened hair shafts, while Peppermint provides an immediate, awakening rush of circulation to tired follicles.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "hand",
+      "title": "Warm",
+      "description": "Dispense a generous amount into your palms and rub them together to activate the warming sesame base."
+    },
+    {
+      "step": 2,
+      "icon": "droplets",
+      "title": "Invigorate",
+      "description": "Vigorously massage the oil into the scalp for 5 to 10 minutes, focusing closely on the crown and hairline."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Fortify",
+      "description": "Leave on for at least 45 minutes to allow the fenugreek proteins to bind and strengthen the roots."
+    },
+    {
+      "step": 4,
+      "icon": "wind",
+      "title": "Refresh",
+      "description": "Wash out thoroughly with a daily shampoo, enjoying the lingering, crisp scent of peppermint and rosemary."
+    }
+  ]
+}

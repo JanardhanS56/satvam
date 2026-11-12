@@ -1,0 +1,76 @@
+{
+  "slug": "chandanadi-sandalwood-neem-cooling-oil",
+  "name": "Chandanadi",
+  "subtitle": "Sandalwood & Neem Cooling Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 625,
+  "originalPrice": 750,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "dry",
+    "irritated",
+    "normal",
+    "oily"
+  ],
+  "concerns": [
+    "scalp heat",
+    "irritation",
+    "dandruff",
+    "dryness"
+  ],
+  "description": "An exquisite, calming elixir crafted to cool the scalp and restore natural balance. Chandanadi merges the soothing, fragrant tranquility of Sandalwood with the deeply purifying and protective qualities of Neem. Steeped in a hydrating coconut base and enriched with grounding Vetiver roots, this traditional formulation dispels excess heat, comforts irritated skin, and leaves hair with a natural, healthy luster and a lingering, sacred aroma.",
+  "ingredients": [
+    {
+      "name": "Sandalwood Chips",
+      "sanskrit": "Chandana",
+      "role": "Cools the scalp, pacifies excess heat, and provides a soothing, sacred fragrance",
+      "percent": 30
+    },
+    {
+      "name": "Neem Leaves",
+      "sanskrit": "Nimba",
+      "role": "Purifies the scalp and combats dandruff and irritation",
+      "percent": 25
+    },
+    {
+      "name": "Vetiver Roots",
+      "sanskrit": "Ushira",
+      "role": "Grounds the blend and provides an earthy, cooling effect",
+      "percent": 20
+    },
+    {
+      "name": "Coconut Oil",
+      "sanskrit": "Narikela Taila",
+      "role": "Nourishing, cooling base that deeply conditions and hydrates",
+      "percent": 25
+    }
+  ],
+  "whyThisHerb": "Sandalwood is celebrated for its unmatched ability to pacify heat and soothe an irritated scalp, while Neem provides the essential purification needed to keep roots healthy and free of flakiness.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "droplets",
+      "title": "Apply",
+      "description": "Part your hair and apply the oil directly to your scalp, focusing on areas that feel warm or irritated."
+    },
+    {
+      "step": 2,
+      "icon": "hand",
+      "title": "Massage",
+      "description": "Using gentle, circular motions with your fingertips, massage the oil deeply into the scalp to encourage absorption."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Rest",
+      "description": "Allow the cooling botanical blend to rest for at least 30 to 45 minutes to deeply soothe the roots."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Rinse",
+      "description": "Wash thoroughly with a mild herbal shampoo. Use twice a week to maintain a balanced, calm scalp."
+    }
+  ]
+}

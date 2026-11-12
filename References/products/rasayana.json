@@ -1,0 +1,76 @@
+{
+  "slug": "rasayana-ashwagandha-amla-age-defying-oil",
+  "name": "Rasayana",
+  "subtitle": "Ashwagandha & Amla Age-Defying Oil",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 749,
+  "originalPrice": 850,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "thinning",
+    "aging",
+    "dry",
+    "normal"
+  ],
+  "concerns": [
+    "loss of volume",
+    "premature aging",
+    "brittleness",
+    "dullness"
+  ],
+  "description": "A restorative nectar crafted to preserve the natural youthfulness and vitality of your hair. Rooted in the ancient Ayurvedic philosophy of 'Rasayana' or rejuvenation, this blend unites the adaptogenic fortitude of Ashwagandha with the antioxidant-rich purity of Amla. Infused with delicate saffron threads in a warming sesame base, it works deeply to encourage thicker, more resilient strands that reflect a timeless grace.",
+  "ingredients": [
+    {
+      "name": "Ashwagandha Root",
+      "sanskrit": "Ashwagandha",
+      "role": "Strengthens follicles and supports scalp resilience against environmental stress",
+      "percent": 35
+    },
+    {
+      "name": "Amla Fruit",
+      "sanskrit": "Amalaki",
+      "role": "Delivers potent antioxidants to preserve natural hair vitality",
+      "percent": 30
+    },
+    {
+      "name": "Saffron Threads",
+      "sanskrit": "Kumkuma",
+      "role": "Stimulates the scalp and imparts a subtle, warming radiance",
+      "percent": 5
+    },
+    {
+      "name": "Sesame Seed Oil",
+      "sanskrit": "Tila Taila",
+      "role": "Deeply penetrating base that anchors and nourishes aging roots",
+      "percent": 30
+    }
+  ],
+  "whyThisHerb": "Ashwagandha acts as a steadfast adaptogen, shielding the scalp from the toll of daily stressors, while Amla delivers a concentrated surge of youth-preserving nutrients.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "hand",
+      "title": "Warm",
+      "description": "Pour a few drops into the palm of your hand and rub together to gently warm the delicate saffron threads."
+    },
+    {
+      "step": 2,
+      "icon": "droplets",
+      "title": "Massage",
+      "description": "Work the oil slowly into your roots, applying firm but gentle pressure to stimulate the scalp."
+    },
+    {
+      "step": 3,
+      "icon": "moon",
+      "title": "Rest",
+      "description": "Leave on overnight, allowing the adaptogenic herbs the time they need to deeply penetrate and restore."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Cleanse",
+      "description": "Wash away the following morning with a gentle cleanser to reveal revitalized, fortified hair."
+    }
+  ]
+}

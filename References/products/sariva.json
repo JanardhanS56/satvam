@@ -1,0 +1,76 @@
+{
+  "slug": "sariva-anantmool-tulsi-scalp-reset",
+  "name": "Sariva",
+  "subtitle": "Anantmool & Tulsi Scalp Reset",
+  "tagline": "From India's Roots to Your Roots.",
+  "price": 449,
+  "originalPrice": 550,
+  "size": "100ml",
+  "targetGender": "all",
+  "hairTypes": [
+    "oily",
+    "flaky",
+    "irritated",
+    "normal"
+  ],
+  "concerns": [
+    "scalp irritation",
+    "product buildup",
+    "excess sebum",
+    "redness"
+  ],
+  "description": "A deeply clarifying botanical reset for an over-stressed scalp. Sariva draws upon the cooling, purifying properties of Anantmool root and the adaptogenic grace of Tulsi to soothe irritation and restore harmony. Grounded in a hydrating coconut base and fortified with cleansing Neem, this oil gently sweeps away daily buildup and tension, cultivating a serene, balanced foundation for healthy hair to flourish.",
+  "ingredients": [
+    {
+      "name": "Anantmool Root",
+      "sanskrit": "Sariva",
+      "role": "Cools the scalp and calms redness and persistent irritation",
+      "percent": 30
+    },
+    {
+      "name": "Tulsi Leaves",
+      "sanskrit": "Tulasi",
+      "role": "Purifies the follicles and offers adaptogenic relief from environmental stress",
+      "percent": 25
+    },
+    {
+      "name": "Neem",
+      "sanskrit": "Nimba",
+      "role": "Provides a profound cleanse to clarify buildup and ease flakiness",
+      "percent": 20
+    },
+    {
+      "name": "Coconut",
+      "sanskrit": "Narikela",
+      "role": "Hydrates and nourishes to repair the scalp's natural moisture barrier",
+      "percent": 25
+    }
+  ],
+  "whyThisHerb": "Anantmool offers an immediate, cooling reprieve to an inflamed scalp, while Tulsi steadily builds resilience, bringing a lasting sense of calm and clarity to your roots.",
+  "howToUse": [
+    {
+      "step": 1,
+      "icon": "droplets",
+      "title": "Section",
+      "description": "Part your hair into clean sections to ensure the soothing oil reaches the scalp directly without obstruction."
+    },
+    {
+      "step": 2,
+      "icon": "hand",
+      "title": "Soothe",
+      "description": "Using gentle pressure, massage the oil deeply into the roots to melt away tension and loosen buildup."
+    },
+    {
+      "step": 3,
+      "icon": "clock",
+      "title": "Reset",
+      "description": "Allow the blend to sit for 45 minutes, letting the cooling botanicals restore harmony to the skin."
+    },
+    {
+      "step": 4,
+      "icon": "sparkles",
+      "title": "Wash",
+      "description": "Cleanse thoroughly with a mild herbal shampoo to reveal a refreshed, quieted scalp."
+    }
+  ]
+}

@@ -6,7 +6,6 @@ import {
   Sprout,
   Truck,
   Quote,
-  Sparkles,
   Award,
   CheckCircle2,
   TrendingUp,
@@ -95,9 +94,6 @@ export default function About() {
     <div className="w-full bg-[#FAF7F0] pb-24">
       {/* Editorial Page Header */}
       <section className="pt-20 pb-16 px-6 max-w-5xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EFE3] border border-[#6B5B45]/15 text-[#6B5B45] text-xs font-mono uppercase tracking-widest mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-[#C9A961]" /> Lineage & Sourcing
-        </div>
         <h1 className="font-display font-medium text-4xl sm:text-6xl text-[#2D3E2F] tracking-tight">
           Purity Born from Patience
         </h1>

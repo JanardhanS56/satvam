@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { SafeImage } from '../lib/images';
 import {
-  ShieldCheck,
   ChevronDown,
   CheckCircle2,
   XCircle,
@@ -124,9 +123,6 @@ export default function Trust() {
     <div className="w-full bg-[#FAF7F0] pb-24">
       {/* Page Header */}
       <section className="pt-20 pb-14 px-6 max-w-5xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EFE3] border border-[#6B5B45]/15 text-[#6B5B45] text-xs font-mono uppercase tracking-widest mb-4">
-          <ShieldCheck className="w-3.5 h-3.5 text-[#C9A961]" /> Verification & Integrity
-        </div>
         <h1 className="font-display font-medium text-4xl sm:text-6xl text-[#2D3E2F] tracking-tight">
           Trust & Authenticity
         </h1>

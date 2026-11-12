@@ -14,7 +14,7 @@ export default function Nav() {
   const navLinks = [
     { label: 'Shop', path: '/shop' },
     { label: 'Products', path: '/products' },
-    { label: 'AI Consultation', path: '/consultation', badge: 'New' },
+    { label: 'AI Consultation', path: '/consultation' },
     { label: 'About', path: '/about' },
     { label: 'Trust', path: '/trust' }
   ];

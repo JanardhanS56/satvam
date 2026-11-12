@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import productsData from '../data/products.json';
 import ProductCard from '../components/ProductCard';
-import { Sparkles, Shield, Leaf, HeartHandshake } from 'lucide-react';
+import { Shield, Leaf, HeartHandshake } from 'lucide-react';
 
 export default function Shop() {
   // Exactly the 5 hero: true products
@@ -14,9 +14,6 @@ export default function Shop() {
     <div className="w-full min-h-screen bg-[#FAF7F0] pb-24">
       {/* Header Banner */}
       <section className="pt-16 pb-12 px-6 max-w-7xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#F5EFE3] border border-[#6B5B45]/15 text-[#6B5B45] text-xs font-mono uppercase tracking-widest mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-[#C9A961]" /> Curated Harvest
-        </div>
         <h1 className="font-display font-medium text-4xl sm:text-6xl text-[#2D3E2F] tracking-tight">
           The Herbal Atelier
         </h1>

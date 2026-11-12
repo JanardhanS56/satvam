@@ -1,0 +1,94 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: var(--satvam-ivory);
+    color: var(--satvam-forest);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--satvam-ivory);
+    color: var(--satvam-forest);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    color: var(--satvam-forest);
+  }
+
+  ::selection {
+    background-color: var(--satvam-gold);
+    color: var(--satvam-forest);
+  }
+}
+
+@layer utilities {
+  .text-eyebrow {
+    font-family: 'Cormorant SC', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--satvam-bark);
+  }
+
+  .btn-primary {
+    background-color: var(--satvam-gold);
+    color: var(--satvam-forest);
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 200ms var(--ease-out), background-color 200ms var(--ease-out);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: var(--satvam-gold-hover);
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+    border: 1px solid var(--satvam-forest);
+    color: var(--satvam-forest);
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 200ms var(--ease-out), background-color 200ms var(--ease-out);
+  }
+  .btn-ghost:hover {
+    transform: translateY(-2px);
+    background-color: rgba(45, 62, 47, 0.05);
+  }
+
+  .satvam-card {
+    background-color: var(--satvam-paper);
+    border: 1px solid rgba(107, 91, 69, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(45, 62, 47, 0.04), 0 8px 24px rgba(45, 62, 47, 0.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

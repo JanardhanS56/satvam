@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { gsap, isReducedMotion } from '../lib/gsap';
 import { SafeImage } from '../lib/images';
+import { getHerbBadge } from '../lib/herbs';
 
 // 16 shards with varied polygon clip-paths for authentic glass shattering
 const SHARD_CONFIGS = [
@@ -274,6 +275,7 @@ export default function IngredientOrbit({ product }) {
       <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
         {ingredients.map((ing, i) => {
           const meta = getHerbMeta(ing.name);
+          const badge = getHerbBadge(ing.name);
           const isHighlighted = activeHighlightIndex === i;
 
           return (
@@ -285,11 +287,20 @@ export default function IngredientOrbit({ product }) {
             >
               {/* Circular Botanical Herb Badge with 3D counter-elevation */}
               <div
-                className={`w-12 h-12 rounded-full ${meta.bg} border-2 ${meta.border} shadow-lifted flex items-center justify-center p-1 overflow-hidden transition-all duration-300 ${
+                className={`w-12 h-12 rounded-full ${meta.bg} border-2 ${meta.border} shadow-lifted flex items-center justify-center p-0.5 overflow-hidden transition-all duration-300 ${
                   isHighlighted ? 'scale-115 ring-2 ring-[#E8B44A] shadow-[0_0_14px_rgba(232,180,74,0.7)]' : ''
                 }`}
               >
-                <span className="text-lg select-none filter drop-shadow-xs">{meta.emoji}</span>
+                {badge.icon ? (
+                  <SafeImage
+                    src={badge.icon}
+                    alt={ing.name}
+                    className="w-full h-full object-cover"
+                    fallbackText={meta.emoji}
+                  />
+                ) : (
+                  <span className="text-lg select-none filter drop-shadow-xs">{meta.emoji}</span>
+                )}
               </div>
 
               {/* Herb Label Pill with Continuous Cycling Highlight */}

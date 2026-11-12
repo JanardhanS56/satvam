@@ -4,6 +4,7 @@ import { Star, ShoppingBag, ArrowRight, Sparkles } from 'lucide-react';
 import { useCartStore } from '../stores/cart';
 import { useProfileStore } from '../stores/profile';
 import { useUIStore } from '../stores/ui';
+import { SafeImage } from '../lib/images';
 import IngredientOrbit from './IngredientOrbit';
 import { getHerbBadge } from '../lib/herbs';
 
@@ -149,15 +150,26 @@ export default function ProductCard({ product }) {
                     : 'opacity-0 scale-50 translate-y-3 pointer-events-none'
                 }`}
               >
-                <div className="w-18 h-18 sm:w-20 sm:h-20 aspect-square rounded-full bg-[#FAF7F0]/95 backdrop-blur-md border-2 border-[#C9A961] shadow-lifted flex flex-col items-center justify-center p-1 text-center group-hover:scale-105 transition-transform">
-                  <span className="text-xl sm:text-2xl select-none leading-none filter drop-shadow-xs">
-                    {badge.emoji}
-                  </span>
-                  <span className="font-display font-bold text-[10px] sm:text-[11px] text-[#2D3E2F] leading-tight mt-1 max-w-[62px] truncate px-0.5">
+                <div className="w-18 h-18 sm:w-20 sm:h-20 aspect-square rounded-full bg-[#FAF7F0]/95 backdrop-blur-md border-2 border-[#C9A961] shadow-lifted flex flex-col items-center justify-center p-1 text-center group-hover:scale-105 transition-transform overflow-hidden">
+                  {badge.icon ? (
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden flex items-center justify-center shadow-2xs">
+                      <SafeImage
+                        src={badge.icon}
+                        alt={ing.name}
+                        className="w-full h-full object-cover filter drop-shadow-xs"
+                        fallbackText={badge.emoji}
+                      />
+                    </div>
+                  ) : (
+                    <span className="text-xl sm:text-2xl select-none leading-none filter drop-shadow-xs">
+                      {badge.emoji}
+                    </span>
+                  )}
+                  <span className="font-display font-bold text-[10px] sm:text-[11px] text-[#2D3E2F] leading-tight mt-0.5 max-w-[62px] truncate px-0.5">
                     {ing.name}
                   </span>
                   <span className="font-mono text-[8px] text-[#C9A961] font-semibold leading-none mt-0.5">
-                    {ing.percentage ? `${ing.percentage}%` : badge.type}
+                    {ing.percent || ing.percentage ? `${ing.percent || ing.percentage}%` : badge.type}
                   </span>
                 </div>
               </div>

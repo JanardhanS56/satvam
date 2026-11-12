@@ -112,13 +112,24 @@ export default function ProductCatalogCard({ product, onSelect }) {
                 }`}
               >
                 <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#FAF7F0]/95 backdrop-blur-md border border-[#C9A961]/60 shadow-md text-[#2D3E2F]">
-                  <span className="text-sm select-none">{badge.emoji}</span>
+                  {badge.icon ? (
+                    <div className="w-5 h-5 rounded-full overflow-hidden flex items-center justify-center shrink-0">
+                      <SafeImage
+                        src={badge.icon}
+                        alt={ing.name}
+                        className="w-full h-full object-cover"
+                        fallbackText={badge.emoji}
+                      />
+                    </div>
+                  ) : (
+                    <span className="text-sm select-none">{badge.emoji}</span>
+                  )}
                   <div className="flex flex-col text-left">
                     <span className="font-display font-semibold text-[11px] leading-tight text-[#2D3E2F]">
                       {ing.name}
                     </span>
                     <span className="font-mono text-[8px] text-[#6B5B45] leading-tight">
-                      {ing.percentage ? `${ing.percentage}% · ` : ''}{ing.sanskritName || badge.type}
+                      {ing.percent || ing.percentage ? `${ing.percent || ing.percentage}% · ` : ''}{ing.sanskrit || ing.sanskritName || badge.type}
                     </span>
                   </div>
                 </div>

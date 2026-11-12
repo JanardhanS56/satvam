@@ -473,9 +473,20 @@ export default function Consultation() {
                       return (
                         <div
                           key={i}
-                          className="bg-[#FAF7F0] p-3 rounded-xl border border-[#6B5B45]/15 text-center flex flex-col items-center justify-center"
+                          className="bg-[#FAF7F0] p-3 rounded-2xl border border-[#6B5B45]/15 text-center flex flex-col items-center justify-center shadow-2xs hover:border-[#C9A961]/40 transition-colors"
                         >
-                          <span className="text-xl select-none mb-1">{badge.emoji}</span>
+                          <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center mb-1.5 border border-[#C9A961]/35 bg-[#FFFFFF]">
+                            {badge.icon ? (
+                              <SafeImage
+                                src={badge.icon}
+                                alt={ing.name}
+                                className="w-full h-full object-cover"
+                                fallbackText={badge.emoji}
+                              />
+                            ) : (
+                              <span className="text-xl select-none">{badge.emoji}</span>
+                            )}
+                          </div>
                           <span className="font-display font-semibold text-xs text-[#2D3E2F] truncate w-full">
                             {ing.name}
                           </span>

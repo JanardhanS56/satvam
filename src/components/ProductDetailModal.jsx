@@ -193,18 +193,30 @@ export default function ProductDetailModal({ product, onClose }) {
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
                     {(product.ingredients || []).map((ing, idx) => {
                       const badge = getHerbBadge(ing.name);
+                      const percentVal = ing.percent || ing.percentage;
                       return (
                         <div
                           key={idx}
                           className="p-2.5 rounded-xl bg-[#FFFFFF] border border-[#6B5B45]/15 flex items-center gap-2.5 shadow-xs"
                         >
-                          <span className="text-base select-none">{badge.emoji}</span>
+                          <div className="w-8 h-8 rounded-full overflow-hidden flex items-center justify-center shrink-0 border border-[#C9A961]/35 bg-[#FAF7F0]">
+                            {badge.icon ? (
+                              <SafeImage
+                                src={badge.icon}
+                                alt={ing.name}
+                                className="w-full h-full object-cover"
+                                fallbackText={badge.emoji}
+                              />
+                            ) : (
+                              <span className="text-base select-none">{badge.emoji}</span>
+                            )}
+                          </div>
                           <div className="overflow-hidden">
                             <p className="font-display font-medium text-xs text-[#2D3E2F] truncate">
                               {ing.name}
                             </p>
                             <p className="font-mono text-[9px] text-[#6B5B45] truncate">
-                              {ing.percentage ? `${ing.percentage}% · ` : ''}{badge.type}
+                              {percentVal ? `${percentVal}% · ` : ''}{badge.type}
                             </p>
                           </div>
                         </div>
@@ -263,41 +275,67 @@ export default function ProductDetailModal({ product, onClose }) {
                 </p>
               </div>
 
-              {/* Ingredient Percentage Rows */}
+              {/* Ingredient Percentage Rows with High-Res Composition Icons */}
               <div className="space-y-4">
-                {(product.ingredients || []).map((ing, idx) => (
-                  <div
-                    key={idx}
-                    className="p-4 bg-[#FFFFFF] rounded-xl border border-[#6B5B45]/15 shadow-xs"
-                  >
-                    <div className="flex justify-between items-baseline mb-2">
-                      <div>
-                        <span className="font-display font-semibold text-base text-[#2D3E2F]">
-                          {ing.name}
-                        </span>
-                        <span className="font-mono text-xs text-[#6B5B45] italic ml-2">
-                          ({ing.sanskritName})
-                        </span>
+                {(product.ingredients || []).map((ing, idx) => {
+                  const badge = getHerbBadge(ing.name);
+                  const percentVal = ing.percent || ing.percentage || 15;
+                  const sanskritVal = ing.sanskrit || ing.sanskritName;
+                  const hasSanskrit = sanskritVal && sanskritVal !== '—' && sanskritVal.trim() !== '';
+
+                  return (
+                    <div
+                      key={idx}
+                      className="p-4 bg-[#FFFFFF] rounded-2xl border border-[#6B5B45]/15 shadow-xs flex items-center gap-4 hover:border-[#C9A961]/50 transition-colors"
+                    >
+                      {/* Real Circular Botanical Composition Icon */}
+                      <div className="w-12 h-12 rounded-full overflow-hidden flex items-center justify-center shrink-0 bg-[#FAF7F0] border-2 border-[#C9A961]/40 shadow-xs">
+                        {badge.icon ? (
+                          <SafeImage
+                            src={badge.icon}
+                            alt={ing.name}
+                            className="w-full h-full object-cover"
+                            fallbackText={badge.emoji}
+                          />
+                        ) : (
+                          <span className="text-xl select-none">{badge.emoji}</span>
+                        )}
                       </div>
-                      <span className="font-mono font-bold text-sm text-[#C9A961]">
-                        {ing.percentage}%
-                      </span>
-                    </div>
 
-                    {/* Percentage Progress Bar */}
-                    <div className="w-full h-1.5 bg-[#F5EFE3] rounded-full overflow-hidden mb-2">
-                      <div
-                        className="h-full bg-[#C9A961] rounded-full transition-all duration-500"
-                        style={{ width: `${Math.min(ing.percentage * 3, 100)}%` }}
-                      />
-                    </div>
+                      {/* Ingredient Details & Percentage Bar */}
+                      <div className="flex-grow">
+                        <div className="flex justify-between items-baseline mb-1">
+                          <div className="flex items-baseline gap-2">
+                            <span className="font-display font-semibold text-base text-[#2D3E2F]">
+                              {ing.name}
+                            </span>
+                            {hasSanskrit && (
+                              <span className="font-mono text-xs text-[#6B5B45] italic">
+                                ({sanskritVal})
+                              </span>
+                            )}
+                          </div>
+                          <span className="font-mono font-bold text-sm text-[#C9A961]">
+                            {percentVal}%
+                          </span>
+                        </div>
 
-                    <p className="text-xs text-[#6B5B45] leading-relaxed">
-                      <span className="font-semibold text-[#2D3E2F]">Role: </span>
-                      {ing.role}
-                    </p>
-                  </div>
-                ))}
+                        {/* Percentage Progress Bar */}
+                        <div className="w-full h-1.5 bg-[#F5EFE3] rounded-full overflow-hidden mb-1.5">
+                          <div
+                            className="h-full bg-[#C9A961] rounded-full transition-all duration-500"
+                            style={{ width: `${Math.min(percentVal * 2.5, 100)}%` }}
+                          />
+                        </div>
+
+                        <p className="text-xs text-[#6B5B45] leading-relaxed">
+                          <span className="font-semibold text-[#2D3E2F]">Role: </span>
+                          {ing.role || badge.type}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Why This Herb Explainer */}

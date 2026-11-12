@@ -3,6 +3,8 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import PopupScheduler from './components/PopupScheduler';
+import CartDrawer from './components/CartDrawer';
+import PaymentModal from './components/PaymentModal';
 
 export default function App() {
   const { pathname } = useLocation();
@@ -18,6 +20,8 @@ export default function App() {
         <Outlet />
       </main>
       <Footer />
+      <CartDrawer />
+      <PaymentModal />
       <PopupScheduler />
     </div>
   );

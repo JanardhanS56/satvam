@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { X, Sparkles, Gift } from 'lucide-react';
+import { X, Sparkles, Gift, Clock } from 'lucide-react';
 import { useProfileStore } from '../stores/profile';
 
 const POPUP_ITEMS = [
@@ -30,13 +30,25 @@ const POPUP_ITEMS = [
     description: 'Calm the mind, induce restful sleep, and nourish the scalp naturally.',
     ctaText: 'Explore',
     link: '/products#shirodhara'
+  },
+  {
+    id: 'harvest-urgent',
+    badge: 'Seasonal Reserve',
+    icon: Clock,
+    title: 'Monsoon Harvest Allocation',
+    description: 'Freshly pressed batches from Western Ghats smallholders are nearly allocated.',
+    ctaText: 'Shop Atelier',
+    link: '/shop'
   }
 ];
 
 export default function PopupScheduler() {
   const popupsDisabled = useProfileStore((state) => state.popupsDisabled);
   const [currentPopup, setCurrentPopup] = useState(null);
-  const [shownCount, setShownCount] = useState(0);
+  const [shownCount, setShownCount] = useState(() => {
+    if (typeof window === 'undefined') return 0;
+    return parseInt(sessionStorage.getItem('satvam_popups_count') || '0', 10);
+  });
 
   useEffect(() => {
     if (popupsDisabled) return;
@@ -45,17 +57,33 @@ export default function PopupScheduler() {
     }
     if (shownCount >= 3) return;
 
-    // First popup at 10s, subsequent every 45s
+    // First popup after 10s, subsequent every 45s
     const delay = shownCount === 0 ? 10000 : 45000;
 
     const timer = setTimeout(() => {
-      const nextItem = POPUP_ITEMS[shownCount % POPUP_ITEMS.length];
+      const dismissedList = JSON.parse(sessionStorage.getItem('satvam_dismissed_popups') || '[]');
+      const available = POPUP_ITEMS.filter((p) => !dismissedList.includes(p.id));
+      const nextItem = available.length > 0 ? available[0] : POPUP_ITEMS[shownCount % POPUP_ITEMS.length];
+
       setCurrentPopup(nextItem);
-      setShownCount((prev) => prev + 1);
+      const nextCount = shownCount + 1;
+      setShownCount(nextCount);
+      sessionStorage.setItem('satvam_popups_count', nextCount.toString());
     }, delay);
 
     return () => clearTimeout(timer);
   }, [shownCount, popupsDisabled]);
+
+  const handleDismiss = () => {
+    if (currentPopup && typeof window !== 'undefined') {
+      const dismissedList = JSON.parse(sessionStorage.getItem('satvam_dismissed_popups') || '[]');
+      if (!dismissedList.includes(currentPopup.id)) {
+        dismissedList.push(currentPopup.id);
+        sessionStorage.setItem('satvam_dismissed_popups', JSON.stringify(dismissedList));
+      }
+    }
+    setCurrentPopup(null);
+  };
 
   if (!currentPopup || popupsDisabled) return null;
 
@@ -77,7 +105,7 @@ export default function PopupScheduler() {
         </div>
         <button
           type="button"
-          onClick={() => setCurrentPopup(null)}
+          onClick={handleDismiss}
           className="text-[#6B5B45] hover:text-[#2D3E2F] p-1 rounded-full transition-colors focus:outline-none"
           aria-label="Dismiss announcement"
         >
@@ -97,8 +125,8 @@ export default function PopupScheduler() {
       <div className="mt-4 flex items-center justify-end">
         <Link
           to={currentPopup.link}
-          onClick={() => setCurrentPopup(null)}
-          className="text-xs font-semibold text-[#2D3E2F] bg-[#C9A961] hover:bg-[#D4B872] px-4 py-2 rounded-full transition-all tracking-wide"
+          onClick={handleDismiss}
+          className="text-xs font-semibold text-[#2D3E2F] bg-[#C9A961] hover:bg-[#D4B872] px-4 py-2 rounded-full transition-all tracking-wide shadow-xs"
         >
           {currentPopup.ctaText} →
         </Link>

@@ -1,0 +1,43 @@
+:root {
+  /* Canvas (60%) */
+  --satvam-ivory: #FAF7F0;
+  --satvam-cream: #F5EFE3;
+  --satvam-paper: #FFFFFF;
+
+  /* Structure (30%) */
+  --satvam-forest: #2D3E2F;
+  --satvam-bark: #6B5B45;
+  --satvam-moss: #A3B18A;
+
+  /* Accent (10%) */
+  --satvam-gold: #C9A961;
+  --satvam-gold-hover: #D4B872;
+  --satvam-hibiscus: #A8453D;
+  --satvam-saffron: #E8B44A;
+
+  /* Typography scale */
+  --text-hero: clamp(3.5rem, 8vw, 7rem);
+  --text-h1: clamp(2.5rem, 5vw, 4rem);
+  --text-h2: 2rem;
+  --text-h3: 1.375rem;
+  --text-body: 1rem;
+  --text-eyebrow: 0.75rem;
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Shadows */
+  --shadow-soft: 0 1px 2px rgba(45, 62, 47, 0.04), 0 8px 24px rgba(45, 62, 47, 0.06);
+  --shadow-lifted: 0 4px 12px rgba(45, 62, 47, 0.08), 0 24px 48px rgba(45, 62, 47, 0.12);
+
+  /* Borders */
+  --border-subtle: 1px solid rgba(107, 91, 69, 0.15);
+  --border-nav: 1px solid rgba(107, 91, 69, 0.12);
+
+  /* Radii */
+  --radius-btn: 999px;
+  --radius-card: 12px;
+  --radius-modal: 20px;
+  --radius-img: 4px;
+}

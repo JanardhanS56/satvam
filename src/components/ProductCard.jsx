@@ -6,11 +6,11 @@ import IngredientOrbit from './IngredientOrbit';
 import { getHerbBadge } from '../lib/herbs';
 
 const SHOP_BUBBLE_POSITIONS = [
-  'top-14 left-3',
-  'top-14 right-3',
-  'top-1/2 -translate-y-8 left-2',
-  'top-1/2 -translate-y-8 right-2',
-  'bottom-4 left-1/2 -translate-x-1/2'
+  'top-3 left-3',
+  'top-3 right-3',
+  'top-1/2 -translate-y-1/2 left-1',
+  'top-1/2 -translate-y-1/2 right-1',
+  'bottom-3 left-1/2 -translate-x-1/2'
 ];
 
 export default function ProductCard({ product }) {
@@ -83,43 +83,41 @@ export default function ProductCard({ product }) {
         </span>
       )}
 
-      {/* Floating Enlarged Ingredient Bubbles (Pop out prominently on hover) */}
-      <div className="absolute inset-0 pointer-events-none p-3 overflow-hidden z-25">
-        {previewIngredients.map((ing, i) => {
-          const badge = getHerbBadge(ing.name);
-          const posClass = SHOP_BUBBLE_POSITIONS[i % SHOP_BUBBLE_POSITIONS.length];
-          const delays = ['delay-0', 'delay-75', 'delay-100', 'delay-150', 'delay-200'];
+      {/* Shatter-Orbit Interactive Bottle Center with Floating Circles on Hover */}
+      <div className="my-2 relative z-10 w-full min-h-[320px] flex items-center justify-center overflow-visible">
+        <IngredientOrbit product={product} />
 
-          return (
-            <div
-              key={i}
-              className={`absolute ${posClass} transition-all duration-300 ease-out transform ${delays[i % delays.length]} ${
-                isHovered
-                  ? 'opacity-100 scale-100 translate-y-0'
-                  : 'opacity-0 scale-75 translate-y-3'
-              }`}
-            >
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-[#FAF7F0]/95 backdrop-blur-md border-2 border-[#C9A961]/70 shadow-lifted text-[#2D3E2F]">
-                <span className="text-xl sm:text-2xl select-none filter drop-shadow-xs leading-none">
-                  {badge.emoji}
-                </span>
-                <div className="flex flex-col text-left">
-                  <span className="font-display font-semibold text-xs sm:text-sm leading-tight text-[#2D3E2F]">
+        {/* Floating Enlarged Circular Ingredient Bubbles (Z-40: in front of bottle) */}
+        <div className="absolute inset-0 pointer-events-none z-40 overflow-visible">
+          {previewIngredients.map((ing, i) => {
+            const badge = getHerbBadge(ing.name);
+            const posClass = SHOP_BUBBLE_POSITIONS[i % SHOP_BUBBLE_POSITIONS.length];
+            const delays = ['delay-0', 'delay-75', 'delay-100', 'delay-150', 'delay-200'];
+
+            return (
+              <div
+                key={i}
+                className={`absolute ${posClass} transition-all duration-300 ease-out transform ${delays[i % delays.length]} ${
+                  isHovered
+                    ? 'opacity-100 scale-100 translate-y-0'
+                    : 'opacity-0 scale-50 translate-y-3 pointer-events-none'
+                }`}
+              >
+                <div className="w-18 h-18 sm:w-20 sm:h-20 aspect-square rounded-full bg-[#FAF7F0]/95 backdrop-blur-md border-2 border-[#C9A961] shadow-lifted flex flex-col items-center justify-center p-1 text-center group-hover:scale-105 transition-transform">
+                  <span className="text-xl sm:text-2xl select-none leading-none filter drop-shadow-xs">
+                    {badge.emoji}
+                  </span>
+                  <span className="font-display font-bold text-[10px] sm:text-[11px] text-[#2D3E2F] leading-tight mt-1 max-w-[62px] truncate px-0.5">
                     {ing.name}
                   </span>
-                  <span className="font-mono text-[10px] text-[#6B5B45] font-medium leading-tight mt-0.5">
-                    {ing.percentage ? `${ing.percentage}% · ` : ''}{ing.sanskritName || badge.type}
+                  <span className="font-mono text-[8px] text-[#C9A961] font-semibold leading-none mt-0.5">
+                    {ing.percentage ? `${ing.percentage}%` : badge.type}
                   </span>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Shatter-Orbit Interactive Bottle Center */}
-      <div className="my-2 relative z-10">
-        <IngredientOrbit product={product} />
+            );
+          })}
+        </div>
       </div>
 
       {/* Product Details Section */}

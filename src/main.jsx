@@ -14,6 +14,7 @@ import Products from './pages/Products';
 import About from './pages/About';
 import Trust from './pages/Trust';
 import Profile from './pages/Profile';
+import Consultation from './pages/Consultation';
 
 function Root() {
   useEffect(() => {
@@ -49,6 +50,8 @@ function Root() {
           <Route path="products" element={<Products />} />
           <Route path="about" element={<About />} />
           <Route path="trust" element={<Trust />} />
+          <Route path="consultation" element={<Consultation />} />
+          <Route path="ai-consultation" element={<Navigate to="/consultation" replace />} />
           <Route path="profile" element={<Profile />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>

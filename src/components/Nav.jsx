@@ -14,6 +14,7 @@ export default function Nav() {
   const navLinks = [
     { label: 'Shop', path: '/shop' },
     { label: 'Products', path: '/products' },
+    { label: 'AI Consultation', path: '/consultation', badge: 'New' },
     { label: 'About', path: '/about' },
     { label: 'Trust', path: '/trust' }
   ];
@@ -54,7 +55,14 @@ export default function Nav() {
                 }`
               }
             >
-              {item.label}
+              <span className="inline-flex items-center">
+                {item.label}
+                {item.badge && (
+                  <span className="ml-1.5 px-1.5 py-0.5 bg-[#C9A961]/20 text-[#6B5B45] text-[9px] font-mono uppercase tracking-wider rounded-full border border-[#C9A961]/40 leading-none">
+                    {item.badge}
+                  </span>
+                )}
+              </span>
             </NavLink>
           ))}
         </nav>
@@ -111,7 +119,14 @@ export default function Nav() {
                   }`
                 }
               >
+                <span className="inline-flex items-center">
                 {item.label}
+                {item.badge && (
+                  <span className="ml-1.5 px-1.5 py-0.5 bg-[#C9A961]/20 text-[#6B5B45] text-[9px] font-mono uppercase tracking-wider rounded-full border border-[#C9A961]/40 leading-none">
+                    {item.badge}
+                  </span>
+                )}
+              </span>
               </NavLink>
             ))}
             <div className="pt-4 border-t border-[#6B5B45]/10 flex flex-col gap-3">

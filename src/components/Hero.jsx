@@ -66,11 +66,11 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center my-auto">
         {/* Seal / Eyebrow */}
         <div className="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#F5EFE3]/90 border border-[#6B5B45]/15 backdrop-blur-xs shadow-xs">
-          <div className="w-5 h-5 rounded-full overflow-hidden flex items-center justify-center bg-[#FAF7F0]">
+          <div className="w-6 h-6 rounded-full overflow-hidden flex items-center justify-center bg-[#FAF7F0] border border-[#C9A961]/35">
             <SafeImage
               src="/references/logo/logo-mark.webp"
               alt="Seal"
-              className="w-4 h-4 object-contain"
+              className="w-full h-full object-contain p-0.5"
               fallbackText="S"
             />
           </div>
@@ -79,12 +79,12 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Full Lockup Logo from References/logo */}
-        <div className="mb-4 flex flex-col items-center justify-center">
+        {/* Full Lockup Logo from References/logo — Prominent and Bold */}
+        <div className="mb-6 flex flex-col items-center justify-center">
           <SafeImage
             src="/references/logo/logo.webp"
             alt="Satvam Vedic Apothecary"
-            className="h-28 sm:h-36 md:h-44 w-auto max-w-[280px] sm:max-w-md object-contain filter drop-shadow-sm"
+            className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto max-w-[340px] sm:max-w-lg md:max-w-xl object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-102"
             fallbackText="SATVAM"
           />
           <h1 className="sr-only">Satvam — Vedic Hair Care Atelier</h1>

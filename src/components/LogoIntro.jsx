@@ -97,11 +97,11 @@ export default function LogoIntro({ onComplete }) {
 
       <div className="relative flex flex-col items-center">
         {/* Logo Mark with Shimmer Wrapper */}
-        <div ref={markRef} className="relative w-28 h-28 sm:w-36 sm:h-36 overflow-hidden rounded-full flex items-center justify-center p-3 bg-[#F5EFE3] shadow-soft border border-[#6B5B45]/15">
+        <div ref={markRef} className="relative w-32 h-32 sm:w-40 sm:h-40 overflow-hidden rounded-full flex items-center justify-center p-1 bg-[#F5EFE3] shadow-soft border border-[#C9A961]/40 ring-1 ring-[#C9A961]/25">
           <SafeImage
             src="/references/logo/logo-mark.webp"
             alt="Satvam Seal"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain p-0.5"
             fallbackText="SV"
           />
           {/* Shimmer sweep element */}

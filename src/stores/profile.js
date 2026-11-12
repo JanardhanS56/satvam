@@ -42,10 +42,13 @@ export const useProfileStore = create(
       wishlist: [],
       favorites: [],
       orders: DEFAULT_ORDERS,
+      avatar: null,
       quizResults: null,
       popupsDisabled: false,
 
       setName: (name) => set({ name: name || generateDefaultName() }),
+      setAvatar: (avatar) => set({ avatar }),
+      removeAvatar: () => set({ avatar: null }),
       setGender: (gender) => set({ gender }),
       setAgeBand: (ageBand) => set({ ageBand }),
       setHairTypes: (hairTypes) => set({ hairTypes }),

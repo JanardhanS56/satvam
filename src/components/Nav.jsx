@@ -3,11 +3,14 @@ import { Link, NavLink } from 'react-router-dom';
 import { ShoppingBag, User, Menu, X } from 'lucide-react';
 import { useCartStore } from '../stores/cart';
 import { useUIStore } from '../stores/ui';
+import { useProfileStore } from '../stores/profile';
 import { SafeImage } from '../lib/images';
 
 export default function Nav() {
   const totalCount = useCartStore((state) => state.getTotalCount());
   const toggleCart = useCartStore((state) => state.toggleCart);
+  const avatar = useProfileStore((state) => state.avatar);
+  const name = useProfileStore((state) => state.name);
   const isMobileNavOpen = useUIStore((state) => state.isMobileNavOpen);
   const setMobileNavOpen = useUIStore((state) => state.setMobileNavOpen);
 
@@ -71,10 +74,20 @@ export default function Nav() {
         <div className="flex items-center gap-4 lg:gap-6">
           <Link
             to="/profile"
-            className="p-2 text-[#2D3E2F] hover:text-[#6B5B45] transition-colors rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]"
+            className="p-1 text-[#2D3E2F] hover:text-[#6B5B45] transition-colors rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961] flex items-center justify-center"
             aria-label="User Profile"
           >
-            <User className="w-5 h-5" />
+            {avatar ? (
+              <img
+                src={avatar}
+                alt={name}
+                className="w-7 h-7 rounded-full object-cover border-2 border-[#C9A961] shadow-2xs"
+              />
+            ) : (
+              <span className="p-1 flex items-center justify-center">
+                <User className="w-5 h-5" />
+              </span>
+            )}
           </Link>
 
           <button

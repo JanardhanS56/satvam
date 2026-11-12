@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useProfileStore } from '../stores/profile';
 import { useCartStore } from '../stores/cart';
@@ -10,7 +10,7 @@ import {
   User,
   Heart,
   Bookmark,
-  ShoppingBag,
+  Camera,
   History,
   PackageCheck,
   RotateCcw,
@@ -30,6 +30,9 @@ const AGE_BAND_OPTIONS = ['18-24', '25-34', '35-44', '45-54', '55+'];
 export default function Profile() {
   const name = useProfileStore((state) => state.name);
   const setName = useProfileStore((state) => state.setName);
+  const avatar = useProfileStore((state) => state.avatar);
+  const setAvatar = useProfileStore((state) => state.setAvatar);
+  const removeAvatar = useProfileStore((state) => state.removeAvatar);
   const gender = useProfileStore((state) => state.gender);
   const setGender = useProfileStore((state) => state.setGender);
   const ageBand = useProfileStore((state) => state.ageBand);
@@ -44,15 +47,15 @@ export default function Profile() {
   const popupsDisabled = useProfileStore((state) => state.popupsDisabled);
   const setPopupsDisabled = useProfileStore((state) => state.setPopupsDisabled);
 
-  const cartItems = useCartStore((state) => state.items);
-  const removeItemFromCart = useCartStore((state) => state.removeItem);
   const addItemToCart = useCartStore((state) => state.addItem);
+  const openCart = useCartStore((state) => state.openCart);
   const openPaymentModal = useUIStore((state) => state.openPaymentModal);
   const showToast = useUIStore((state) => state.showToast);
 
-  const [activeTab, setActiveTab] = useState('quiz'); // quiz | wishlist | favorites | cart | history
+  const [activeTab, setActiveTab] = useState('quiz'); // quiz | wishlist | favorites | history
   const [isEditingName, setIsEditingName] = useState(false);
   const [tempName, setTempName] = useState(name);
+  const fileInputRef = useRef(null);
 
   // Auto-scroll to quiz or open specific tab if loaded with hash
   useEffect(() => {
@@ -61,10 +64,12 @@ export default function Profile() {
       setActiveTab('quiz');
       const el = document.getElementById('quiz-section');
       if (el) el.scrollIntoView({ behavior: 'smooth' });
-    } else if (['wishlist', 'favorites', 'cart', 'history'].includes(hash)) {
+    } else if (hash === 'cart') {
+      openCart();
+    } else if (['wishlist', 'favorites', 'history'].includes(hash)) {
       setActiveTab(hash);
     }
-  }, []);
+  }, [openCart]);
 
   const handleSaveName = (e) => {
     e.preventDefault();
@@ -72,6 +77,49 @@ export default function Profile() {
       setName(tempName.trim());
     }
     setIsEditingName(false);
+  };
+
+  const handleAvatarUpload = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (!file.type.startsWith('image/')) {
+      if (showToast) showToast('Please select a valid image file', 'error');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const maxDim = 320;
+        let width = img.width;
+        let height = img.height;
+
+        if (width > height) {
+          if (width > maxDim) {
+            height = Math.round((height * maxDim) / width);
+            width = maxDim;
+          }
+        } else {
+          if (height > maxDim) {
+            width = Math.round((width * maxDim) / height);
+            height = maxDim;
+          }
+        }
+
+        canvas.width = width;
+        canvas.height = height;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, height);
+
+        const compressed = canvas.toDataURL('image/jpeg', 0.85);
+        setAvatar(compressed);
+        if (showToast) showToast('Profile photo updated', 'info');
+      };
+      img.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
   };
 
   const handleBuyNow = (product) => {
@@ -92,7 +140,7 @@ export default function Profile() {
     if (showToast) {
       showToast(`Re-added ${order.items.length} ${order.items.length === 1 ? 'item' : 'items'} to Cart`, 'cart');
     }
-    setActiveTab('cart');
+    openCart();
   };
 
   const getProductBySlug = (slug) => {
@@ -108,11 +156,51 @@ export default function Profile() {
       <section className="pt-16 pb-10 px-6 max-w-6xl mx-auto">
         <div className="bg-[#FFFFFF] p-8 sm:p-10 rounded-3xl border border-[#6B5B45]/20 shadow-soft">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#6B5B45]/15">
-            {/* User Avatar & Name */}
+            {/* User Avatar with Custom Photo Upload */}
             <div className="flex items-center gap-5">
-              <div className="w-16 h-16 rounded-2xl bg-[#F5EFE3] text-[#2D3E2F] border-2 border-[#C9A961] flex items-center justify-center font-display text-2xl font-bold flex-shrink-0 shadow-xs">
-                {name.charAt(0).toUpperCase()}
+              <div className="relative group flex-shrink-0">
+                <div
+                  onClick={() => fileInputRef.current?.click()}
+                  className="w-18 h-18 sm:w-20 sm:h-20 rounded-2xl bg-[#F5EFE3] text-[#2D3E2F] border-2 border-[#C9A961] flex items-center justify-center font-display text-2xl sm:text-3xl font-bold flex-shrink-0 shadow-xs relative overflow-hidden cursor-pointer transition-transform duration-200 group-hover:scale-102"
+                  title="Click to upload profile photo"
+                >
+                  {avatar ? (
+                    <img
+                      src={avatar}
+                      alt={name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="select-none">{name.charAt(0).toUpperCase()}</span>
+                  )}
+
+                  {/* Hover Upload Overlay */}
+                  <div className="absolute inset-0 bg-[#2D3E2F]/65 backdrop-blur-2xs flex flex-col items-center justify-center text-[#FAF7F0] opacity-0 group-hover:opacity-100 transition-opacity">
+                    <Camera className="w-5 h-5 text-[#C9A961]" />
+                    <span className="text-[9px] font-mono uppercase tracking-wider mt-0.5 font-semibold">Change</span>
+                  </div>
+                </div>
+
+                {/* Corner Camera Button */}
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
+                  className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[#2D3E2F] text-[#FAF7F0] border border-[#C9A961] flex items-center justify-center hover:bg-[#C9A961] hover:text-[#2D3E2F] transition-all shadow-xs"
+                  title="Upload profile photo"
+                  aria-label="Upload custom profile photo"
+                >
+                  <Camera className="w-3.5 h-3.5" />
+                </button>
+
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept="image/*"
+                  onChange={handleAvatarUpload}
+                  className="hidden"
+                />
               </div>
+
               <div>
                 <div className="flex items-center gap-3">
                   {isEditingName ? (
@@ -151,9 +239,20 @@ export default function Profile() {
                     </>
                   )}
                 </div>
-                <p className="font-mono text-xs text-[#6B5B45] mt-1">
-                  Patron Identifier · Personalized Apothecary Account
-                </p>
+                <div className="flex flex-wrap items-center gap-2 mt-1">
+                  <p className="font-mono text-xs text-[#6B5B45]">
+                    Patron Identifier · Personalized Apothecary Account
+                  </p>
+                  {avatar && (
+                    <button
+                      type="button"
+                      onClick={removeAvatar}
+                      className="text-[11px] font-mono text-[#A8453D] hover:underline"
+                    >
+                      (Remove Photo)
+                    </button>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -288,17 +387,6 @@ export default function Profile() {
           </button>
           <button
             type="button"
-            onClick={() => setActiveTab('cart')}
-            className={`py-3.5 text-sm sm:text-base font-medium tracking-wide relative whitespace-nowrap transition-colors flex items-center gap-1.5 ${
-              activeTab === 'cart'
-                ? 'text-[#2D3E2F] font-semibold after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#C9A961]'
-                : 'text-[#6B5B45] hover:text-[#2D3E2F]'
-            }`}
-          >
-            <ShoppingBag className="w-4 h-4" /> Cart ({cartItems.length})
-          </button>
-          <button
-            type="button"
             onClick={() => setActiveTab('history')}
             className={`py-3.5 text-sm sm:text-base font-medium tracking-wide relative whitespace-nowrap transition-colors flex items-center gap-1.5 ${
               activeTab === 'history'
@@ -429,65 +517,7 @@ export default function Profile() {
           </div>
         )}
 
-        {/* TAB 4: CART */}
-        {activeTab === 'cart' && (
-          <div className="space-y-4 animate-fadeIn">
-            {cartItems.length === 0 ? (
-              <div className="text-center py-16 bg-[#FFFFFF] rounded-3xl border border-[#6B5B45]/15 p-8">
-                <ShoppingBag className="w-10 h-10 text-[#6B5B45]/30 mx-auto mb-3" />
-                <h3 className="font-display text-lg text-[#2D3E2F]">Your cart is currently empty</h3>
-                <p className="text-xs text-[#6B5B45] mt-1 max-w-sm mx-auto">
-                  Add products from the Atelier or taking the quiz.
-                </p>
-              </div>
-            ) : (
-              <div className="space-y-3">
-                {cartItems.map((item) => (
-                  <div
-                    key={item.slug || item.id}
-                    className="bg-[#FFFFFF] p-5 rounded-2xl border border-[#6B5B45]/15 flex items-center justify-between gap-4"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="w-14 h-16 bg-[#F5EFE3] rounded-lg p-1 flex items-center justify-center">
-                        <SafeImage
-                          src={item.bottleImage || `references/products/${item.slug}-bottle.webp`}
-                          alt={item.name}
-                          className="max-h-full max-w-full object-contain"
-                          fallbackText={item.name}
-                        />
-                      </div>
-                      <div>
-                        <h4 className="font-display font-medium text-base text-[#2D3E2F]">{item.name}</h4>
-                        <p className="font-mono text-xs text-[#C9A961]">
-                          ₹{item.price} × {item.quantity}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <button
-                        type="button"
-                        onClick={() => openPaymentModal('profile-cart')}
-                        className="btn-primary py-2 px-4 text-xs font-semibold"
-                      >
-                        Checkout
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => removeItemFromCart(item.slug || item.id)}
-                        className="text-[#6B5B45]/60 hover:text-[#A8453D] p-2"
-                        title="Remove"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* TAB 5: HISTORY (PAST PURCHASES) */}
+        {/* TAB 4: HISTORY (PAST PURCHASES) */}
         {activeTab === 'history' && (
           <div className="space-y-6 animate-fadeIn">
             {orders.length === 0 ? (

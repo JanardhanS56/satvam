@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
 import productsData from '../data/products.json';
 import ProductCatalogCard from '../components/ProductCatalogCard';
 import ProductDetailModal from '../components/ProductDetailModal';
@@ -15,15 +16,16 @@ const FILTER_OPTIONS = [
 ];
 
 export default function Products() {
+  const location = useLocation();
   const allProducts = useMemo(() => productsData.products || [], []);
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedProduct, setSelectedProduct] = useState(null);
 
-  // Deep-link handling via hash: /products#slug
+  // Deep-link handling via hash: /products#slug (react-router location + window event)
   useEffect(() => {
     const handleHash = () => {
-      const hash = window.location.hash.replace('#', '').trim().toLowerCase();
+      const hash = (location.hash || window.location.hash || '').replace('#', '').trim().toLowerCase();
       if (!hash) {
         setSelectedProduct(null);
         return;
@@ -39,7 +41,7 @@ export default function Products() {
     handleHash();
     window.addEventListener('hashchange', handleHash);
     return () => window.removeEventListener('hashchange', handleHash);
-  }, [allProducts]);
+  }, [location.hash, allProducts]);
 
   const handleSelectProduct = (product) => {
     window.location.hash = product.slug;

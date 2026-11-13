@@ -152,16 +152,16 @@ export default function LiveJourneySection() {
   return (
     <section
       id="journey-section"
-      className="w-full bg-[#FAF7F0] py-16 sm:py-24 px-6 border-t border-[#6B5B45]/15"
+      className="w-full bg-[#FAF7F0] py-12 sm:py-24 px-4 sm:px-6 border-t border-[#6B5B45]/15"
     >
       <div className="max-w-7xl mx-auto lg:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
           <div>
-            <h2 className="font-display font-medium text-3xl sm:text-5xl text-[#2D3E2F] leading-tight">
+            <h2 className="font-display font-medium text-2xl sm:text-5xl text-[#2D3E2F] leading-tight">
               The 5-Stage Seed-to-Bottle Journey
             </h2>
-            <p className="text-sm sm:text-base text-[#6B5B45] mt-2 max-w-xl">
+            <p className="text-xs sm:text-base text-[#6B5B45] mt-2 max-w-xl">
               Witness the untouched path of our sacred cold-pressed botanicals from Indian soil to your crown.
             </p>
           </div>
@@ -174,7 +174,7 @@ export default function LiveJourneySection() {
             <button
               type="button"
               onClick={prevStage}
-              className="w-9 h-9 rounded-full bg-[#FFFFFF] border border-[#6B5B45]/20 flex items-center justify-center text-[#2D3E2F] hover:bg-[#F5EFE3] transition-colors shadow-xs"
+              className="w-8.5 h-8.5 sm:w-9 sm:h-9 rounded-full bg-[#FFFFFF] border border-[#6B5B45]/20 flex items-center justify-center text-[#2D3E2F] hover:bg-[#F5EFE3] transition-colors shadow-xs"
               aria-label="Previous stage"
             >
               <ChevronLeft className="w-4 h-4" />
@@ -182,7 +182,7 @@ export default function LiveJourneySection() {
             <button
               type="button"
               onClick={nextStage}
-              className="w-9 h-9 rounded-full bg-[#FFFFFF] border border-[#6B5B45]/20 flex items-center justify-center text-[#2D3E2F] hover:bg-[#F5EFE3] transition-colors shadow-xs"
+              className="w-8.5 h-8.5 sm:w-9 sm:h-9 rounded-full bg-[#FFFFFF] border border-[#6B5B45]/20 flex items-center justify-center text-[#2D3E2F] hover:bg-[#F5EFE3] transition-colors shadow-xs"
               aria-label="Next stage"
             >
               <ChevronRight className="w-4 h-4" />
@@ -191,7 +191,7 @@ export default function LiveJourneySection() {
         </div>
 
         {/* 5-Step Stage Selectors with Active Progress Bar */}
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-4 mb-8">
+        <div className="flex overflow-x-auto snap-x no-scrollbar gap-2.5 sm:gap-4 mb-6 sm:mb-8 pb-1.5 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-5 sm:overflow-visible">
           {JOURNEY_SCENES.map((scene, idx) => {
             const isCurrent = currentIdx === idx;
             return (
@@ -199,7 +199,7 @@ export default function LiveJourneySection() {
                 key={scene.step}
                 type="button"
                 onClick={() => selectStage(idx)}
-                className={`relative text-left p-3.5 rounded-2xl border transition-all overflow-hidden ${
+                className={`relative text-left p-3 sm:p-3.5 rounded-2xl border transition-all overflow-hidden min-w-[130px] sm:min-w-0 snap-start flex-shrink-0 sm:flex-shrink ${
                   isCurrent
                     ? 'bg-[#2D3E2F] text-[#FAF7F0] border-[#2D3E2F] shadow-soft scale-[1.02]'
                     : 'bg-[#FFFFFF] text-[#2D3E2F] border-[#6B5B45]/15 hover:border-[#C9A961]/50 hover:bg-[#F5EFE3]/50'
@@ -233,7 +233,7 @@ export default function LiveJourneySection() {
         </div>
 
         {/* Dynamic Stage Display Container */}
-        <div className="bg-[#FFFFFF] rounded-3xl border border-[#6B5B45]/20 shadow-soft overflow-hidden p-6 sm:p-8 lg:p-10 xl:p-12 transition-all">
+        <div className="bg-[#FFFFFF] rounded-3xl border border-[#6B5B45]/20 shadow-soft overflow-hidden p-4 sm:p-8 lg:p-10 xl:p-12 transition-all">
           <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10 xl:gap-14">
             {/* Left: Stage Image Expanded by ~15% (56% width on desktop) */}
             <div className="w-full lg:w-[56%] flex-shrink-0 relative aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden bg-[#FAF7F0] border border-[#6B5B45]/15 shadow-md">

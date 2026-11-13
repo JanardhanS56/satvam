@@ -101,7 +101,7 @@ export default function PaymentModal() {
       />
 
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-lg bg-[#FAF7F0] rounded-3xl border border-[#6B5B45]/20 shadow-2xl p-6 sm:p-8 z-10 animate-scaleUp overflow-hidden">
+      <div className="relative w-full max-w-lg bg-[#FAF7F0] rounded-2xl sm:rounded-3xl border border-[#6B5B45]/20 shadow-2xl p-5 sm:p-8 z-10 animate-scaleUp overflow-hidden">
         {/* Header */}
         <div className="flex items-start justify-between pb-4 border-b border-[#6B5B45]/15 mb-6">
           <div>

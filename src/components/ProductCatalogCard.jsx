@@ -45,46 +45,51 @@ export default function ProductCatalogCard({ product, onSelect }) {
       onClick={() => onSelect(product)}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group satvam-card relative bg-[#FFFFFF] rounded-2xl p-5 flex flex-col justify-between cursor-pointer border border-[#6B5B45]/15 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lifted overflow-hidden"
+      className="group satvam-card relative bg-[#FFFFFF] rounded-2xl p-3.5 sm:p-5 flex flex-col justify-between cursor-pointer border border-[#6B5B45]/15 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-lifted overflow-hidden"
     >
-      {/* Target Gender Tag */}
-      {product.targetGender && product.targetGender !== 'all' && (
-        <span className="absolute top-4 left-4 z-20 px-2.5 py-0.5 bg-[#F5EFE3] text-[#6B5B45] font-mono text-[10px] uppercase tracking-wider rounded-full border border-[#6B5B45]/15">
-          {product.targetGender === 'male' ? 'For Men' : 'For Women'}
-        </span>
-      )}
+      {/* Top Header Tags & Action Bar */}
+      <div className="absolute top-2.5 sm:top-4 left-2.5 sm:left-4 right-2.5 sm:right-4 z-20 flex items-center justify-between gap-1 pointer-events-none">
+        {/* Left: Target Gender Tag */}
+        <div>
+          {product.targetGender && product.targetGender !== 'all' && (
+            <span className="pointer-events-auto px-2 sm:px-2.5 py-0.5 bg-[#F5EFE3] text-[#6B5B45] font-mono text-[9px] sm:text-[10px] uppercase tracking-wider rounded-full border border-[#6B5B45]/15 whitespace-nowrap">
+              {product.targetGender === 'male' ? 'For Men' : 'For Women'}
+            </span>
+          )}
+        </div>
 
-      {/* Top Right: Concern Tag + Star Favourite Button */}
-      <div className="absolute top-4 right-4 z-30 flex items-center gap-2">
-        {product.concerns && product.concerns.length > 0 && (
-          <span className="px-2 py-0.5 bg-[#FAF7F0] text-[#6B5B45]/80 font-mono text-[9px] uppercase tracking-wider rounded-full border border-[#6B5B45]/10">
-            {product.concerns[0]}
-          </span>
-        )}
+        {/* Right: Concern Tag + Star Favourite Button */}
+        <div className="flex items-center gap-1 sm:gap-2 pointer-events-auto">
+          {product.concerns && product.concerns.length > 0 && (
+            <span className="hidden xs:inline-block px-1.5 sm:px-2 py-0.5 bg-[#FAF7F0] text-[#6B5B45]/80 font-mono text-[8px] sm:text-[9px] uppercase tracking-wider rounded-full border border-[#6B5B45]/10 whitespace-nowrap">
+              {product.concerns[0]}
+            </span>
+          )}
 
-        <button
-          type="button"
-          onClick={handleToggleFavorite}
-          className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-200 border shadow-xs hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8B44A] ${
-            isFavorite
-              ? 'bg-[#FAF7F0] border-[#E8B44A] shadow-soft ring-1 ring-[#E8B44A]/50'
-              : 'bg-[#FAF7F0]/90 backdrop-blur-xs border-[#6B5B45]/20 hover:border-[#E8B44A]'
-          }`}
-          aria-label={isFavorite ? `Remove ${product.name} from favourites` : `Add ${product.name} to favourites`}
-          title={isFavorite ? 'In your Favourites' : 'Add to Favourites'}
-        >
-          <Star
-            className={`w-3.5 h-3.5 transition-colors ${
+          <button
+            type="button"
+            onClick={handleToggleFavorite}
+            className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center transition-all duration-200 border shadow-xs hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E8B44A] ${
               isFavorite
-                ? 'fill-[#E8B44A] stroke-[#E8B44A] filter drop-shadow-xs'
-                : 'stroke-[#E8B44A] fill-transparent hover:fill-[#E8B44A]/30'
+                ? 'bg-[#FAF7F0] border-[#E8B44A] shadow-soft ring-1 ring-[#E8B44A]/50'
+                : 'bg-[#FAF7F0]/90 backdrop-blur-xs border-[#6B5B45]/20 hover:border-[#E8B44A]'
             }`}
-          />
-        </button>
+            aria-label={isFavorite ? `Remove ${product.name} from favourites` : `Add ${product.name} to favourites`}
+            title={isFavorite ? 'In your Favourites' : 'Add to Favourites'}
+          >
+            <Star
+              className={`w-3 h-3 sm:w-3.5 sm:h-3.5 transition-colors ${
+                isFavorite
+                  ? 'fill-[#E8B44A] stroke-[#E8B44A] filter drop-shadow-xs'
+                  : 'stroke-[#E8B44A] fill-transparent hover:fill-[#E8B44A]/30'
+              }`}
+            />
+          </button>
+        </div>
       </div>
 
       {/* Main Image Container — Always displays product bottle with floating ingredient bubbles on hover */}
-      <div className="relative w-full h-64 my-2 flex items-center justify-center overflow-hidden rounded-xl bg-[#F5EFE3]/40 p-4">
+      <div className="relative w-full h-44 sm:h-56 md:h-64 my-1.5 sm:my-2 flex items-center justify-center overflow-hidden rounded-xl bg-[#F5EFE3]/40 p-2 sm:p-4">
         {/* Main Product Bottle (Always visible, does not disappear) */}
         <div className="relative w-full h-full flex items-center justify-center p-2 transition-transform duration-300 ease-out group-hover:scale-105">
           <SafeImage
@@ -176,24 +181,24 @@ export default function ProductCatalogCard({ product, onSelect }) {
         </div>
 
         {/* Bottom Price & Link */}
-        <div className="mt-4 pt-2 border-t border-[#6B5B45]/10 flex items-center justify-between">
-          <div className="flex items-baseline gap-1.5">
-            <span className="font-display text-lg font-semibold text-[#2D3E2F]">
+        <div className="mt-3 sm:mt-4 pt-2 border-t border-[#6B5B45]/10 flex flex-wrap items-center justify-between gap-1 sm:gap-2">
+          <div className="flex items-baseline gap-1 sm:gap-1.5">
+            <span className="font-display text-base sm:text-lg font-semibold text-[#2D3E2F]">
               ₹{product.price}
             </span>
             {product.originalPrice && product.originalPrice > product.price && (
-              <span className="text-xs text-[#6B5B45]/50 line-through">
+              <span className="text-[11px] sm:text-xs text-[#6B5B45]/50 line-through">
                 ₹{product.originalPrice}
               </span>
             )}
             {savePercent > 0 && (
-              <span className="text-[10px] font-mono font-semibold text-[#A8453D] bg-[#A8453D]/10 px-1.5 py-0.5 rounded-full">
+              <span className="text-[9px] sm:text-[10px] font-mono font-semibold text-[#A8453D] bg-[#A8453D]/10 px-1 sm:px-1.5 py-0.5 rounded-full">
                 Save {savePercent}%
               </span>
             )}
           </div>
-          <span className="text-xs font-medium text-[#C9A961] group-hover:text-[#2D3E2F] flex items-center gap-0.5 transition-colors">
-            Full Formula <ArrowUpRight className="w-3.5 h-3.5" />
+          <span className="text-[11px] sm:text-xs font-medium text-[#C9A961] group-hover:text-[#2D3E2F] flex items-center gap-0.5 transition-colors">
+            Full Formula <ArrowUpRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           </span>
         </div>
       </div>

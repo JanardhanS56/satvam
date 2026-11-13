@@ -93,23 +93,23 @@ export default function Products() {
   return (
     <div className="w-full min-h-screen bg-[#FAF7F0] pb-24">
       {/* Page Header */}
-      <section className="pt-16 pb-10 px-6 max-w-7xl mx-auto text-center">
-        <h1 className="font-display font-medium text-4xl sm:text-6xl text-[#2D3E2F] tracking-tight">
+      <section className="pt-12 sm:pt-16 pb-8 sm:pb-10 px-4 sm:px-6 max-w-7xl mx-auto text-center">
+        <h1 className="font-display font-medium text-3xl sm:text-6xl text-[#2D3E2F] tracking-tight">
           The Twenty Formulations
         </h1>
-        <p className="font-eyebrow text-sm sm:text-base tracking-[0.2em] uppercase text-[#6B5B45] mt-3">
+        <p className="font-eyebrow text-xs sm:text-base tracking-[0.2em] uppercase text-[#6B5B45] mt-2 sm:mt-3">
           Single-origin botanicals tailored to individual scalp doshas.
         </p>
-        <p className="text-xs sm:text-sm text-[#2D3E2F]/75 max-w-xl mx-auto mt-3 font-normal leading-relaxed">
+        <p className="text-xs sm:text-sm text-[#2D3E2F]/75 max-w-xl mx-auto mt-2.5 sm:mt-3 font-normal leading-relaxed">
           Hover any card to preview its floating botanical ingredients; click to enlarge and inspect full Ayurvedic components.
         </p>
       </section>
 
       {/* Filter and Search Bar */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-10">
-        <div className="bg-[#F5EFE3]/70 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-[#6B5B45]/15 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xs">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-8 sm:mb-10">
+        <div className="bg-[#F5EFE3]/70 backdrop-blur-xs p-3.5 sm:p-5 rounded-2xl border border-[#6B5B45]/15 flex flex-col md:flex-row items-center justify-between gap-4 shadow-xs">
           {/* Category Chips */}
-          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 scrollbar-none">
+          <div className="flex items-center gap-2 overflow-x-auto w-full md:w-auto pb-2 md:pb-0 no-scrollbar">
             <span className="text-xs font-mono text-[#6B5B45] uppercase flex items-center gap-1 mr-1 hidden sm:flex">
               <SlidersHorizontal className="w-3.5 h-3.5 text-[#C9A961]" /> Filter:
             </span>
@@ -118,7 +118,7 @@ export default function Products() {
                 key={opt.id}
                 type="button"
                 onClick={() => setActiveFilter(opt.id)}
-                className={`px-4 py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
                   activeFilter === opt.id
                     ? 'bg-[#C9A961] text-[#2D3E2F] font-semibold shadow-xs'
                     : 'bg-[#FAF7F0] text-[#6B5B45] hover:text-[#2D3E2F] border border-[#6B5B45]/15'
@@ -144,7 +144,7 @@ export default function Products() {
       </section>
 
       {/* 20 Products Responsive Grid (2 cols mobile, 3 cols tablet, 4 cols desktop) */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12">
+      <section className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-12">
         {filteredProducts.length === 0 ? (
           <div className="text-center py-20 bg-[#F5EFE3]/40 rounded-3xl border border-[#6B5B45]/15 p-8">
             <p className="font-display text-xl text-[#2D3E2F] mb-2">No matching formulations found</p>
@@ -163,7 +163,7 @@ export default function Products() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6 lg:gap-8">
             {filteredProducts.map((product) => (
               <ProductCatalogCard
                 key={product.slug}

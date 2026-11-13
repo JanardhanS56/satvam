@@ -107,11 +107,11 @@ export default function Consultation() {
     <div className="min-h-screen bg-[#FAF7F0] text-[#2D3E2F] py-12 lg:py-20 px-4 sm:px-6 lg:px-12">
       <div className="max-w-5xl mx-auto">
         {/* Top Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-[#2D3E2F]">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
+          <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-[#2D3E2F]">
             Your Tailored Ayurvedic Prescription
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-[#6B5B45] leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-[#6B5B45] leading-relaxed">
             Answer 4 diagnostic questions to consult our Ayurvedic Vaidya intelligence. Receive a single, clinically matched whole-plant formulation suited to your exact scalp dosha.
           </p>
         </div>
@@ -120,7 +120,7 @@ export default function Consultation() {
           /* Diagnostic Form */
           <form
             onSubmit={handleSubmit}
-            className="bg-[#FFFFFF] rounded-3xl border border-[#6B5B45]/20 p-6 sm:p-10 lg:p-12 shadow-soft space-y-10"
+            className="bg-[#FFFFFF] rounded-2xl sm:rounded-3xl border border-[#6B5B45]/20 p-4 sm:p-10 lg:p-12 shadow-soft space-y-8 sm:space-y-10"
           >
             {/* Step 1: Hair Type */}
             <div className="space-y-4">

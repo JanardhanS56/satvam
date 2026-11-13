@@ -13,22 +13,22 @@ export default function Shop() {
   return (
     <div className="w-full min-h-screen bg-[#FAF7F0] pb-24">
       {/* Header Banner */}
-      <section className="pt-16 pb-12 px-6 max-w-7xl mx-auto text-center">
-        <h1 className="font-display font-medium text-4xl sm:text-6xl text-[#2D3E2F] tracking-tight">
+      <section className="pt-12 sm:pt-16 pb-8 sm:pb-12 px-4 sm:px-6 max-w-7xl mx-auto text-center">
+        <h1 className="font-display font-medium text-3xl sm:text-6xl text-[#2D3E2F] tracking-tight">
           The Herbal Atelier
         </h1>
-        <p className="font-eyebrow text-base sm:text-lg tracking-[0.2em] uppercase text-[#6B5B45] mt-3">
+        <p className="font-eyebrow text-sm sm:text-lg tracking-[0.2em] uppercase text-[#6B5B45] mt-2 sm:mt-3">
           Five oils. Twenty herbs. One lineage.
         </p>
-        <p className="text-sm sm:text-base text-[#2D3E2F]/75 max-w-2xl mx-auto mt-4 font-normal leading-relaxed">
+        <p className="text-xs sm:text-base text-[#2D3E2F]/75 max-w-2xl mx-auto mt-3 sm:mt-4 font-normal leading-relaxed">
           Each formula is slow cold-pressed in limited small batches.
           Hover any bottle to preview its floating botanical components; click the bottle to shatter the veil and orbit its raw ingredients.
         </p>
       </section>
 
       {/* 5-Hero Grid */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
           {heroProducts.map((product) => (
             <ProductCard key={product.slug} product={product} />
           ))}
@@ -36,8 +36,8 @@ export default function Shop() {
       </section>
 
       {/* Craft Note Bottom Banner */}
-      <section className="max-w-5xl mx-auto px-6 mt-20">
-        <div className="bg-[#F5EFE3] rounded-3xl p-8 sm:p-10 border border-[#6B5B45]/15 text-center">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 mt-14 sm:mt-20">
+        <div className="bg-[#F5EFE3] rounded-2xl sm:rounded-3xl p-6 sm:p-10 border border-[#6B5B45]/15 text-center">
           <h3 className="font-display text-2xl text-[#2D3E2F] mb-3">
             Looking for Our Complete 20-Formula Apothecary?
           </h3>

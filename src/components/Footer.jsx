@@ -15,8 +15,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#2D3E2F] text-[#FAF7F0] pt-16 pb-12 mt-auto border-t border-[#6B5B45]/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+    <footer className="w-full bg-[#2D3E2F] text-[#FAF7F0] pt-12 sm:pt-16 pb-10 sm:pb-12 mt-auto border-t border-[#6B5B45]/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 lg:gap-16">
         {/* Brand Block */}
         <div className="flex flex-col items-start gap-4">
           <div className="flex items-center gap-3">
@@ -75,7 +75,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Legal / Disclaimer */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-12 pt-8 border-t border-[#FAF7F0]/10 flex flex-col sm:flex-row items-center justify-between text-xs text-[#FAF7F0]/50 gap-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-[#FAF7F0]/10 flex flex-col sm:flex-row items-center justify-between text-xs text-[#FAF7F0]/50 gap-4">
         <p>© 2026 Satvam · Fictional brand created for a college competition.</p>
         <p className="font-mono text-[11px] text-[#FAF7F0]/40">Pure Frontend · Cold-Pressed Herbal Formulations</p>
       </div>

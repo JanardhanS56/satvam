@@ -153,9 +153,9 @@ export default function Profile() {
   return (
     <div className="w-full bg-[#FAF7F0] pb-24 min-h-screen">
       {/* Header Container */}
-      <section className="pt-16 pb-10 px-6 max-w-6xl mx-auto">
-        <div className="bg-[#FFFFFF] p-8 sm:p-10 rounded-3xl border border-[#6B5B45]/20 shadow-soft">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-[#6B5B45]/15">
+      <section className="pt-12 sm:pt-16 pb-8 sm:pb-10 px-4 sm:px-6 max-w-6xl mx-auto">
+        <div className="bg-[#FFFFFF] p-5 sm:p-10 rounded-2xl sm:rounded-3xl border border-[#6B5B45]/20 shadow-soft">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 sm:pb-8 border-b border-[#6B5B45]/15">
             {/* User Avatar with Custom Photo Upload */}
             <div className="flex items-center gap-5">
               <div className="relative group flex-shrink-0">
@@ -350,8 +350,8 @@ export default function Profile() {
       </section>
 
       {/* Tabs Section: Quiz | Wishlist | Favorites | Cart */}
-      <section className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center gap-4 sm:gap-8 border-b border-[#6B5B45]/15 mb-8 overflow-x-auto">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center gap-3 sm:gap-8 border-b border-[#6B5B45]/15 mb-6 sm:mb-8 overflow-x-auto no-scrollbar">
           <button
             type="button"
             onClick={() => setActiveTab('quiz')}

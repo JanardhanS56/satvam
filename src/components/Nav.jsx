@@ -25,14 +25,14 @@ export default function Nav() {
 
   return (
     <header className="sticky top-0 z-40 w-full backdrop-blur-md bg-[#FAF7F0]/85 border-b border-[#6B5B45]/15 transition-all">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
         {/* Brand / Logo */}
         <Link
           to="/"
-          className="flex items-center gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]"
+          className="flex items-center gap-2 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]"
           aria-label="Satvam Home"
         >
-          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden flex items-center justify-center bg-[#F5EFE3] border border-[#C9A961]/40 shadow-xs ring-1 ring-[#C9A961]/20 transition-transform duration-200 group-hover:scale-105">
+          <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden flex items-center justify-center bg-[#F5EFE3] border border-[#C9A961]/40 shadow-xs ring-1 ring-[#C9A961]/20 transition-transform duration-200 group-hover:scale-105">
             <SafeImage
               src="/references/logo/logo-mark.webp"
               alt="Satvam Mark"
@@ -40,7 +40,7 @@ export default function Nav() {
               fallbackText="SV"
             />
           </div>
-          <span className="font-display font-medium text-2xl tracking-[0.08em] text-[#2D3E2F] group-hover:text-[#6B5B45] transition-colors">
+          <span className="font-display font-medium text-xl sm:text-2xl tracking-[0.08em] text-[#2D3E2F] group-hover:text-[#6B5B45] transition-colors">
             SATVAM
           </span>
         </Link>
@@ -72,7 +72,7 @@ export default function Nav() {
         </nav>
 
         {/* Right Cluster */}
-        <div className="flex items-center gap-3 sm:gap-4 lg:gap-5">
+        <div className="flex items-center gap-1.5 sm:gap-3.5 lg:gap-5">
           <ThemeSwitcher />
 
           <Link
@@ -84,11 +84,11 @@ export default function Nav() {
               <img
                 src={avatar}
                 alt={name}
-                className="w-7 h-7 rounded-full object-cover border-2 border-[#C9A961] shadow-2xs"
+                className="w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full object-cover border-2 border-[#C9A961] shadow-2xs"
               />
             ) : (
-              <span className="p-1 flex items-center justify-center">
-                <User className="w-5 h-5" />
+              <span className="p-0.5 sm:p-1 flex items-center justify-center">
+                <User className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
               </span>
             )}
           </Link>
@@ -96,12 +96,12 @@ export default function Nav() {
           <button
             type="button"
             onClick={toggleCart}
-            className="relative p-2 text-[#2D3E2F] hover:text-[#6B5B45] transition-colors rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]"
+            className="relative p-1.5 sm:p-2 text-[#2D3E2F] hover:text-[#6B5B45] transition-colors rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]"
             aria-label={`Shopping Cart with ${totalCount} items`}
           >
-            <ShoppingBag className="w-5 h-5" />
+            <ShoppingBag className="w-4.5 h-4.5 sm:w-5 sm:h-5" />
             {totalCount > 0 && (
-              <span className="absolute top-1 right-1 w-4 h-4 bg-[#C9A961] text-[#2D3E2F] text-[10px] font-bold rounded-full flex items-center justify-center leading-none">
+              <span className="absolute top-0.5 right-0.5 sm:top-1 sm:right-1 w-4 h-4 bg-[#C9A961] text-[#2D3E2F] text-[10px] font-bold rounded-full flex items-center justify-center leading-none">
                 {totalCount}
               </span>
             )}
@@ -111,11 +111,11 @@ export default function Nav() {
           <button
             type="button"
             onClick={() => setMobileNavOpen(!isMobileNavOpen)}
-            className="md:hidden p-2 text-[#2D3E2F] hover:text-[#6B5B45] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]"
+            className="md:hidden p-1.5 sm:p-2 text-[#2D3E2F] hover:text-[#6B5B45] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]"
             aria-label="Toggle navigation menu"
             aria-expanded={isMobileNavOpen}
           >
-            {isMobileNavOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileNavOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </button>
         </div>
       </div>

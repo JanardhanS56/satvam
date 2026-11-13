@@ -63,9 +63,9 @@ export default function Hero() {
       </div>
 
       {/* Hero Content Container */}
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center flex flex-col items-center my-auto">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center my-auto">
         {/* Seal / Eyebrow */}
-        <div className="mb-6 inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#F5EFE3]/90 border border-[#6B5B45]/15 backdrop-blur-xs shadow-xs">
+        <div className="mb-6 inline-flex items-center gap-3 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#F5EFE3]/90 border border-[#6B5B45]/15 backdrop-blur-xs shadow-xs">
           <div className="w-6 h-6 rounded-full overflow-hidden flex items-center justify-center bg-[#FAF7F0] border border-[#C9A961]/35">
             <SafeImage
               src="/references/logo/logo-mark.webp"
@@ -74,7 +74,7 @@ export default function Hero() {
               fallbackText="S"
             />
           </div>
-          <span className="text-eyebrow text-[#6B5B45] text-xs font-medium tracking-[0.2em]">
+          <span className="text-eyebrow text-[#6B5B45] text-[11px] sm:text-xs font-medium tracking-[0.16em] sm:tracking-[0.2em]">
             Vedic Apothecary · Estd. 2018
           </span>
         </div>
@@ -84,19 +84,19 @@ export default function Hero() {
           <SafeImage
             src="/references/logo/logo.webp"
             alt="Satvam Vedic Apothecary"
-            className="h-44 sm:h-56 md:h-64 lg:h-72 w-auto max-w-[340px] sm:max-w-lg md:max-w-xl object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-102"
+            className="h-36 xs:h-44 sm:h-56 md:h-64 lg:h-72 w-auto max-w-[280px] xs:max-w-[340px] sm:max-w-lg md:max-w-xl object-contain filter drop-shadow-md transition-transform duration-300 hover:scale-102"
             fallbackText="SATVAM"
           />
           <h1 className="sr-only">Satvam — Vedic Hair Care Atelier</h1>
         </div>
 
         {/* Tagline */}
-        <p className="mt-4 font-eyebrow text-sm sm:text-base md:text-lg tracking-[0.22em] text-[#6B5B45] uppercase font-medium max-w-2xl">
+        <p className="mt-4 font-eyebrow text-xs sm:text-base md:text-lg tracking-[0.18em] sm:tracking-[0.22em] text-[#6B5B45] uppercase font-medium max-w-2xl">
           From India's Roots to Your Roots.
         </p>
 
         {/* Supporting description */}
-        <p className="mt-4 text-[#2D3E2F]/85 text-base sm:text-lg max-w-xl font-normal leading-relaxed">
+        <p className="mt-4 text-[#2D3E2F]/85 text-sm sm:text-lg max-w-xl font-normal leading-relaxed">
           Sacred cold-pressed hair elixirs crafted with single-origin Indian botanicals,
           wood-pressed slowly to preserve whole plant vitality.
         </p>

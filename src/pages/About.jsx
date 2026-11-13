@@ -93,20 +93,20 @@ export default function About() {
   return (
     <div className="w-full bg-[#FAF7F0] pb-24">
       {/* Editorial Page Header */}
-      <section className="pt-20 pb-16 px-6 max-w-5xl mx-auto text-center">
-        <h1 className="font-display font-medium text-4xl sm:text-6xl text-[#2D3E2F] tracking-tight">
+      <section className="pt-14 sm:pt-20 pb-10 sm:pb-16 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+        <h1 className="font-display font-medium text-3xl sm:text-6xl text-[#2D3E2F] tracking-tight">
           Purity Born from Patience
         </h1>
-        <p className="font-eyebrow text-base sm:text-lg tracking-[0.2em] uppercase text-[#6B5B45] mt-3">
+        <p className="font-eyebrow text-xs sm:text-lg tracking-[0.18em] sm:tracking-[0.2em] uppercase text-[#6B5B45] mt-2 sm:mt-3">
           Ancient Ayurvedic Apothecary Meets Modern Clean Phytochemistry.
         </p>
       </section>
 
       {/* 1. Origin Story Section */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Growth Trajectory & Tri-Pillar Trust Matrix (Replaces former placeholder image) */}
-          <div className="lg:col-span-5 bg-[#FFFFFF] p-6 sm:p-7 rounded-3xl border border-[#6B5B45]/20 shadow-soft flex flex-col justify-between space-y-6">
+          <div className="lg:col-span-5 bg-[#FFFFFF] p-4.5 sm:p-7 rounded-2xl sm:rounded-3xl border border-[#6B5B45]/20 shadow-soft flex flex-col justify-between space-y-6">
             <div>
               {/* Header Badge */}
               <div className="flex items-center justify-between pb-3 border-b border-[#6B5B45]/15">

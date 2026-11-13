@@ -67,7 +67,7 @@ export default function ProductDetailModal({ product, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 z-50 flex items-center justify-center p-2.5 sm:p-6 overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="product-modal-title"
@@ -79,9 +79,9 @@ export default function ProductDetailModal({ product, onClose }) {
       />
 
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-4xl max-h-[90vh] bg-[#FAF7F0] rounded-3xl border border-[#6B5B45]/20 shadow-2xl flex flex-col z-10 overflow-hidden animate-scaleUp">
+      <div className="relative w-full max-w-4xl max-h-[92vh] sm:max-h-[90vh] bg-[#FAF7F0] rounded-2xl sm:rounded-3xl border border-[#6B5B45]/20 shadow-2xl flex flex-col z-10 overflow-hidden animate-scaleUp">
         {/* Header Bar */}
-        <div className="p-6 border-b border-[#6B5B45]/15 flex items-center justify-between bg-[#F5EFE3]/40">
+        <div className="p-4 sm:p-6 border-b border-[#6B5B45]/15 flex items-center justify-between bg-[#F5EFE3]/40">
           <div className="flex items-center gap-3">
             <span className="text-eyebrow text-[#C9A961] font-mono">
               Vedic Code: {product.slug}
@@ -103,12 +103,12 @@ export default function ProductDetailModal({ product, onClose }) {
         </div>
 
         {/* Product Title Bar & Tabs */}
-        <div className="px-6 sm:px-8 pt-6 pb-2">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="px-4 sm:px-8 pt-4 sm:pt-6 pb-2">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
             <div>
               <h2
                 id="product-modal-title"
-                className="font-display font-medium text-3xl sm:text-4xl text-[#2D3E2F]"
+                className="font-display font-medium text-2xl sm:text-4xl text-[#2D3E2F]"
               >
                 {product.name}
               </h2>
@@ -116,12 +116,12 @@ export default function ProductDetailModal({ product, onClose }) {
                 {product.tagline || product.subtitle}
               </p>
             </div>
-            <div className="flex items-center gap-4">
-              <div className="text-right">
-                <div className="font-display text-2xl font-semibold text-[#2D3E2F]">
+            <div className="flex items-center justify-between sm:justify-end gap-4 pt-1 sm:pt-0">
+              <div className="text-left sm:text-right">
+                <div className="font-display text-xl sm:text-2xl font-semibold text-[#2D3E2F]">
                   ₹{product.price}
                 </div>
-                <div className="text-xs text-[#6B5B45]/70 font-mono">
+                <div className="text-[11px] sm:text-xs text-[#6B5B45]/70 font-mono">
                   {product.size || '100ml'} Amber Flacon
                 </div>
               </div>
@@ -136,13 +136,13 @@ export default function ProductDetailModal({ product, onClose }) {
           </div>
 
           {/* Navigation Tabs */}
-          <div className="flex items-center gap-6 border-b border-[#6B5B45]/15 mt-6 overflow-x-auto">
+          <div className="flex items-center gap-4 sm:gap-6 border-b border-[#6B5B45]/15 mt-4 sm:mt-6 overflow-x-auto no-scrollbar">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`py-3 text-sm font-medium tracking-wide relative whitespace-nowrap transition-colors ${
+                className={`py-2.5 sm:py-3 text-xs sm:text-sm font-medium tracking-wide relative whitespace-nowrap transition-colors ${
                   activeTab === tab.id
                     ? 'text-[#2D3E2F] font-semibold after:content-[""] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#C9A961]'
                     : 'text-[#6B5B45] hover:text-[#2D3E2F]'
@@ -155,7 +155,7 @@ export default function ProductDetailModal({ product, onClose }) {
         </div>
 
         {/* Tab Content Body */}
-        <div className="p-6 sm:p-8 overflow-y-auto flex-1">
+        <div className="p-4 sm:p-8 overflow-y-auto flex-1">
           {/* TAB 1: OVERVIEW */}
           {activeTab === 'overview' && (
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start animate-fadeIn">

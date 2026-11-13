@@ -122,18 +122,18 @@ export default function Trust() {
   return (
     <div className="w-full bg-[#FAF7F0] pb-24">
       {/* Page Header */}
-      <section className="pt-20 pb-14 px-6 max-w-5xl mx-auto text-center">
-        <h1 className="font-display font-medium text-4xl sm:text-6xl text-[#2D3E2F] tracking-tight">
+      <section className="pt-14 sm:pt-20 pb-10 sm:pb-14 px-4 sm:px-6 max-w-5xl mx-auto text-center">
+        <h1 className="font-display font-medium text-3xl sm:text-6xl text-[#2D3E2F] tracking-tight">
           Trust & Authenticity
         </h1>
-        <p className="font-eyebrow text-base sm:text-lg tracking-[0.2em] uppercase text-[#6B5B45] mt-3">
+        <p className="font-eyebrow text-xs sm:text-lg tracking-[0.18em] sm:tracking-[0.2em] uppercase text-[#6B5B45] mt-2 sm:mt-3">
           Independent Certification, Clinical Science, and Botanical Truth.
         </p>
       </section>
 
       {/* 1. Certificates Gallery with Herb-Border SVG */}
-      <section className="max-w-7xl mx-auto px-6 lg:px-12 py-12">
-        <div className="relative rounded-3xl p-8 sm:p-12 bg-[#F5EFE3]/60 border border-[#6B5B45]/20 shadow-soft overflow-hidden">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12">
+        <div className="relative rounded-2xl sm:rounded-3xl p-4 sm:p-12 bg-[#F5EFE3]/60 border border-[#6B5B45]/20 shadow-soft overflow-hidden">
           {/* Decorative SVG Herb Vines Background Pattern */}
           <svg
             className="absolute inset-0 w-full h-full opacity-10 pointer-events-none"

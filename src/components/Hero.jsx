@@ -70,7 +70,7 @@ export default function Hero() {
             <SafeImage
               src="/references/logo/logo-mark.webp"
               alt="Seal"
-              className="w-full h-full object-contain p-0.5"
+              className="w-full h-full object-cover scale-[1.18]"
               fallbackText="S"
             />
           </div>

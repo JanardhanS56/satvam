@@ -29,14 +29,14 @@ export default function Nav() {
         {/* Brand / Logo */}
         <Link
           to="/"
-          className="flex items-center gap-2 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]"
+          className="flex items-center gap-2.5 sm:gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A961]"
           aria-label="Satvam Home"
         >
-          <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full overflow-hidden flex items-center justify-center bg-[#F5EFE3] border border-[#C9A961]/40 shadow-xs ring-1 ring-[#C9A961]/20 transition-transform duration-200 group-hover:scale-105">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex items-center justify-center bg-[#F5EFE3] border border-[#C9A961]/40 shadow-xs ring-1 ring-[#C9A961]/20 transition-transform duration-200 group-hover:scale-105 shrink-0">
             <SafeImage
               src="/references/logo/logo-mark.webp"
               alt="Satvam Mark"
-              className="w-full h-full object-contain p-0.5"
+              className="w-full h-full object-cover scale-[1.18] transition-transform duration-200 group-hover:scale-[1.24]"
               fallbackText="SV"
             />
           </div>

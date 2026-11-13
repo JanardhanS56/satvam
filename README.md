@@ -22,16 +22,39 @@
 
 **SATVAM** is an immersive digital flagship and modern e-commerce experience for an artisanal Ayurvedic hair wellness house. Rooted in ancient Charaka Samhita scriptures and sustained by fair-trade partnerships with 740+ smallholder farmers across Kerala, Karnataka, and Rajasthan, SATVAM harmonizes timeless botanical wisdom with modern interactive web design.
 
+<img width="791" height="622" alt="Screenshot 2026-11-13 173355" src="https://github.com/user-attachments/assets/a8f057de-de50-4cea-a554-c298839a2f4c" />
+
 ---
 
 ## ✨ Key Features
 
 - **🌱 5-Stage Seed-to-Bottle Journey:** An interactive narrative chronicle detailing the reverent lifecycle of each elixir — *Seed & Soil*, *Monsoon Growth*, *Dawn Harvest*, *Vaagai Wood Pressing*, and *Amber Flacon Bottling*. Featuring automated smooth transitions, touch pagination, and deep lineage storytelling.
+
+<img width="1385" height="843" alt="Screenshot 2026-11-13 173415" src="https://github.com/user-attachments/assets/d6953d89-4dfe-4b7a-9d55-b6118c55a391" />
+
+
 - **🏺 20 Signature Ayurvedic Formulations:** Complete digital apothecary catalog (`/shop` and `/products`) covering concerns such as stress-fall, DHT thinning, scalp congestion, premature graying, and dryness. Each formulation includes detailed ingredient dossiers, dosha profiles, botanical provenance, and usage rituals.
+
+<img width="1167" height="773" alt="Screenshot 2026-11-13 173442" src="https://github.com/user-attachments/assets/86663b95-328f-4931-a416-10e5e56eb9b9" />
+
+
 - **🤖 Vedic AI Scalp & Dosha Consultation:** Powered client-side by the Groq LLM API, providing patrons with personalized tri-dosha (Vata, Pitta, Kapha) scalp diagnostics and curated multi-stage oil recommendations.
+
+<img width="1051" height="868" alt="Screenshot 2026-11-13 174306" src="https://github.com/user-attachments/assets/a555e6d5-0fa2-4893-bc2b-dca9145a62c5" />
+
+
 - **🛍️ Complete Apothecary Basket & Mock Checkout:** Real-time slide-out cart drawer, quantity adjustment, coupon code verification, past order purchase history, and interactive Vedic payment gateway modal.
+
+<img width="1167" height="773" alt="Screenshot 2026-11-13 173442" src="https://github.com/user-attachments/assets/05a92803-e120-47a0-989f-2b3615d6c13a" />
+
+
 - **🌗 Vedic Day & Night Adaptive Theming:** 3-state segmented theme switcher (*Light*, *Dark*, *System*) preserving user preference in local storage. Features an authentic daytime warm parchment palette (`#FAF7F0`) and a deep nocturnal Ayurvedic forest palette (`#151D16` / `#1F2B20`).
+
 - **👤 Patron Atelier Profile:** Interactive hair constitution quiz, custom avatar photo upload, saved wishlists, favorites collection, and persistent purchase chronicles.
+
+<img width="1135" height="957" alt="Screenshot 2026-11-13 174419" src="https://github.com/user-attachments/assets/0f3a5724-39b5-4dfa-b0ac-fb6ac8d925ce" />
+
+
 - **✨ Fluid Kinematics & Touch Optimization:** Ultra-smooth inertia scrolling powered by Lenis, micro-interactions with GSAP, and touch-calibrated mobile drawers.
 
 ---
